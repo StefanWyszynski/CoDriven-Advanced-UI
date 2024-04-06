@@ -32,9 +32,9 @@
     - [Graph editor](graph_editor.md)
   
   - Utils
-    - [Game settings util](cmlive_data.md)
     - [Observable field](cmlive_data.md)
-    - [Multiplayer mirror helpers](cmlive_data.md)
+    - [Game settings util](game_settings_utils.md)
+    - [Multiplayer mirror helpers](multiplayer_mirror_utils.md)
   
   - Tutorial scenes
     - [Tutorials](tutorials/tutorials.md)
