@@ -1,31 +1,37 @@
 ﻿# UI Compose documentation version 1.0.0
 
-
 ![](images/ui_compose_logo.png)
 
 Thank you for buying UI Compose. I hope it will speed up your workflow and help to finish your game faster 😄.
 
 <!-- TOC -->
-
-* [UI Compose documentation](#ui-compose-documentation)
-* [The main **benefit** of UI Compose is:](#the-main-benefit-of-ui-compose-is)
-	* [Note: this tool **include: FULLY working 3D multiplayer FPS (mirror/LAN) with
-	  **:](#note-this-tool-include-fully-working-3d-multiplayer-fps-mirrorlan-with)
-	* [UI Compose components](#ui-compose-components)
-		* [Screen Manager (CmScreenManager)](#screen-manager-cmscreenmanager)
-		* [Screen (CmScreen)](#screen-cmscreen)
-		* [Theme (ICMThemeBase)](#theme-icmthemebase)
-		* [Screen Part (CmScreenPart)](#screen-part-cmscreenpart)
-		* [Controls](#controls)
-		* [Modifiers](#modifiers)
-		* [UI events](#ui-events)
-		* [Tutorials](#tutorials)
-
+* [UI Compose documentation version 1.0.0](#ui-compose-documentation-version-100)
+* [The main **benefits** of UI Compose is:](#the-main-benefits-of-ui-compose-is)
+  * [![graph editor image](images/features/graph_editor.png)](#)
+  * [![translation editor image](images/features/translation_editor.png)](#-1)
+  * [Note: this tool **include: FULLY working 3D multiplayer FPS (mirror/LAN) with**:](#note-this-tool-include-fully-working-3d-multiplayer-fps-mirrorlan-with)
+  * [Some limitations of the current version of UI Compose:](#some-limitations-of-the-current-version-of-ui-compose)
+    * [Detailed description of limitations enforced by UI toolkit](#detailed-description-of-limitations-enforced-by-ui-toolkit)
+  * [UI Compose components](#ui-compose-components)
+    * [Screen Manager (CmScreenManager)](#screen-manager-cmscreenmanager)
+    * [Screen (CmScreen)](#screen-cmscreen)
+    * [Theme (ICMThemeBase)](#theme-icmthemebase)
+    * [Screen Part (CmScreenPart)](#screen-part-cmscreenpart)
+    * [Controls](#controls)
+    * [Modifiers](#modifiers)
+    * [UI events](#ui-events)
+    * [Tutorials](#tutorials)
 <!-- TOC -->
 
 # The main **benefits** of UI Compose is:
 
 - full source code included
+
+
+- powerful styling in the code using probably all modifiers available in USS but using build-in functions - no more
+  CSS/USS, [(more about here)](modifiers.md),
+
+
 - build in nodes with screen preview so you can connect them by actions and use these actions to move between screens,
   but you can move between screens without it by just a simple method call with screen
   name [(more about here)](graph_editor.md)
@@ -33,54 +39,77 @@ Thank you for buying UI Compose. I hope it will speed up your workflow and help 
 ![graph editor image](images/features/graph_editor.png)
 -------------------------------------------------------
 
-- easy language change and translation editor (built-in) [(more about here)](translation_editor.md)
+- language change and translation editor (built-in) [(more about here)](translation_editor.md)
 
 ![langage change image](images/features/lang_change.gif)
+
+You can add your custom Editors in Unity. You can check how (build-in) Translation Editor was made - because it was made
+with UI Compose
+
 ![translation editor image](images/features/translation_editor.png)
 -------------------------------------------------------------------
 
-- easy theming and changing of the current theme! [(more about here)](theming.md)
+- theming and changing of the current theme! [(more about here)](theming.md)
 
   ![themes image](images/features/themes.gif)
 
 ---
 
-- easy and powerful styling but in the code - no more CSS/USS! and much easier, because you will not modify text style
-  for any component :) [(more about here)](modifiers.md),
-- easily add your own custom Editors in Unity. You can check how Translation Editor was made - because it was made with
-  its own code I mean UI Compose :)
-- really easy event handling! (you can handle events on part of your screen, screen as a whole, globally, or event in
+- easy event handling! (you can handle events on part of your screen, screen as a whole, globally, or event in
   many places at the same time) [(more about here)](ui_events.md)
+
+
 - UI compose contains controls from UI Toolkit and a few more, like a floating window, and a draggable panel. This will
   be probably improved in the future [(more about here)](visual_controls.md)
-- implemented with observer pattern in mind to observe changes in UI or trigger UI changes from external
-  events [(more about here)](cmlive_data.md)
-- multiple scenes with examples like simple one theme, simple two themes, a few game scenes with maps and main menu,
-  other [(more about here)](tutorials.md)
-- easy passing player data to UI by event callback
-- helper functions for your game and tools for multiplayer with a mirror
+
+
+- implemented with observer pattern in mind to observe changes in UI or trigger UI changes from external events - all by
+  observable fields, but by default it doesn't require that [(more about here)](cmlive_data.md)
+
+- multiple scenes with examples like simple one theme, simple two themes, the scene with screen part, and game included
+  with a few game scenes with maps and a main menu [(more about here)](tutorials.md)
+
+
+- passing player data to UI by event callback
+
+
+- screen changing by separations of concerns. All game screens will be handled by the screen manager which will contain
+  your screen classes. Screens will contain sections ("ScreenPart") that can be reused anywhere in the game. So for
+  example: the settings menu section could be added to in game menu by just one single line of code. You can omit
+  sections code but it is recommended.
+
+
+- build-in helper functions for your game and tools for multiplayer with a mirror
+
+- persistent and also observable fields for settings for your options. Assign data to the field and forget about it.
+
+
+- behaviors classes - allow you to assign specific behaviors for your controls. Currently, there is one behavior
+  floating window behavior that will make control movable/draggable by mouse like windows in the operating system.
+
+
 - **included: FULLY working 3D multiplayer FPS (mirror/LAN) with main menu and in-game
   menu ** [click here](multiplayer_game.md)
 
 ## Note: this tool **include: FULLY working 3D multiplayer FPS (mirror/LAN) with**:
 
+- fully working menu with settings changes like resolution/refresh rate, sound, music, mouse sensitivity, and more,
 - grappling hook weapon created from scratch using math in code for springs (without using the build in spring classes),
   so you can do more,
 - car driving logic: spring camera attached to the seat and shooting while driving + free camera rotation +
   FPP/TPP camera during driving 😄,
-- car models includec (not top quality 😄)
+- car models included,
 - weapon recoil using spring,
 - weapon attached to the hand bone
 - jumping
 - muzzle flashes,
 - sounds for actions,
-- health status
-- fully working menu
-- settings changes like resolution/refresh rate, sound, music, mouse sensitivity, and more
-- multiple weapons like pistol, machinegun, grenade launcher, sniper with simple zooming, rocket launcher (all model included with blender files .blend)
+- health status,
+- multiple weapons like pistol, machine-gun, grenade launcher, a sniper with simple zooming, and rocket launcher (models
+  included with blender files .blend)
 - weapon recoil
 - maps for the game and simple models like trees, houses,
-- you can play with friends :)
+- you can play with friends on LAN
 
 ![Fps game image1](images/features/multiplayer_fps_screen1.jpg)
 ![Fps game image2](images/features/multiplayer_fps_screen2.jpg)
@@ -92,12 +121,16 @@ More about multiplayer games [click here](multiplayer_game.md)
 Please read the below brief overview of all important sections that will help you to understand how it works all
 together.
 
-## Limitations of the current version of UI Compose:
+## Some limitations of the current version of UI Compose:
 
-UI compose is styling controls by generating USS code in the background. The system will generate all styles for all
-your themes and selectors from the code to the Resources/UssStyles folder and it will be loaded runtime.
+UI compose is styling controls by generating USS code in the background and has the same limitations as UI Toolkit (in
+this version). The system will generate all styles for all your themes and selectors from the code to the
+Resources/UssStyles folder and it will be loaded runtime.
 
-Limitation: currently UIToolkit enforces the limitation that USS code can't created and parsed runtime to style sheet
+
+### Detailed description of limitations enforced by UI toolkit
+
+Currently UIToolkit enforces the limitation that USS code can't created and parsed runtime to style sheet
 because The USS importer makes heavy use of the AssetDatabase to resolve asset paths. To make the importer
 runtime-ready, the UI Toolkit needs to come up with other ways to resolve asset paths.
 
@@ -120,14 +153,17 @@ So, we can:
 - dynamically change the visual of any control by accessing the stylesheet property of any CmControl.getVisualElement()
   .stylesheet. So we can for example dynamically load any image and change it runtime.
 
-Because of all of that - UI Compose has an additional custom selector that will allow you to execute runtime. So you want to make control half opacity and red in certain conditions runtime. You will create that style for it with your custom name and activate or deactivate that style runtime.
+Because of all of that - UI Compose has an additional custom selector that will allow you to execute runtime. So you
+want to make control half opacity and red in certain conditions runtime. You will create that style for it with your
+custom name and activate or deactivate that style runtime.
 
 > Important!. **The next version** of the UI compose will be probably fully based on dynamic changes without using
 > CSS/USS so any dynamic changes runtime would be dynamic by default.
 
 ---
 
-> Anyway - all the unity UI Toolkit selectors will work normally in runtime, so you will normally create a style for each selector you want. For example when the mouse is hovered, when control is disabled, or checked:
+> Anyway - all the unity UI Toolkit selectors will work normally in runtime, so you will normally create a style for
+> each selector you want. For example when the mouse is hovered, when control is disabled, or checked:
 
 ```csharp
  var cmToggle = new CmToggle(..);

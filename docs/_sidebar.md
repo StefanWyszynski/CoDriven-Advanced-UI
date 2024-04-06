@@ -4,6 +4,9 @@
 
   - [Overview](README.md)
 
+- Changelog
+  - [Change log](changelog.md)
+
 - Documentation
   - Theming
     - [Theming](theming.md)
