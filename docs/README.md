@@ -5,11 +5,9 @@
 Thank you for buying UI Compose. I hope it will speed up your workflow and help to finish your game faster 😄.
 
 <!-- TOC -->
-
 * [UI Compose documentation version 1.0.0](#ui-compose-documentation-version-100)
+* [Demo executable:](#demo-executable)
 * [The main **benefits** of UI Compose is:](#the-main-benefits-of-ui-compose-is)
-  * [![graph editor image](images/features/graph_editor.png)](#)
-  * [![translation editor image](images/features/translation_editor.png)](#-1)
   * [Note: this tool **include: FULLY working 3D multiplayer FPS (mirror/LAN) with**:](#note-this-tool-include-fully-working-3d-multiplayer-fps-mirrorlan-with)
   * [Some limitations of the current version of UI Compose:](#some-limitations-of-the-current-version-of-ui-compose)
     * [Detailed description of limitations enforced by UI toolkit](#detailed-description-of-limitations-enforced-by-ui-toolkit)
@@ -22,7 +20,6 @@ Thank you for buying UI Compose. I hope it will speed up your workflow and help 
     * [Modifiers](#modifiers)
     * [UI events](#ui-events)
     * [Tutorials](#tutorials)
-
 <!-- TOC -->
 
 # Demo executable:
