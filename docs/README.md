@@ -5,6 +5,7 @@
 Thank you for buying UI Compose. I hope it will speed up your workflow and help to finish your game faster 😄.
 
 <!-- TOC -->
+
 * [UI Compose documentation version 1.0.0](#ui-compose-documentation-version-100)
 * [The main **benefits** of UI Compose is:](#the-main-benefits-of-ui-compose-is)
   * [![graph editor image](images/features/graph_editor.png)](#)
@@ -21,17 +22,21 @@ Thank you for buying UI Compose. I hope it will speed up your workflow and help 
     * [Modifiers](#modifiers)
     * [UI events](#ui-events)
     * [Tutorials](#tutorials)
+
 <!-- TOC -->
+
+# Demo executable:
+
+You can download current demo here:
+
+
+[Demo game with UI Compose menu in action](https://drive.google.com/file/d/1sLXTo1X5chfmrYf_n_eN2lLxLuhypJuJ/view?usp=sharing)
 
 # The main **benefits** of UI Compose is:
 
 - full source code included
-
-
 - powerful styling in the code using probably all modifiers available in USS but using build-in functions - no more
   CSS/USS, [(more about here)](modifiers.md),
-
-
 - build in nodes with screen preview so you can connect them by actions and use these actions to move between screens,
   but you can move between screens without it by just a simple method call with screen
   name [(more about here)](graph_editor.md)
@@ -57,37 +62,21 @@ with UI Compose
 
 - easy event handling! (you can handle events on part of your screen, screen as a whole, globally, or event in
   many places at the same time) [(more about here)](ui_events.md)
-
-
 - UI compose contains controls from UI Toolkit and a few more, like a floating window, and a draggable panel. This will
   be probably improved in the future [(more about here)](visual_controls.md)
-
-
 - implemented with observer pattern in mind to observe changes in UI or trigger UI changes from external events - all by
   observable fields, but by default it doesn't require that [(more about here)](cmlive_data.md)
-
 - multiple scenes with examples like simple one theme, simple two themes, the scene with screen part, and game included
   with a few game scenes with maps and a main menu [(more about here)](tutorials.md)
-
-
 - passing player data to UI by event callback
-
-
 - screen changing by separations of concerns. All game screens will be handled by the screen manager which will contain
   your screen classes. Screens will contain sections ("ScreenPart") that can be reused anywhere in the game. So for
   example: the settings menu section could be added to in game menu by just one single line of code. You can omit
   sections code but it is recommended.
-
-
 - build-in helper functions for your game and tools for multiplayer with a mirror
-
 - persistent and also observable fields for settings for your options. Assign data to the field and forget about it.
-
-
 - behaviors classes - allow you to assign specific behaviors for your controls. Currently, there is one behavior
   floating window behavior that will make control movable/draggable by mouse like windows in the operating system.
-
-
 - **included: FULLY working 3D multiplayer FPS (mirror/LAN) with main menu and in-game
   menu ** [click here](multiplayer_game.md)
 
@@ -126,7 +115,6 @@ together.
 UI compose is styling controls by generating USS code in the background and has the same limitations as UI Toolkit (in
 this version). The system will generate all styles for all your themes and selectors from the code to the
 Resources/UssStyles folder and it will be loaded runtime.
-
 
 ### Detailed description of limitations enforced by UI toolkit
 
