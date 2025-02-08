@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Screen Part - CoDriven Advanced UI</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="css/print-site.css" rel="stylesheet"/>
+<link href="css/print-site-readthedocs.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Screen Part";
+        var mkdocs_page_input_path = "screen_part.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="."> CoDriven Advanced UI
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
+</li>
+<li class="toctree-l1"><a class="" href="print_page">print</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Changelog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change log</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current">Screen containers</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="screen_manager.html">Screen Manager</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="screen.html">Screen</a>
+</li>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Screen Part</a>
+<ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-use">How to use</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#makecontent">MakeContent()</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#binduieventsonstart">BindUIEventsOnStart()</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ui_events.html">UI Events</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modifiers.html">Modifiers</a>
+</li>
+<li class="toctree-l1"><a class="reference internal">Controls</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="visual_controls.html">Controls</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controls/cmcolumn.html">CmColumn</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controls/cmrow.html">CmRow</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Tools</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="translation_editor.html">Translation editor</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="graph_editor.html">Graph editor</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Utils</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="cmlive_data.html">Game settings util</a>
+</li>
+<li class="toctree-l2"><a class="" href="cmlive_data2.md">Observable field</a>
+</li>
+<li class="toctree-l2"><a class="" href="cmlive_data3.md">Multiplayer mirror helpers</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorials.html">Tutorial scenes</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multiplayer_game.html">Multiplayer game sample</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact information</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href=".">CoDriven Advanced UI</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href="."></a></li>
+<li class="breadcrumb-item">Documentation</li>
+<li class="breadcrumb-item">Screen containers</li>
+<li class="breadcrumb-item active">Screen Part</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
+<p><a href="index.html">Go back</a></p>
+<h3 id="introduction">Introduction</h3>
+<p><strong>CmScreenPart</strong> is a part of the screen container for controls. This is an optional component. You can add controls to screens
+directly, but this separation of concerns will help you manage larger projects and reuse parts of your screen UI. You
+can have multiple <strong>CmScreenPart</strong> added to <strong>CmScreen</strong>.</p>
+<h3 id="how-to-use">How to use</h3>
+<blockquote>
+<p>NOTE: Before you will read about CmScreenPart please read about theming <a href="theming.html">here</a>,
+CmScreenManager <a href="screen_manager.html">here</a> and CmScreen <a href="screen.html">here</a>. This way you will understand how it's working
+all-together</p>
+</blockquote>
+<p>To create your own <strong>CmScreenPart</strong> you will have to select if you will use theme or not.</p>
+<blockquote>
+<p>NOTE: If you won't use the theme then you can pass the default builtin <strong>CmThemeDefault</strong> empty theme interface like in
+example below:</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// CmThemeDefault will be used as a base theme and this is the empty theme for filling purposes</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyMainScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">CmThemeDefault</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">...</span>
+<span class="w">        </span><span class="c1">// needed constructor </span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">MyMainScreen</span><span class="p">(</span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">CmThemeDefault</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">VisualElement</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span>
+<span class="w">            </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>But in the theming section of the documentation we created a base interface for theme <strong>IMyExampleTheme</strong> and two
+implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong>:</p>
+<p>So let's use this here. This is how it would look like</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// CmThemeDefault will be used as a base theme and this is the empty theme for filling purposes</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmScreenPartTopSectionExampleSP</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">CmScreenPartTopSectionExampleSP</span><span class="p">(</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">screen</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmControlBase</span><span class="w"> </span><span class="nf">MakeContent</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">();</span>
+<span class="w">            </span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleScreenPartContentRow</span><span class="p">(</span><span class="n">row</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">row</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">OptionButton</span><span class="p">(</span><span class="s">"Theme1"</span><span class="p">,</span><span class="w"> </span><span class="s">"Theme1"</span><span class="p">));</span>
+<span class="w">            </span><span class="n">row</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">OptionButton</span><span class="p">(</span><span class="s">"Theme2"</span><span class="p">,</span><span class="w"> </span><span class="s">"Theme2"</span><span class="p">));</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">row</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">OptionButton</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">getUIEventsHandler</span><span class="p">());</span>
+<span class="w">            </span><span class="n">button</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="w">            </span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>This is a simple screen part that could be reused on screens.</p>
+<h3 id="makecontent">MakeContent()</h3>
+<p>The screen part is not CmControl. So when you want to add it to the screen you need to create content with controls from this
+screen part.
+That is why there is a method <strong>MakeContent</strong>() which will return some control or container with controls.</p>
+<p>In the above example, the content is built with a CmRow control container with two CmButtons added.
+To learn more about controls see <a href="controls.md">there</a></p>
+<h3 id="binduieventsonstart">BindUIEventsOnStart()</h3>
+<p>Here <strong>BindUIEventsOnStart</strong>() function is the same as in CmScreenManager, CmScreen but you can handle UI event
+whenever you want.</p>
+<p>CmScreenPart is the lowest place where you can handle events. Events will go up and will be handled in such direction :</p>
+<pre class="mermaid"><code>graph LR
+    A[CmScreenPart.OnClick] --&gt; B[CmScreen.OnClick]
+    B --&gt; C[CmScreenManager.OnClick]</code></pre>
+<p>So you can handle events whenever you want.</p>
+<blockquote>
+<p>Note: when you create control you will pass CmUIEventsHandler as a parameter. You will have to pass CmUiEventHandler for
+current CmScreenPart by using the method of CmScreenPart.getUIEventsHandler(). This way events will be propagated upper in the view
+hierarchy like in the above diagram. If you create your event handler and pass it or null, then CmScreenPart and its
+parent won't know about the event being triggered so you won't receive events in BindUIEventsOnStart(). To learn more
+about events click <a href="ui_events.html">here</a></p>
+</blockquote>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="screen.html" title="Screen"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="ui_events.html" title="UI Events">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="screen.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="ui_events.html" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>var base_url = ".";</script>
+<script src="js/theme_extra.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/print-site.js"></script>
+<script src="search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

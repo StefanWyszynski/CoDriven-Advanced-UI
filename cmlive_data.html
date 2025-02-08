@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Game settings util - CoDriven Advanced UI</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="css/print-site-enum-headings1.css" rel="stylesheet" />
+        <link href="css/print-site-enum-headings2.css" rel="stylesheet" />
+        <link href="css/print-site-enum-headings3.css" rel="stylesheet" />
+        <link href="css/print-site-enum-headings4.css" rel="stylesheet" />
+        <link href="css/print-site-enum-headings5.css" rel="stylesheet" />
+        <link href="css/print-site-enum-headings6.css" rel="stylesheet" />
+        <link href="css/print-site.css" rel="stylesheet" />
+        <link href="css/print-site-readthedocs.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Game settings util";
+        var mkdocs_page_input_path = "cmlive_data.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> CoDriven Advanced UI
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="print_page">print</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Changelog</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="changelog.html">Change log</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Documentation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Screen containers</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="screen_manager.html">Screen Manager</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="screen.html">Screen</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="screen_part.html">Screen Part</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="ui_events.html">UI Events</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="modifiers.html">Modifiers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Controls</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="visual_controls.html">Controls</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="controls/cmcolumn.html">CmColumn</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="controls/cmrow.html">CmRow</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Tools</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="translation_editor.html">Translation editor</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="graph_editor.html">Graph editor</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Utils</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Game settings util</a>
+    <ul class="current">
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="" href="cmlive_data2.md">Observable field</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="cmlive_data3.md">Multiplayer mirror helpers</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tutorials/tutorials.html">Tutorial scenes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="multiplayer_game.html">Multiplayer game sample</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="contact.html">Contact information</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">CoDriven Advanced UI</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Documentation</li>
+          <li class="breadcrumb-item">Utils</li>
+      <li class="breadcrumb-item active">Game settings util</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
+<p><a href="index.html">Go back</a></p>
+<h1 id="cmlivedata-observable-field">CmLiveData - observable field</h1>
+<p>CmLiveData is for generic type observer. </p>
+<p>available methods:</p>
+<ul>
+<li>available methods are self-explanatory</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Observe</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">observer</span><span class="p">,</span><span class="w"> </span><span class="n">DisposableObservers</span><span class="w"> </span><span class="n">disposableObservers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Remove</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">observer</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">RemoveAllObservers</span><span class="p">()</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">HasObservers</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="disposableobservers">DisposableObservers</h2>
+<p>you can pass DisposableObservers to Observe() method to control lifecycle of observers and call dispose when you dont want to observe anymore</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">DisposableObservers</span><span class="w"> </span><span class="n">disposableObservers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DisposableObservers</span><span class="p">();</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">CmLiveData</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">livedata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmLiveData</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// ...</span>
+
+<span class="w">    </span><span class="n">livedata</span><span class="p">.</span><span class="n">Observe</span><span class="p">(</span><span class="k">value</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// this is callback when that will be called when livedata string field change</span>
+<span class="w">        </span><span class="c1">// do something with value</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="n">disposableObservers</span><span class="p">);</span>
+
+
+<span class="w">    </span><span class="c1">// someware in the code</span>
+<span class="w">    </span><span class="n">livedata</span><span class="p">.</span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;new text&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// will trigger above callback &quot;livedata.Observe(value =&gt; {&quot;</span>
+<span class="w">    </span><span class="n">livedata</span><span class="p">.</span><span class="k">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;other text&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// will trigger above callback &quot;livedata.Observe(value =&gt; {&quot;</span>
+
+<span class="w">    </span><span class="c1">// ... somewhere elese in the code</span>
+<span class="w">    </span><span class="c1">// when you don&#39;t want observer anymore </span>
+<span class="w">    </span><span class="n">disposableObservers</span><span class="p">.</span><span class="n">dispose</span><span class="p">();</span>
+</code></pre></div>
+<p>When you add multiple observers to CmLiveData which passing your disposableObservers, then you can remove all observers 
+by using </p>
+<p>DisposableObservers.dispose()</p>
+<h1 id="cmsingleobserverlivedata-observable-field">CmSingleObserverLiveData - observable field</h1>
+<p>CmSingleObserverLiveData - observable field with only one observer</p>
+<p>available methods:</p>
+<ul>
+<li>available methods are self-explanatory</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Observe</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">observer</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">HasObservers</span><span class="p">()</span>
+</code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="graph_editor.html" class="btn btn-neutral float-left" title="Graph editor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="tutorials/tutorials.html" class="btn btn-neutral float-right" title="Tutorial scenes">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="graph_editor.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="tutorials/tutorials.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="js/print-site.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>UI Events - CoDriven Advanced UI</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="css/print-site.css" rel="stylesheet"/>
+<link href="css/print-site-readthedocs.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "UI Events";
+        var mkdocs_page_input_path = "ui_events.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="."> CoDriven Advanced UI
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
+</li>
+<li class="toctree-l1"><a class="" href="print_page">print</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Changelog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change log</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a>
+</li>
+<li class="toctree-l1"><a class="reference internal">Screen containers</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="screen_manager.html">Screen Manager</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="screen.html">Screen</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="screen_part.html">Screen Part</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">UI Events</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#cmuieventshandler">CmUIEventsHandler</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#binduieventsonstart">BindUIEventsOnStart()</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cmuieventshandler_1">CmUIEventsHandler</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#available-events-from-cmuieventshandler">available events from CmUIEventsHandler</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modifiers.html">Modifiers</a>
+</li>
+<li class="toctree-l1"><a class="reference internal">Controls</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="visual_controls.html">Controls</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controls/cmcolumn.html">CmColumn</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controls/cmrow.html">CmRow</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Tools</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="translation_editor.html">Translation editor</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="graph_editor.html">Graph editor</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Utils</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="cmlive_data.html">Game settings util</a>
+</li>
+<li class="toctree-l2"><a class="" href="cmlive_data2.md">Observable field</a>
+</li>
+<li class="toctree-l2"><a class="" href="cmlive_data3.md">Multiplayer mirror helpers</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorials.html">Tutorial scenes</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multiplayer_game.html">Multiplayer game sample</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact information</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href=".">CoDriven Advanced UI</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href="."></a></li>
+<li class="breadcrumb-item">Documentation</li>
+<li class="breadcrumb-item active">UI Events</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
+<p><a href="index.html">Go back</a></p>
+<h2 id="cmuieventshandler">CmUIEventsHandler</h2>
+<p>UI events are mapped internally to simple Class <strong>CmUIEventsHandler</strong>. This way you can easily use events in any place
+of your elements tree.</p>
+<p>The whole menu is built onto:</p>
+<ul>
+<li><strong>CmScreenManager</strong>,</li>
+<li><strong>CmScreen</strong> which is attached to <strong>CmScreenManager</strong>,</li>
+<li><strong>CmScreenPart</strong> (optional) which is attached to <strong>CmScreen</strong>,</li>
+<li>finally your selected <strong>CmControl</strong> like CmToggle, or CmButton which is added to <strong>CmScreenPart</strong></li>
+</ul>
+<blockquote>
+<p>Note: CmScreenPart is a helper class to manage everything into sections it is optional. So you can omit CmScreenPart
+from the above list and add your control to CmScreen directly.</p>
+</blockquote>
+<h3 id="binduieventsonstart">BindUIEventsOnStart()</h3>
+<p><strong>BindUIEventsOnStart</strong>() function is used to bind your event handling logic. For example on click event when the user
+select the button "Start game"</p>
+<p>This function exists in CmScreenManager, CmScreen, or CmScreenPart.</p>
+<p>Below is a part of the code for the main menu panel of the included example multiplayer game</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainMenuPanelSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">ICmThemeTestBase</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">uiEventsHandler</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">uiEventsHandler</span><span class="p">.</span><span class="n">ButtonClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">control</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">//If the control name is "MultiPlayer" then the user clicks the button "MultiPlayer"</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">control</span><span class="p">.</span><span class="n">GetName</span><span class="p">().</span><span class="n">Equals</span><span class="p">(</span><span class="s">"MultiPlayer"</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">// SetCurrentScreen() is CmScreenPart function that will change the current screen by its name</span>
+<span class="w">                    </span><span class="c1">// ScreenTypes is an enum, so screens have enum names converted to a string</span>
+<span class="w">                    </span><span class="c1">//Using an enum helps to reduce magic strings here and there in-app, but also you can use this enum for screen names in many places </span>
+<span class="w">                    </span><span class="n">SetCurrentScreen</span><span class="p">(</span><span class="n">ScreenTypes</span><span class="p">.</span><span class="n">MAIN_MENU_MAP_SELECT</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="c1">//If the control name is "Exit" then the user clicks the button "Exit"</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">control</span><span class="p">.</span><span class="n">GetName</span><span class="p">().</span><span class="n">Equals</span><span class="p">(</span><span class="s">"Exit"</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Application</span><span class="p">.</span><span class="n">Quit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">};</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>CmScreenPart is the lowest place where you can handle BindUIEventsOnStart events. Events will go up and will be handled
+in such direction :</p>
+<pre class="mermaid"><code>graph TD
+    A[CmControl.OnClick] --&gt; B[CmScreenPart.BindUIEventsOnStart]
+    B[CmScreenPart.BindUIEventsOnStart] --&gt; C[CmScreen.BindUIEventsOnStart]
+    C --&gt; D[CmScreenManager.BindUIEventsOnStart]</code></pre>
+<p>So event will move through parents until it reaches the target which is CmScreenManager.
+You can handle onClick event on each step simultaneously. This way you can add on click sound globally for each onClick
+from all controls and add on click in CmScreenPart to handle some logic.</p>
+<blockquote>
+<p>Note: You won't have to create an instance of CmUIEventsHandler, because it is created internally for each class
+<strong>CmScreenPart, CmScreen, CmScreenManager</strong>. Each CmUIEventsHandler instance has a
+parent. <code>CmScreenPart.CmUIEventsHandler</code> has parent of <code>CmScreen.CmUIEventsHandler</code> etc. This way events will go
+up
+the parent's tree until they reach the grandparent CmScreenManager and propagation will stop.</p>
+</blockquote>
+<h3 id="cmuieventshandler_1">CmUIEventsHandler</h3>
+<p>when you create your control you will have to pass CmUIEventsHandler instance.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameStatsSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">ICmThemeTestBase</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">uiEventsHandler</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// handle image click or whatever</span>
+<span class="w">            </span><span class="p">...</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmImage</span><span class="w"> </span><span class="nf">createUserImage</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// so let's pass built-in event handler from PlayerInGameStatsSp</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmImage</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">getUIEventsHandler</span><span class="p">());</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">image</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>If you create your instance of <strong>CmUIEventsHandler</strong> and pass it to the control constructor or pass null, then
+CmScreenPart and its
+Parent won't know about the event being triggered in controls so you won't receive events in BindUIEventsOnStart().</p>
+</blockquote>
+<p>Of course, you can create your event handler like this, but you will have to handle events by yourself</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameStatsSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">ICmThemeTestBase</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">createExitButton</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">eventHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmUIEventsHandler</span><span class="p">(</span><span class="s">"MyEventHandler"</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(</span><span class="n">eventHandler</span><span class="p">);</span>
+<span class="w">            </span><span class="n">button</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="s">"Exit"</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">eventHandler</span><span class="p">.</span><span class="n">ButtonClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">control</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">//If the control name is "Exit" then the user clicks the button "Exit"</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">control</span><span class="p">.</span><span class="n">GetName</span><span class="p">().</span><span class="n">Equals</span><span class="p">(</span><span class="s">"Exit"</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Application</span><span class="p">.</span><span class="n">Quit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">};</span>
+
+<span class="w">            </span><span class="c1">//But now you will have to handle events using your event handler</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">...</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="available-events-from-cmuieventshandler">available events from CmUIEventsHandler</h3>
+<p>CmUIEventsHandler has actions that will be called by controls when the event occurs in control. Here is a list</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmUIEventsHandler</span><span class="p">{</span>
+<span class="w">        </span><span class="p">.....</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="p">,</span><span class="w"> </span><span class="n">GeometryChangedEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericOnGeometryChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="p">,</span><span class="w"> </span><span class="n">PointerDownEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericPointerDown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="p">,</span><span class="w"> </span><span class="n">PointerUpEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericPointerUp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="p">,</span><span class="w"> </span><span class="n">PointerMoveEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericPointerMove</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="p">,</span><span class="w"> </span><span class="n">PointerOutEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericPointerOut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericMouseDown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="p">,</span><span class="w"> </span><span class="n">ClickEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericMouseUp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericMouseEnter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericMouseLeave</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericKeyUp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">GenericKeyDown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmButton</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ButtonClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmTextField</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">TextFieldChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmToggle</span><span class="p">,</span><span class="w"> </span><span class="n">Boolean</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ToggleCheckChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmRadioButton</span><span class="p">,</span><span class="w"> </span><span class="n">Boolean</span><span class="o">&gt;</span><span class="w"> </span><span class="n">RadioButtonCheckChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmFoldout</span><span class="p">,</span><span class="w"> </span><span class="n">Boolean</span><span class="o">&gt;</span><span class="w"> </span><span class="n">FoldoutCheckChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">SlidingHandleValueChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">CmDropdownField</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">DropdownFieldSelect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">        </span><span class="p">....</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>you will assign your lambda to any of the above fields to handle the event for control.</p>
+<p>Each field is an action that will be executed with parameters like <strong>CmControlBase</strong> (the base class for controls) -
+this is control on which event has occurred.</p>
+<p>For example <strong>CmUIEventsHandler.ButtonClick</strong> from above is a type of Action for the button. So you will handle it like
+in previous examples:</p>
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">uiEventsHandler</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// action ButtonClick will be called by the control when someone clicks a button and you will assign </span>
+<span class="w">            </span><span class="c1">// lambda to that action to handle the event on the button click</span>
+<span class="w">            </span><span class="n">uiEventsHandler</span><span class="p">.</span><span class="n">ButtonClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">clicked_control</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">clicked_control</span><span class="p">.</span><span class="n">GetName</span><span class="p">().</span><span class="n">Equals</span><span class="p">(</span><span class="s">"Exit"</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Application</span><span class="p">.</span><span class="n">Quit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">};</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>here is a description of the events</p>
+<table>
+<thead>
+<tr>
+<th>CmUIEventsHandler field action name</th>
+<th>Action type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GenericOnGeometryChange</td>
+<td>Action\&lt;CmControlBase, GeometryChangedEvent&gt;</td>
+<td>generic event called when control changed their geometry/calculated their size</td>
+</tr>
+<tr>
+<td>GenericPointerDown</td>
+<td>Action\&lt;CmControlBase, PointerDownEvent&gt;</td>
+<td>generic event called when pointer is down</td>
+</tr>
+<tr>
+<td>GenericPointerUp</td>
+<td>Action\&lt;CmControlBase, PointerUpEvent&gt;</td>
+<td>generic event called when pointer is up</td>
+</tr>
+<tr>
+<td>GenericPointerMove</td>
+<td>Action\&lt;CmControlBase, PointerMoveEvent&gt;</td>
+<td>generic event called when pointer is moving</td>
+</tr>
+<tr>
+<td>GenericPointerOut</td>
+<td>Action\&lt;CmControlBase, PointerOutEvent&gt;</td>
+<td>generic event called when pointer is out of control</td>
+</tr>
+<tr>
+<td>GenericMouseDown</td>
+<td>Action\&lt;CmControlBase&gt;</td>
+<td>generic event called when mouse is down</td>
+</tr>
+<tr>
+<td>GenericClick</td>
+<td>Action\&lt;CmControlBase, ClickEvent&gt;</td>
+<td>generic event called when click occurred on the control - this is generic not like ButtonClick event</td>
+</tr>
+<tr>
+<td>GenericMouseUp</td>
+<td>Action\&lt;CmControlBase&gt;</td>
+<td>generic event called when mouse is up</td>
+</tr>
+<tr>
+<td>GenericMouseEnter</td>
+<td>Action\&lt;CmControlBase&gt;</td>
+<td>generic event called when mouse is entering the control</td>
+</tr>
+<tr>
+<td>GenericMouseLeave</td>
+<td>Action\&lt;CmControlBase&gt;</td>
+<td>generic event called when mouse is leaving the control</td>
+</tr>
+<tr>
+<td>GenericKeyUp</td>
+<td>Action\&lt;CmControlBase&gt;</td>
+<td>generic event called when key is up</td>
+</tr>
+<tr>
+<td>GenericKeyDown</td>
+<td>Action\&lt;CmControlBase&gt;</td>
+<td>generic event called when key is down</td>
+</tr>
+<tr>
+<td>ButtonClick</td>
+<td>Action\&lt;CmButton&gt;</td>
+<td>Called when button is clicked</td>
+</tr>
+<tr>
+<td>TextFieldChange</td>
+<td>Action\&lt;CmTextField, String&gt;</td>
+<td>called when text is changed in text field</td>
+</tr>
+<tr>
+<td>ToggleCheckChange</td>
+<td>Action\&lt;CmToggle, Boolean&gt;</td>
+<td>called when toggle button check state is changed</td>
+</tr>
+<tr>
+<td>RadioButtonCheckChange</td>
+<td>Action\&lt;CmRadioButton, Boolean&gt;</td>
+<td>called when radio button is checked</td>
+</tr>
+<tr>
+<td>FoldoutCheckChange</td>
+<td>Action\&lt;CmFoldout, Boolean&gt;</td>
+<td>Called when foldout check change a state</td>
+</tr>
+<tr>
+<td>SlidingHandleValueChange</td>
+<td>Action\&lt;CmControlBase, float&gt;</td>
+<td>Called when any slider, progressbar or scroll is scrolled</td>
+</tr>
+<tr>
+<td>DropdownFieldSelect</td>
+<td>Action\&lt;CmDropdownField, string&gt;</td>
+<td>Called when dropdown field is selected</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="screen_part.html" title="Screen Part"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="modifiers.html" title="Modifiers">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="screen_part.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="modifiers.html" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>var base_url = ".";</script>
+<script src="js/theme_extra.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/print-site.js"></script>
+<script src="search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

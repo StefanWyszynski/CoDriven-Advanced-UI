@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Modifiers - CoDriven Advanced UI</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="css/print-site.css" rel="stylesheet"/>
+<link href="css/print-site-readthedocs.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Modifiers";
+        var mkdocs_page_input_path = "modifiers.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="."> CoDriven Advanced UI
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
+</li>
+<li class="toctree-l1"><a class="" href="print_page">print</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Changelog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change log</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a>
+</li>
+<li class="toctree-l1"><a class="reference internal">Screen containers</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="screen_manager.html">Screen Manager</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="screen.html">Screen</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="screen_part.html">Screen Part</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ui_events.html">UI Events</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Modifiers</a>
+<ul class="current">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Controls</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="visual_controls.html">Controls</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controls/cmcolumn.html">CmColumn</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controls/cmrow.html">CmRow</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Tools</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="translation_editor.html">Translation editor</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="graph_editor.html">Graph editor</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Utils</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="cmlive_data.html">Game settings util</a>
+</li>
+<li class="toctree-l2"><a class="" href="cmlive_data2.md">Observable field</a>
+</li>
+<li class="toctree-l2"><a class="" href="cmlive_data3.md">Multiplayer mirror helpers</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorials.html">Tutorial scenes</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multiplayer_game.html">Multiplayer game sample</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact information</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href=".">CoDriven Advanced UI</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href="."></a></li>
+<li class="breadcrumb-item">Documentation</li>
+<li class="breadcrumb-item active">Modifiers</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
+<p><a href="index.html">Go back</a></p>
+<!-- TOC -->
+<ul>
+<li><a href="#codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#modifiers-builder">Modifiers builder</a></li>
+<li><a href="#base-modifiers">Base modifiers</a></li>
+<li><a href="#modifiers-used-by-controls">Modifiers used by controls</a></li>
+<li><a href="#how-it-works-all-together-with-controls">How it works all together with controls</a></li>
+<li><a href="#what-is-usspropertyval">what is UssPropertyVal</a><ul>
+<li><a href="#so-how-to-create-these-values">So, how to create these values?</a></li>
+</ul>
+</li>
+<li><a href="#custom-modifiers-for-your-own-visual-change-for-control-runtime">Custom modifiers (for your own visual change for control runtime)</a></li>
+<li><a href="#cmselector-controls-visual-state">CmSelector (controls visual state)</a></li>
+<li><a href="#simple-list-of-all-modifiers">Simple list of all modifiers</a><ul>
+<li><a href="#cmmodifierbase-modifiers">CmModifierBase modifiers</a></li>
+<li><a href="#cmmodifierbasebackground-modifiers">CmModifierBaseBackground modifiers</a></li>
+<li><a href="#cmmodifierbaseimageandbackground-modifiers">CmModifierBaseImageAndBackground modifiers</a></li>
+<li><a href="#cmmodifiertext-modifiers">CmModifierText modifiers</a></li>
+<li><a href="#cmmodifierrow-modifiers">CmModifierRow modifiers</a></li>
+<li><a href="#cmmodifiercolumn-modifiers">CmModifierColumn modifiers</a></li>
+<li><a href="#what-next">What next</a></li>
+</ul>
+</li>
+</ul>
+<!-- TOC -->
+<h1 id="introduction">Introduction</h1>
+<p>All controls have their modifiers. For example, CmScrollView has modifiers for the background and modifiers for
+vertical/horizontal scrollbars.</p>
+<p>We need to change different properties for text elements but for background elements, there are fewer properties available
+than for text. Because the text has font size/color etc. but the background does not.</p>
+<h2 id="modifiers-builder">Modifiers builder</h2>
+<p>This is why modifier builder - the class that we will be using for building style for specific control is divided into
+groups that inherit from other groups modifiers to build modifiers depend on their type like text, background etc.</p>
+<p>This is how it looks</p>
+<pre class="mermaid"><code>graph TD
+;
+    A[CmModifierBase] -- abstract class --&gt; B[CmModifierBaseBackground];
+    B --&gt; C[CmModifierBackground];
+    B --&gt; D[CmModifierText];
+    B -- abstract class --&gt; E[CmModifierBaseImageAndBackground];
+    B --&gt; F[CmModifierColumn];
+    B --&gt; G[CmModifierRow];
+    E --&gt; H[CmModifierImageAndBackground];</code></pre>
+<blockquote>
+<p>Note: you shouldn't use classes with the text "<strong>Base</strong>" in their names from the above diagram. Only if you need to create
+your own class with your own modifiers that inherit from them.</p>
+</blockquote>
+<h2 id="base-modifiers">Base modifiers</h2>
+<ul>
+<li><strong>CmModifierBase</strong> - is the parent for all modifiers and contains generic modifiers.</li>
+</ul>
+<blockquote>
+<p>It will allow us to set properties like size, animation, padding, generic properties, border(color, radius, width),
+margin.</p>
+</blockquote>
+<ul>
+<li><strong>CmModifierBaseBackground</strong> - extension from <code>CmModifierBase</code>.</li>
+</ul>
+<blockquote>
+<p>It will allow us to set properties like background: color, image, image tint color, image slice, scale mode, repeat,
+position, size</p>
+</blockquote>
+<ul>
+<li><strong>CmModifierBaseImageAndBackground</strong>  - extension from <code>CmModifierBaseBackground</code>.</li>
+</ul>
+<blockquote>
+<p>It will allow you to set properties like image, image scale mode, image tint color</p>
+</blockquote>
+<h2 id="modifiers-used-by-controls">Modifiers used by controls</h2>
+<ul>
+<li><strong>CmModifierImageAndBackground</strong> - this is child of base modifer <code>CmModifierBaseImageAndBackground</code>.</li>
+</ul>
+<hr/>
+<ul>
+<li><strong>CmModifierBackground</strong> - this is child of base modifer <code>CmModifierBaseBackground</code>.</li>
+</ul>
+<hr/>
+<ul>
+<li><strong>CmModifierText</strong> - used where we need to change anything related to text.</li>
+</ul>
+<hr/>
+<blockquote>
+<p>You can change properties like: text(color, outline color, size, font, alignment, outline width etc),
+multiline/single-line etc.</p>
+</blockquote>
+<ul>
+<li><strong>CmModifierColumn</strong> is an extension for CmModifierBaseBackground that contains only two new methods:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="w"> </span><span class="nf">HorizontalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="w"> </span><span class="n">alignment</span><span class="p">);</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="w"> </span><span class="nf">VerticalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="w"> </span><span class="n">arrangement</span><span class="p">);</span>
+</code></pre></div>
+<hr/>
+<ul>
+<li><strong>CmModifierRow</strong> is similar to CmModifierColumn and it is an extension for CmModifierBaseBackground that contains only
+  two new methods:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmModifierRow</span><span class="w"> </span><span class="nf">HorizontalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="w"> </span><span class="n">arrangement</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmModifierRow</span><span class="w"> </span><span class="nf">VerticalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="w"> </span><span class="n">alignment</span><span class="p">)</span>
+</code></pre></div>
+<hr/>
+<blockquote>
+<p>Note: As you can see <strong>CmModifierColumn</strong> has <code>horizontalAlignment</code> but <strong>CmModifierRow</strong>
+has <code>HorizontalArrangement</code>, the same difference is for vertical space. This is because the CmColumn is vertical
+container,
+but CmRow is a horizontal container. The same rules affect html/css controls.</p>
+</blockquote>
+<hr/>
+<h1 id="how-it-works-all-together-with-controls">How it works all together with controls</h1>
+<p>All controls have a field called <code>Modifiers</code>which is a class that allows you to style elements of these controls like
+background, label, scrollbars, etc.</p>
+<p>Some controls have many elements like CmScrollView. But for example, let's take a look at CmToogle control. This is simple
+toggle button.</p>
+<p><strong>CmToogle</strong> has a <code>Modifiers</code> field that contains methods to style elements of CmToogle control like Background, Label,
+CheckMarkBackground and CheckMark</p>
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmToggleModifiers</span><span class="w"> </span><span class="nf">Background</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmToggleModifiers</span><span class="w"> </span><span class="nf">Label</span><span class="p">(</span><span class="n">CmModifierText</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmToggleModifiers</span><span class="w"> </span><span class="nf">CheckMarkBackground</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmToggleModifiers</span><span class="w"> </span><span class="nf">CheckMark</span><span class="p">(</span><span class="n">CmModifierImageAndBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+</code></pre></div>
+<p>so you can style any element of toggle control by using:</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">cmToggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmToggle</span><span class="p">(..);</span>
+
+<span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">;</span>
+
+<span class="w"> </span><span class="c1">// change CheckMarkBackground</span>
+<span class="w"> </span><span class="n">modifiers</span><span class="p">.</span><span class="n">CheckMarkBackground</span><span class="p">(...)</span>
+
+<span class="w"> </span><span class="c1">// change checkmark</span>
+<span class="w"> </span><span class="n">modifiers</span><span class="p">.</span><span class="n">CheckMark</span><span class="p">(...)</span>
+
+<span class="w"> </span><span class="c1">// change Label</span>
+<span class="w"> </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Label</span><span class="p">(...)</span>
+</code></pre></div>
+<blockquote>
+<p>Note: each method allows you to style other elements and because the label is not background it will use different Modifiers
+builder. <strong>Label</strong> contains text so it uses <strong>CmModifierText</strong>, but the <strong>Background</strong> is just a simple background, so
+text modifiers are useless here so we hide its methods by using a less extended modifier builder like *
+<em>CmModifierBackground</em>*.</p>
+</blockquote>
+<p>Here is how to style the checkmark element which contains the image and background so it uses <strong>CmModifierImageAndBackground</strong>
+modifier:</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">cmToggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmToggle</span><span class="p">(..);</span>
+<span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">CheckMark</span><span class="p">(</span>
+<span class="w">     </span><span class="c1">// create modifier for DEFAULT_STATE but we will add other states using ____NextSelector</span>
+<span class="w">     </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierImageAndBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">BorderWidth</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">BorderRadius</span><span class="p">(</span><span class="mi">60</span><span class="p">.</span><span class="n">px</span><span class="p">())</span>
+<span class="w">         </span><span class="p">.</span><span class="n">BorderColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color32</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">51</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">))</span>
+
+<span class="w">         </span><span class="c1">//Now add modifiers for HOVER state</span>
+<span class="w">         </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">HOVER</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.2f</span><span class="p">)</span>
+
+<span class="w">         </span><span class="c1">//Now add modifiers for the DISABLED state</span>
+<span class="w">         </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DISABLED</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
+
+<span class="w">         </span><span class="c1">//Now add modifiers for the CHECKED state</span>
+<span class="w">         </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">CHECKED</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">gray</span><span class="p">)</span>
+<span class="w"> </span><span class="p">);</span>
+</code></pre></div>
+<p>This code can have multiple lines because you would want to change many modifiers, but it's simple to understand and
+easier to maintain than the USS code.</p>
+<p>Additionally, you will not have to know the class name for the toggle checkmark to change it and modifiers will
+hide difficult flex uss code behind simple API.</p>
+<hr/>
+<h2 id="what-is-usspropertyval">what is UssPropertyVal</h2>
+<p>Many modifiers allow you to set parameters as percents, pixels, or others. These modifiers will accept parameters with
+int type which will be converted to pixels internally in USS.</p>
+<p>There are also overloaded versions of these modifier functions that will accept parameters as <strong>UssPropertyVal</strong>.</p>
+<p><strong>UssPropertyVal</strong> is a special conversion class generated automatically from your int/float/double parameters that will
+be converted to pixels/percents/other.</p>
+<blockquote>
+<p>Important: You won't have to create this class because it will be created automatically when you use the extension
+function on int/float/double values.</p>
+</blockquote>
+<h3 id="so-how-to-create-these-values">So, how to create these values?</h3>
+<p>here is an example of that</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">CheckMark</span><span class="p">(</span>
+<span class="w">     </span><span class="c1">// create modifier for DEFAULT_STATE but we will add other state using ____NextSelector</span>
+<span class="w">     </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierImageAndBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">BorderWidth</span><span class="p">(</span><span class="mi">4</span><span class="p">.</span><span class="n">px</span><span class="p">())</span>
+<span class="w"> </span><span class="p">);</span>
+</code></pre></div>
+<p>in this example, BorderWidth accepts <strong>UssPropertyVal</strong> but it was automatically created from int value "4" converted
+by extension function "px()" to <strong>UssPropertyVal</strong> class</p>
+<p>you can use extension functions on base types int/float/double in some exceptions:</p>
+<table>
+<thead>
+<tr>
+<th>extension function</th>
+<th>out class</th>
+<th>convert to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.px()</td>
+<td>UssPropertyVal</td>
+<td>pixel values</td>
+</tr>
+<tr>
+<td>.percent()</td>
+<td>UssPropertyVal</td>
+<td>percentage values</td>
+</tr>
+<tr>
+<td>.em()</td>
+<td>UssPropertyVal</td>
+<td>font em values</td>
+</tr>
+<tr>
+<td>.rem()</td>
+<td>UssPropertyVal</td>
+<td>font rem values</td>
+</tr>
+<tr>
+<td>.deg()</td>
+<td>UssPropertyVal</td>
+<td>rotation values</td>
+</tr>
+<tr>
+<td>.rad()</td>
+<td>UssPropertyVal</td>
+<td>rotation values</td>
+</tr>
+<tr>
+<td>.grad()</td>
+<td>UssPropertyVal</td>
+<td>rotation values</td>
+</tr>
+</tbody>
+</table>
+<p>Another example. If you want to set font size using "em()"</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">CheckMark</span><span class="p">(</span>
+<span class="w">     </span><span class="c1">// create modifier for DEFAULT_STATE but we will add other state using ____NextSelector</span>
+<span class="w">     </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierImageAndBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">12</span><span class="p">.</span><span class="n">em</span><span class="p">())</span>
+<span class="w"> </span><span class="p">);</span>
+</code></pre></div>
+<hr/>
+<h2 id="custom-modifiers-for-your-own-visual-change-for-control-runtime">Custom modifiers (for your own visual change for control runtime)</h2>
+<p>Suppose that for example, you want to hide a label using USS code for the UI toolkit using your custom modifier.</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">cmToggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmToggle</span><span class="p">(..);</span>
+
+<span class="w"> </span><span class="c1">//Create a custom selector for the label with the name: "your_custom_selector_name_enter_here"</span>
+<span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">Label</span><span class="p">(</span>
+<span class="w">     </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">,</span><span class="w"> </span><span class="s">"your_custom_selector_name_enter_here"</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">Hide</span><span class="p">()</span>
+<span class="w"> </span><span class="p">);</span>
+
+<span class="w"> </span><span class="c1">//------------------------ </span>
+<span class="w"> </span><span class="c1">// then runtime</span>
+
+<span class="w"> </span><span class="c1">//Add your selector to hide the label</span>
+<span class="w"> </span><span class="n">cmToggle</span><span class="p">.</span><span class="n">SetCustomSelector</span><span class="p">(</span><span class="s">"your_custom_selector_name_enter_here"</span><span class="p">);</span>
+
+<span class="w"> </span><span class="c1">// to remove your selector to show the label</span>
+<span class="w"> </span><span class="n">cmToggle</span><span class="p">.</span><span class="n">RemoveCustomSelector</span><span class="p">(</span><span class="s">"your_custom_selector_name_enter_here"</span><span class="p">);</span>
+</code></pre></div>
+<hr/>
+<h2 id="cmselector-controls-visual-state">CmSelector (controls visual state)</h2>
+<p>The selector is something like a state of control. Here is the list of states</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
+<span class="w">    </span><span class="c1">/// Use this to build a selecor for control. For example when you want to change style when the mouse is over a control.</span>
+<span class="w">    </span><span class="c1">/// This is a pseudo Class Type of visual element eg. selector.</span>
+<span class="w">    </span><span class="c1">/// &lt;/summary&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">CmSelector</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">/// default style</span>
+<span class="w">        </span><span class="n">DEFAULT_STATE</span><span class="p">,</span>
+
+<span class="w">        </span><span class="c1">/// The cursor is positioned over the element.</span>
+<span class="w">        </span><span class="n">HOVER</span><span class="p">,</span>
+
+<span class="w">        </span><span class="c1">/// A user interacts with the element. Button click for example.</span>
+<span class="w">        </span><span class="n">ACTIVE</span><span class="p">,</span>
+
+<span class="w">        </span><span class="c1">/// A user stops to interact with the element.</span>
+<span class="w">        </span><span class="n">INACTIVE</span><span class="p">,</span>
+
+<span class="w">        </span><span class="c1">/// The element has focus.</span>
+<span class="w">        </span><span class="n">FOCUS</span><span class="p">,</span>
+
+<span class="w">        </span><span class="c1">/// USS doesn’t support this pseudo-state. Use :checked instead.</span>
+<span class="w">        </span><span class="n">SELECTED</span><span class="p">,</span>
+
+<span class="w">        </span><span class="c1">/// The element is in a disabled state.</span>
+<span class="w">        </span><span class="n">DISABLED</span><span class="p">,</span>
+
+<span class="w">        </span><span class="c1">/// The element is in an enabled state.</span>
+<span class="w">        </span><span class="n">ENABLED</span><span class="p">,</span>
+
+<span class="w">        </span><span class="c1">/// The element is a Toggle or RadioButton element and it’s selected.</span>
+<span class="w">        </span><span class="n">CHECKED</span><span class="p">,</span>
+
+<span class="w">        </span><span class="c1">/// The element is the highest-level element in the visual tree</span>
+<span class="w">        </span><span class="n">ROOT</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>DEFAULT_STATE is the state when control is visible on the screen and nothing is changed with its state. You will always use this state for styling. Typically you will also style control for HOVER and DISABLED states to change how the control will look while the mouse is hovering over it, or when the control is disabled. Here is an example of how to style these three states:</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">cmToggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmToggle</span><span class="p">(..);</span>
+<span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">CheckMark</span><span class="p">(</span>
+<span class="w">     </span><span class="c1">// create modifier for DEFAULT_STATE but we will add other states using ____NextSelector</span>
+<span class="w">     </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierImageAndBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">BorderWidth</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">BorderRadius</span><span class="p">(</span><span class="mi">60</span><span class="p">.</span><span class="n">px</span><span class="p">())</span>
+<span class="w">         </span><span class="p">.</span><span class="n">BorderColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color32</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">51</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">))</span>
+
+<span class="w">         </span><span class="c1">//Now add modifiers for HOVER state</span>
+<span class="w">         </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">HOVER</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.2f</span><span class="p">)</span>
+
+<span class="w">         </span><span class="c1">//Now add modifiers for the DISABLED state</span>
+<span class="w">         </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DISABLED</span><span class="p">)</span>
+<span class="w">         </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
+<span class="w"> </span><span class="p">);</span>
+</code></pre></div>
+<hr/>
+<h1 id="simple-list-of-all-modifiers">Simple list of all modifiers</h1>
+<p>Here are all modifiers available in version 1.0.0 of CoDriven Advanced UI.</p>
+<p>Modifiers will be divided into sections based on the mentioned earlier ModifierBuilders</p>
+<h3 id="cmmodifierbase-modifiers">CmModifierBase modifiers</h3>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// left, top, right, bottom</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">LeftInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">RightInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TopInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BottomInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Left</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Left</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">left</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Right</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Right</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">right</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Top</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Top</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">top</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Bottom</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">bottom</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Bottom</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">bottom</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// size related</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Width</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">width</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Width</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">width</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FillMaxWidth</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">factor</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">WidthWrapContent</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">WidthAuto</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FillParentWidth</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Height</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Height</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">height</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FillMaxHeight</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">factor</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">HeightWrapContent</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">HeightAuto</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FillParentHeight</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Weight</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// animation</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">AnimEnable</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">AnimDuration</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">durationMillisecond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">AnimDelay</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">delayMillisecond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">AnimEasing</span><span class="p">(</span><span class="n">CmAnimationEasing</span><span class="w"> </span><span class="n">cmAnimationEasing</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">AnimEasingInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">AnimDelayInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">AnimDurationInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">AnimEnableInitial</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// pading</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingAll</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">bottom</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingLeft</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">left</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingRight</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">right</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingTop</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">top</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingBottom</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">bottom</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingHorizVert</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">horizontalPadding</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">verticalPadding</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingAll</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">bottom</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingLeft</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingRight</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingTop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingBottom</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">bottom</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PaddingHorizVert</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">horizontalPadding</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">verticalPadding</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// visibility</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Opacity</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">opacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Invisible</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Hide</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Show</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// position related to parent</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PositionRelativeToParent</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">PositionAbsoluteInFirstRelativeParent</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FreeFloatingWorldSpace</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">AttachToParent</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">DetachFromAllParents</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// scale</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Scale</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">scale</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Scale</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">scale</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Scale</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">scale</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Scale</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Scale</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Scale</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// transform rotate/move/translate</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Rotate</span><span class="p">(</span><span class="n">UssPropertyRotationVal</span><span class="w"> </span><span class="n">angle</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Move</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">tx</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">ty</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Translate</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">tx</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">ty</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// orygin</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OriginCornerTopLeft</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OriginCornerTopRight</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OriginCornerBottomLeft</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OriginCornerBottomRight</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OriginAtCenterPoint</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OriginEdgeLeftCenter</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OriginEdgeTopCenter</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OriginEdgeRightCenter</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OriginEdgeBottomCenter</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OriginPoint</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">tx</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">ty</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// overflow (it means clip/no clip children controls to not draw over parent borders)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OverflowVisible</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OverflowHidden</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OverflowClip</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">OverflowScroll</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">AlignSelf</span><span class="p">(</span><span class="n">CmAlignment</span><span class="w"> </span><span class="n">alignment</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">AlignSelfInitial</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// min max width/height</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MinWidthInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MinHeightInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MaxWidthInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MaxHeightInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MinWidth</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">minWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MinWidth</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">minWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MinHeight</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">minHeight</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MinHeight</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">minHeight</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MaxWidth</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">maxWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MaxWidth</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">maxWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MaxHeight</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">maxHeight</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MaxHeight</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">maxHeight</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// flex modifiers for more advanced usage similar to USS</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexShrinkInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexGrowInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexBasisInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexShrink</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">shrink</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexShrink</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">shrink</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexDontShrink</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexAllowShrink</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexGrow</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">grow</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexGrow</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">grow</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexDontGrow</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexAllowGrow</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexBasis</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">basis</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexBasis</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">basis</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">FlexBasisAuto</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// border color</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderColorRGB</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderColorHex</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">hexColor</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderColorRGBA</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderColorRGB</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderColorTransparent</span><span class="p">();</span>
+
+
+<span class="w">    </span><span class="c1">// border radius</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadius</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusLeftTop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusLeftBottom</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusRightTop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusRightBottom</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusLeftTopInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusLeftBottomInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusRightTopInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusRightBottomInitial</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadius</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusLeftTop</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusLeftBottom</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusRightTop</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderRadiusRightBottom</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// border width</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderWidth</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">borderWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderWidthLeft</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">borderWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderWidthBottom</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">borderWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderWidthTop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">borderWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderWidthRight</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">borderWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderWidth</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">borderWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderWidthLeft</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">borderWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderWidthBottom</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">borderWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderWidthTop</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">borderWidth</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BorderWidthRight</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">borderWidth</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// margin</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Margin</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">margin</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginAll</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">bottom</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginLeft</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">left</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginRight</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">right</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginTop</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">top</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginBottom</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">bottom</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginHorizVert</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">horizontalMargin</span><span class="p">,</span><span class="w"> </span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">verticalMargin</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">Margin</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">margin</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginAll</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">bottom</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginLeft</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginRight</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginTop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">top</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginBottom</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">bottom</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginHorizVert</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">horizontalMargin</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">verticalMargin</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginLeftInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginRightInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginTopInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">MarginBottomInitial</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="cmmodifierbasebackground-modifiers">CmModifierBaseBackground modifiers</h3>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// background color</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundColorRGB</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundColorHex</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">hexColor</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundColorRGB</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundColorTransparent</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// background image</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageRes</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageUrl</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundIcon</span><span class="p">(</span><span class="n">CmUnityIcons</span><span class="w"> </span><span class="n">cmUnityIcons</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageInitial</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// background image tint color</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageTintRGB</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageTintRGBA</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageTintHex</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">colorHex</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageTintRGBA</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageTintRGB</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageTintTransparent</span><span class="p">();</span>
+
+
+<span class="w">    </span><span class="c1">// background image slice (for proper image scalling like 9 patch)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageSliceLeft</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">sliceValue</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageSliceRight</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">sliceValue</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageSliceTop</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">sliceValue</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageSliceBottom</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">sliceValue</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageSliceScale</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">sliceScale</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageSliceScale</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">sliceScale</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageSliceLeftInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageSliceRightInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageSliceTopInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageSliceBottomInitial</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundImageSliceScaleInitial</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// background scale</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundScaleMode</span><span class="p">(</span><span class="n">CmBackgroundScaleMode</span><span class="w"> </span><span class="n">cmBackgroundScaleMode</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundScaleModeInitial</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// background repeat</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundRepeat</span><span class="p">(</span><span class="n">CmBackgroundRepeat</span><span class="w"> </span><span class="n">cmBackgroundRepeat</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// background position</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundPositionX</span><span class="p">(</span><span class="n">CmBackgroundPosition</span><span class="w"> </span><span class="n">positionX</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundPositionY</span><span class="p">(</span><span class="n">CmBackgroundPosition</span><span class="w"> </span><span class="n">positionY</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundPositionX</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">positionX</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundPositionY</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">positionY</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundPositionX</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">positionX</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundPositionY</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">positionY</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// background size</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundSize</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">bgSize</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundSizeContainInArea</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">BackgroundSizeCoverArea</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="cmmodifierbaseimageandbackground-modifiers">CmModifierBaseImageAndBackground modifiers</h3>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// image</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">ImageRes</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">ImageUrl</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">UnityIcon</span><span class="p">(</span><span class="n">CmUnityIcons</span><span class="w"> </span><span class="n">cmUnityIcons</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">ImageInitial</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// image</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">ImageScaleMode</span><span class="p">(</span><span class="n">CmImageScaleMode</span><span class="w"> </span><span class="n">cmImageScaleMode</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// image tint color</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">ImageTintColorRGB</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">ImageTintColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">ImageTintColorHex</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">hexColor</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">ImageTintColorRGBA</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">ImageTintColorRGB</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">ImageTintColorTransparent</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="cmmodifiertext-modifiers">CmModifierText modifiers</h3>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// text color in different formats</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextColorRGB</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextColorHex</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">hexColor</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextColorRGBA</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextColorRGB</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextColorTransparent</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// text font style</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextFontStyle</span><span class="p">(</span><span class="n">CmFontStyle</span><span class="w"> </span><span class="n">fontStyle</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// text font outline width</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextOutlineWidth</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">w</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextOutlineWidth</span><span class="p">(</span><span class="n">UssPropertyVal</span><span class="w"> </span><span class="n">w</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// text align</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextAlign</span><span class="p">(</span><span class="n">CmTextAlign</span><span class="w"> </span><span class="n">cmTextAlign</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// text font size</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextFontSize</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="k">value</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextFontSize</span><span class="p">(</span><span class="n">UssPropertyTextVal</span><span class="w"> </span><span class="k">value</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextFontSize</span><span class="p">(</span><span class="n">CmFontSizeName</span><span class="w"> </span><span class="n">fontSizeName</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// text overflow position</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextOverflowPosition</span><span class="p">(</span><span class="n">CmTextOverflowPosition</span><span class="w"> </span><span class="n">cmTextOverflowPosition</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextOverflowInitial</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// text font loading</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextFontRes</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextFontUrl</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextFontInitial</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// text whitespaces</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextWhiteSpace</span><span class="p">(</span><span class="n">CmTextWhiteSpace</span><span class="w"> </span><span class="n">textWhiteSpace</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// text singleline/multiline</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextMultiline</span><span class="p">();</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextSingleLine</span><span class="p">();</span>
+
+<span class="w">    </span><span class="c1">// text outline</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextOutlineColorRGB</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextOutlineColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextOutlineColorHex</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">hexColor</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextOutlineColorRGBA</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextOutlineColorRGB</span><span class="p">(</span><span class="n">Color32</span><span class="w"> </span><span class="n">color</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">TextOutlineColorTransparent</span><span class="p">();</span>
+</code></pre></div>
+<h3 id="cmmodifierrow-modifiers">CmModifierRow modifiers</h3>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// layout direction (shouldn't be used in CmRow control)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">LayoutDirection</span><span class="p">(</span><span class="n">CmLayoutDirection</span><span class="w"> </span><span class="n">layoutDirection</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// horizontal and vertical (this is inverted in CmModifierColumn)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">HorizontalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="w"> </span><span class="n">arrangement</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">VerticalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="w"> </span><span class="n">alignment</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="cmmodifiercolumn-modifiers">CmModifierColumn modifiers</h3>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// layout direction (shouldn't be used in CmColumn control)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">LayoutDirection</span><span class="p">(</span><span class="n">CmLayoutDirection</span><span class="w"> </span><span class="n">layoutDirection</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// horizontal and vertical (this is inverted in CmModifierRow)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">HorizontalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="w"> </span><span class="n">alignment</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="nf">VerticalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="w"> </span><span class="n">arrangement</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="what-next">What next</h3>
+<p>Because documentation will be probably changing less frequently than code - the description for these modifiers was not pasted here.</p>
+<p>You will find documentation for specified modifiers inside the code comment for the modifier function.</p>
+<p><a href="visual_controls.html">In the controls seciton</a> there is styling applied to individual controls and their elements</p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="ui_events.html" title="UI Events"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="visual_controls.html" title="Controls">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="ui_events.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="visual_controls.html" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>var base_url = ".";</script>
+<script src="js/theme_extra.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/print-site.js"></script>
+<script src="search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

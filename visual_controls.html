@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="img/favicon.ico" rel="shortcut icon"/>
+<title>Controls - CoDriven Advanced UI</title>
+<link href="css/theme.css" rel="stylesheet"/>
+<link href="css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings1.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings2.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings3.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings4.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings5.css" rel="stylesheet"/>
+<link href="css/print-site-enum-headings6.css" rel="stylesheet"/>
+<link href="css/print-site.css" rel="stylesheet"/>
+<link href="css/print-site-readthedocs.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Controls";
+        var mkdocs_page_input_path = "visual_controls.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="."> CoDriven Advanced UI
+        </a><div role="search">
+<form action="./search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
+</li>
+<li class="toctree-l1"><a class="" href="print_page">print</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Changelog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change log</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a>
+</li>
+<li class="toctree-l1"><a class="reference internal">Screen containers</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="screen_manager.html">Screen Manager</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="screen.html">Screen</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="screen_part.html">Screen Part</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ui_events.html">UI Events</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modifiers.html">Modifiers</a>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current">Controls</a>
+<ul class="current">
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Controls</a>
+<ul class="current">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controls/cmcolumn.html">CmColumn</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controls/cmrow.html">CmRow</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Tools</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="translation_editor.html">Translation editor</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="graph_editor.html">Graph editor</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">Utils</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="cmlive_data.html">Game settings util</a>
+</li>
+<li class="toctree-l2"><a class="" href="cmlive_data2.md">Observable field</a>
+</li>
+<li class="toctree-l2"><a class="" href="cmlive_data3.md">Multiplayer mirror helpers</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorials.html">Tutorial scenes</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multiplayer_game.html">Multiplayer game sample</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact information</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href=".">CoDriven Advanced UI</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href="."></a></li>
+<li class="breadcrumb-item">Documentation</li>
+<li class="breadcrumb-item">Controls</li>
+<li class="breadcrumb-item active">Controls</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
+<p><a href="index.html">Go back</a></p>
+<h1 id="codriven-advanced-ui-controls">CoDriven Advanced UI controls</h1>
+<h2 id="introduction">Introduction</h2>
+<p>CoDriven Advanced UI is based on UI toolkit. There are a few extension controls like CmDraggableScrollView and others, but mostly
+controls are the same as in UI toolkit. So what is the benefit of this?. CoDriven Advanced UI has a different approach to:</p>
+<ul>
+<li>you won't have to search for styles assigned to elements in controls, because styling controls is done using modifiers
+  instead of USS/CSS code. This will make your menu development faster. More about this <a href="modifiers.html">here</a>,</li>
+<li>event handling is really easy. More about this <a href="ui_events.html">here</a>,</li>
+<li>separation of concerns in case of screens based on these controls and easy switching between screens by using Screen
+  Manager, Screens and Screen Part. See <a href="screen_manager.html">Screen Manager</a>, <a href="screen.html">Screen</a>
+  and <a href="screen_part.html">Screen Part</a></li>
+<li>styling dropdown is difficult in UI Toolkit and require to assign system uss as parent and here CoDriven Advanced UI will help
+  you to forget about these problems and just style your dropdown.</li>
+<li>the whole system is better solution for styling, theming and language change.</li>
+</ul>
+<h2 id="controls">Controls</h2>
+<pre class="mermaid"><code>graph TD
+;
+    A[CmControlBase] -- abstract class --&gt; B[CmControlModifiable];
+    B -- abstract class --&gt; C[CmControlContainer];
+    B -- abstract class --&gt; D[CmControlModifiableForSelfHandleSubitems];
+    D --&gt; E[Special container controls];
+    C --&gt; F[All container controls];
+    B --&gt; G[All normal controls]</code></pre>
+<blockquote>
+<p>important - read this section before the documentation for indivitual controls.</p>
+</blockquote>
+<p>All CoDriven Advanced UI controls inherits from CmControlBase and all of them are holding reference to their counterparts controls
+from UI Toolkit.</p>
+<p>For example CmButton holds reference to Button, or CmTextField holds reference to TextField of UI Toolkit.</p>
+<p>You can get original control by using CmControlBase.GetVisualElement();</p>
+<h3 id="available-methods-for-base-control-cmcontrolbase">available methods for base control - CmControlBase</h3>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetName</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetName</span><span class="p">()</span>
+
+<span class="w">    </span><span class="c1">/// get or set index of control in focusable ring. The ring of controls that can take focus.</span>
+<span class="w">    </span><span class="c1">/// You can set index of that focus then you can control which control will be focused next by changing</span>
+<span class="w">    </span><span class="c1">/// active focused control.  </span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetTabIndex</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">tabIndex</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">GetTabIndex</span><span class="p">()</span>
+
+<span class="w">    </span><span class="c1">// enabled state</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetEnabled</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">/// set custom selector.</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetCustomSelector</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">modifierName</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">/// remove custom selector.</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">RemoveCustomSelector</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">modifierName</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">/// control focused state</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Focus</span><span class="p">()</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Blur</span><span class="p">()</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetFocusable</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">focusable</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// bring to front or back</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BringToFront</span><span class="p">()</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SendToBack</span><span class="p">()</span>
+
+<span class="w">    </span><span class="c1">// control visibility</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Hide</span><span class="p">()</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Show</span><span class="p">()</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetVisible</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">visible</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">IsVisible</span><span class="p">()</span>
+</code></pre></div>
+<p>almost all methods are self-explanatory. There are mostly delegates from base VisualElement methods from UI toolkit.</p>
+<p>so all controls have above methods.</p>
+<h3 id="cmcontrolcontainer-base-controls-container">CmControlContainer - base controls container</h3>
+<p>All container controls are inherit from base container <strong>CmControlContainer</strong>. You will add your own controls to that
+containers by calling control.AddContent(). For example:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">CmColumn</span><span class="w"> </span><span class="nf">CreateLeftPanel</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">();</span>
+<span class="w">        </span><span class="n">column</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(...));</span>
+<span class="w">        </span><span class="n">column</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(...));</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">column</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<h4 id="finding-control-in-cmcontrolcontainer">finding control in CmControlContainer</h4>
+<p>You can find any control inside container by calling:</p>
+<ul>
+<li>CmControlContainer.<strong>FindControl</strong><control_type>("optional_control_name")</control_type></li>
+<li>CmControlContainer.<strong>Q</strong><control_type>("optional_control_name")</control_type></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cmControl</span><span class="p">.</span><span class="n">FindControl</span><span class="o">&lt;</span><span class="n">CmLabel</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">    </span><span class="n">label</span><span class="p">.</span><span class="n">SetText</span><span class="p">(</span><span class="n">column</span><span class="p">.</span><span class="n">title</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="behaviours-addcontrolbehaviour">Behaviours (AddControlBehaviour())</h3>
+<p>All controls inherited from CmControlModifiable which include function <strong>AddControlBehaviour</strong></p>
+<p>Behaviours was made to add some functionality to control that can be reused.</p>
+<p>Currently there is one behavior available:</p>
+<ul>
+<li><strong>CmControlFloatingWindowBehaviour</strong> - add this behaviour to any container to make it like floating Window that you
+  can drag freely using mouse</li>
+</ul>
+<p>you can add your own behaviour by inherit the base class of behaviours <strong>CmControlBehaviourBase</strong></p>
+<h3 id="all-controls-containers">All controls containers</h3>
+<ul>
+<li>CmColumn <a href="controls/cmcolumn.html">click for description</a></li>
+<li>CmRow <a href="controls/cmrow.html">click for description</a></li>
+<li>CmDropDownField <a href="controls/cmdropdownfield.md">click for description</a></li>
+<li>CmFoldout <a href="controls/cmfoldout.md">click for description</a></li>
+<li>CmGroupBox <a href="controls/cmgroupbox.md">click for description</a></li>
+<li>CmPopupWindow <a href="controls/cmpopupwindow.md">click for description</a></li>
+<li>CmScrollView <a href="controls/cmscrollview.md">click for description</a></li>
+</ul>
+<h3 id="simple-controls">Simple controls</h3>
+<ul>
+<li>CmButton <a href="controls/cmbutton.html">click for description</a></li>
+<li>CmDraggableScrollView <a href="controls/cmdraggablescrollview.md">click for description</a></li>
+<li>CmHelpBox <a href="controls/cmhelpbox.md">click for description</a></li>
+<li>CmImage <a href="controls/cmimage.md">click for description</a></li>
+<li>CmLabel <a href="controls/cmlabel.md">click for description</a></li>
+<li>CmListView <a href="controls/cmlistview.md">click for description</a></li>
+<li>CmMultiColumnListView <a href="controls/cmmulticolumnlistview.md">click for description</a></li>
+<li>CmProgressBar <a href="controls/cmprogressbar.md">click for description</a></li>
+<li>CmRadioButton <a href="controls/cmradiobutton.md">click for description</a></li>
+<li>CmScroller <a href="controls/cmscroller.md">click for description</a></li>
+<li>CmSlider <a href="controls/cmslider.md">click for description</a></li>
+<li>CmTextField <a href="controls/cmtextfield.md">click for description</a></li>
+<li>CmToggle <a href="controls/cmtoggle.md">click for description</a></li>
+</ul>
+<h3 id="controls-for-unity-editor">Controls for Unity editor</h3>
+<ul>
+<li>CmCurveFiled <a href="controls/cmcurvefield.md">click for description</a></li>
+<li>CmEnumFlagsField <a href="controls/cmenumflagsfield.md">click for description</a></li>
+<li>CmFloatField <a href="controls/cmfloatfield.md">click for description</a></li>
+<li>CmIntegerField <a href="controls/cmintegerfield.md">click for description</a></li>
+<li>CmLongField <a href="controls/cmlongfield.md">click for description</a></li>
+<li>CmMaskField <a href="controls/cmmaskfield.md">click for description</a></li>
+<li>CmObjectField <a href="controls/cmobjectfield.md">click for description</a></li>
+<li>CmPropertyField <a href="controls/cmpropertyfield.md">click for description</a></li>
+<li>CmTagField <a href="controls/cmtagfield.md">click for description</a></li>
+<li>CmToolbar <a href="controls/cmtoolbar.md">click for description</a></li>
+</ul>
+<p>currently in editor controls are only delegates to unity version without "Cm" suffix, but it still helps with styling
+and events handling of these controls</p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="modifiers.html" title="Modifiers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="controls/cmcolumn.html" title="CmColumn">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="modifiers.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="controls/cmcolumn.html" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>var base_url = ".";</script>
+<script src="js/theme_extra.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/print-site.js"></script>
+<script src="search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>
