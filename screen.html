@@ -49,6 +49,8 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Getting Started</span></p>
               <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="install.html">How to install</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="print_page">print</a>
@@ -143,26 +145,25 @@
 <p><a href="index.html">Go back</a></p>
 <h1 id="cmscreen">CmScreen</h1>
 <!-- TOC -->
+
 <ul>
 <li><a href="#codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
-<li><a href="#cmscreen">CmScreen</a><ul>
+<li><a href="#cmscreen">CmScreen</a></li>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#how-to-use">How to use</a></li>
 <li><a href="#getscreenname">GetScreenName()</a></li>
 <li><a href="#binduieventsonstart">bindUIEventsOnStart()</a></li>
 <li><a href="#onmakescreencontentlistcmcontrolbase-contentlist-the-most-important-section">OnMakeScreenContent(List<CmControlBase> contentList) the most important section</a></li>
-</ul>
-</li>
 <li><a href="#complete-example-of-cmscreen-implementation-from-one-theme-scene-example">Complete example of CmScreen implementation from "One Theme scene example"</a></li>
 </ul>
 <!-- TOC -->
 
 <h3 id="introduction">Introduction</h3>
-<p>CmScreen is a screen container for controls. You can have multiple screens but you show only one screen at once.</p>
+<p>CmScreen is a screen container for controls on your game screen. You can have multiple screens but you show only one screen at once. For example map select screen, main menu screen or in game lobby screen</p>
 <h3 id="how-to-use">How to use</h3>
 <blockquote>
-<p>NOTE: Before you will read about CmScreen please read about theming <a href="theming.html">here</a> and CmScreenManager which is a
-container for CmScreen <a href="screen_manager.html">here</a>.</p>
+<p>NOTE: Before you will read about CmScreen please read about theming <a href="theming.html">here in theming section</a> and CmScreenManager which is a
+container for CmScreen <a href="screen_manager.html">here in screen manager section</a>.</p>
 </blockquote>
 <p>To create your own CmScreen you will have to select if you will use a theme or not.</p>
 <blockquote>
@@ -180,15 +181,14 @@ example below:</p>
 <span class="w">        </span><span class="p">...</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>But in the theming section of the documentation we created a base interface for theme <strong>IMyExampleTheme</strong> and two
-implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong>:</p>
+<p>But in the theming section of the documentation we created a base class for theme <strong>MyExampleTheme</strong> and two implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong> that inherit the base class. Now we can create screen using our theme as base, so that we can use it for theming:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// CmThemeDefault will be used as a base theme and this is the empty theme for filling purposes</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyMainScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyMainScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">MYMAIN_SCREEN_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MyMainScreen&quot;</span><span class="p">;</span>
 
-<span class="w">        </span><span class="c1">// needed constructor </span>
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">MyMainScreen</span><span class="p">(</span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">VisualElement</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="c1">// needed empty constructor </span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">MyMainScreen</span><span class="p">(</span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">VisualElement</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span>
 <span class="w">            </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">bindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
@@ -198,7 +198,7 @@ implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMakeScreenContent</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">contentList</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="c1">//Add content to the list</span>
+<span class="w">            </span><span class="c1">//create controls here and add them to contentList</span>
 <span class="w">            </span><span class="n">contentList</span><span class="p">.</span><span class="n">Add</span><span class="p">(...</span><span class="n">create</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="n">here</span><span class="p">...);</span>
 <span class="w">        </span><span class="p">}</span>
 
@@ -210,24 +210,25 @@ implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>As you can see adding a screen is nothing difficult.</p>
+<p>I will tell you what are the reason for this methods.</p>
 <h3 id="getscreenname">GetScreenName()</h3>
 <p>We need to override <strong>GetScreenName</strong>() to return the screen name string (you can use an enum with the names of your screens and
-cast enum to string here)</p>
+cast enum to string here so you wouldn't use magic strings)</p>
+<p>Screen name is used to move to screen by its name so it is good practice to use constants or static to hold that name.</p>
 <hr />
 <h3 id="binduieventsonstart">bindUIEventsOnStart()</h3>
-<p>If you read the section about ScreenManager which I will suggest doing first then you will notice method *
-<em>bindUIEventsOnStart</em>*(). On CmScreenManager this method was for handling global UI events but here we handle events
-more local because it will be connected with this screen. This way we can handle events here and in CmScreenManager if
-you want. More about events see the ui_events section <a href="ui_events.html">here</a></p>
+<p>If you read the section about ScreenManager which I will suggest doing first then you will notice method <strong>bindUIEventsOnStart</strong>(). On CmScreenManager this method was for handling global UI events but here we handle events
+more local because it will be connected with this screen.</p>
+<p>This way we can handle events here and additionaly in CmScreenManager if you want. More about events see the ui_events section <a href="ui_events.html">here in ui_events section</a></p>
 <hr />
 <h3 id="onmakescreencontentlist-contentlist-the-most-important-section">OnMakeScreenContent(List<CmControlBase> contentList) the most important section</h3>
 <p>content of the screen needs to be filled with controls. <strong>OnMakeScreenContent</strong>() function is just for that purpose.
 Below will be added a full working example from example projects that will show you how to create a simple screen with
-a button
-You can create any control extended from CmControl in OnMakeScreenContent and add it to contentList.</p>
-<p>You can also split your game menu into sections and each section could be CmScreenPart which is a part of the main menu
-see <a href="screen_part.html">here</a>. You can use this screenPart inside multiple screens. For example to create a simple static
-header which is the same on a few screens. so you will fulfill the known pattern "don't repeat yourself (DRY)"</p>
+a button</p>
+<p>You can create any control extended from CmControl in OnMakeScreenContent and add it to contentList. For example CmButton, CmToggle, CmScrollView, CmColumn, CmRow ect.</p>
+<p>You can also split your game menu into sections and each section could be <strong>CmScreenPart</strong> which is a part of the main menu see <a href="screen_part.html">here in screen_part section</a>.</p>
+<p>You can use this screenPart inside multiple screens. For example to create a simple static header which is the same on a few screens.</p>
+<p>So you will fulfill the known programming pattern "don't repeat yourself (DRY)"</p>
 <hr />
 <h2 id="complete-example-of-cmscreen-implementation-from-one-theme-scene-example">Complete example of CmScreen implementation from "One Theme scene example"</h2>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
@@ -245,8 +246,7 @@ header which is the same on a few screens. so you will fulfill the known pattern
 <span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">MainButtonName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MyButtonName&quot;</span><span class="p">;</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">CmExample1MainScreen</span><span class="p">(</span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">CmExample1ThemeBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">VisualElement</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="p">:</span>
-<span class="w">            </span><span class="k">base</span><span class="p">(</span>
-<span class="w">                </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">)</span>
+<span class="w">            </span><span class="k">base</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">        </span><span class="p">}</span>
 
@@ -255,7 +255,7 @@ header which is the same on a few screens. so you will fulfill the known pattern
 <span class="w">            </span><span class="c1">// handle clicks for all buttons on this screen</span>
 <span class="w">            </span><span class="n">eventsHandler</span><span class="p">.</span><span class="n">ButtonClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=&gt;</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="c1">//Check if the user clicked mainButton</span>
+<span class="w">                </span><span class="c1">//Check if the user clicked button with name &quot;MyButtonName&quot;</span>
 <span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">button</span><span class="p">.</span><span class="n">GetName</span><span class="p">().</span><span class="n">Equals</span><span class="p">(</span><span class="n">MainButtonName</span><span class="p">))</span>
 <span class="w">                </span><span class="p">{</span>
 <span class="w">                    </span><span class="c1">// handle on click for the main button</span>
@@ -298,8 +298,9 @@ header which is the same on a few screens. so you will fulfill the known pattern
 <span class="w">            </span><span class="c1">//Set button name for further event handling</span>
 <span class="w">            </span><span class="n">button</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
 
-<span class="w">            </span><span class="c1">//Get the theme assigned to this screen and use its function to style this button</span>
-<span class="w">            </span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">// Get the theme assigned to this screen and use its function to style this button.</span>
+<span class="w">            </span><span class="c1">// We will not call theme method but pass method address to StyleButton function</span>
+<span class="w">            </span><span class="n">button</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">);</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 
@@ -310,6 +311,7 @@ header which is the same on a few screens. so you will fulfill the known pattern
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
+<p>For more information about this example. See examples for project. Just read the code and you will know how to use this</p>
               
             </div>
           </div><footer>

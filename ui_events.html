@@ -45,6 +45,8 @@
 <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
 <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">How to install</a>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
 </li>
 <li class="toctree-l1"><a class="" href="print_page">print</a>
@@ -162,7 +164,7 @@ from the above list and add your control to CmScreen directly.</p>
 select the button "Start game"</p>
 <p>This function exists in CmScreenManager, CmScreen, or CmScreenPart.</p>
 <p>Below is a part of the code for the main menu panel of the included example multiplayer game</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainMenuPanelSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">ICmThemeTestBase</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainMenuPanelSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">CmThemeTestBase</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">uiEventsHandler</span><span class="p">)</span>
@@ -192,7 +194,8 @@ in such direction :</p>
 <pre class="mermaid"><code>graph TD
     A[CmControl.OnClick] --&gt; B[CmScreenPart.BindUIEventsOnStart]
     B[CmScreenPart.BindUIEventsOnStart] --&gt; C[CmScreen.BindUIEventsOnStart]
-    C --&gt; D[CmScreenManager.BindUIEventsOnStart]</code></pre>
+    C --&gt; D[CmScreenManager.BindUIEventsOnStart]
+</code></pre>
 <p>So event will move through parents until it reaches the target which is CmScreenManager.
 You can handle onClick event on each step simultaneously. This way you can add on click sound globally for each onClick
 from all controls and add on click in CmScreenPart to handle some logic.</p>
@@ -205,7 +208,7 @@ the parent's tree until they reach the grandparent CmScreenManager and propagati
 </blockquote>
 <h3 id="cmuieventshandler_1">CmUIEventsHandler</h3>
 <p>when you create your control you will have to pass CmUIEventsHandler instance.</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameStatsSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">ICmThemeTestBase</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameStatsSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">CmThemeTestBase</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">uiEventsHandler</span><span class="p">)</span>
@@ -230,7 +233,7 @@ CmScreenPart and its
 Parent won't know about the event being triggered in controls so you won't receive events in BindUIEventsOnStart().</p>
 </blockquote>
 <p>Of course, you can create your event handler like this, but you will have to handle events by yourself</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameStatsSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">ICmThemeTestBase</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameStatsSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">CmThemeTestBase</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">createExitButton</span><span class="p">()</span>
@@ -441,5 +444,8 @@ in previous examples:</p>
             SphinxRtdTheme.Navigation.enable(true);
         });
     </script>
-</body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script></body>
 </html>

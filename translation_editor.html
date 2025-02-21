@@ -49,6 +49,8 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Getting Started</span></p>
               <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="install.html">How to install</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="print_page">print</a>
@@ -162,7 +164,7 @@
 <h3 id="introduction">Introduction</h3>
 <p>Translation editor will allow you to create translations for your texts, manage languages, and generate translation files.</p>
 <p>To create your translations open the translation editor by clicking in Unity from the top menu:</p>
-<p><strong>windows -&gt; CoDrivenAdvancedUI -&gt; Translation Editor</strong></p>
+<p><strong>windows -&gt; CoDriven Advanced UI -&gt; Translation Editor</strong></p>
 <p>Translations are divided into columns.</p>
 <p>The first column "Translation ID" are ids for your translations because you will have to use the translation_ID name to access
 translation text.
@@ -218,17 +220,6 @@ table.</p>
 <span class="w">        </span><span class="n">CmLanguageManager</span><span class="p">.</span><span class="n">SetCurrentLang</span><span class="p">(</span><span class="s">&quot;Polish&quot;</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="c1">// TRANSLATION extension methods</span>
-<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text_str_settings</span><span class="o">&lt;</span><span class="n">Theme</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">Theme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">screen</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">Theme</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmThemeBase</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">screen</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">settings</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text_str_settings</span><span class="o">&lt;</span><span class="n">Theme</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">Theme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">screen</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">Theme</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmThemeBase</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">screen</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">settings</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-
 <span class="p">}</span>
 </code></pre></div>
 <p>As you can see this generated class will contain all your translation IDS as variable names with types of int and index
@@ -244,26 +235,6 @@ value.</p>
 </code></pre></div>
 <p>As you noticed there are extension methods "text_str_settings()" generated for our str_settings translation ID that can
 be used as a shortcut for our previous code with CmGeneratedTranslations.GetString(CmGeneratedTranslations.str_settings);</p>
-<p>because text_str_settings() is extension method for <strong>CmScreenPart</strong> and <strong>CmScreen</strong>, you can use this method to get
-our str_settings translation for the current language like this:</p>
-<p>inside <strong>CmScreenPart</strong> code</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreenPart</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">MyTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">      </span>
-<span class="w">        </span><span class="p">....</span>
-<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">someMethod</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">settingsText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">text_str_settings</span><span class="p">();</span>
-<span class="w">            </span><span class="c1">// use text settingsText for button text or other component</span>
-</code></pre></div>
-<p>or inside <strong>CmScreen</strong> code</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">      </span>
-<span class="w">        </span><span class="p">....</span>
-
-<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">someMethod</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">settingsText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">text_str_settings</span><span class="p">();</span>
-<span class="w">            </span><span class="c1">// use text settingsText for button text or other component</span>
-</code></pre></div>
-<p>this method name is built by connecting "text_" + our translation ID. - text_str_settings() in this example, because we
-had str_settings translation ID, because of that we have to keep the same naming rules for translation IDs as for a
-functions or variables</p>
 <h4 id="set-current-language">Set current language:</h4>
 <p>For example, to set English as the current language you can use</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">CmGeneratedTranslations</span><span class="p">.</span><span class="n">setCurrentLang_English</span><span class="p">();</span>

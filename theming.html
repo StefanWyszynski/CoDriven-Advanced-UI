@@ -49,6 +49,8 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Getting Started</span></p>
               <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="install.html">How to install</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="print_page">print</a>
@@ -142,71 +144,86 @@
 <p><a href="index.html">Go back</a></p>
 <h1 id="themes">Themes</h1>
 <!-- TOC -->
+
 <ul>
 <li><a href="#codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
-<li><a href="#themes">Themes</a><ul>
+<li><a href="#themes">Themes</a></li>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#how-to-use">How to use</a></li>
-</ul>
-</li>
 </ul>
 <!-- TOC -->
 
 <p><img alt="themes image" src="images/features/themes.gif" /></p>
 <h3 id="introduction">Introduction</h3>
-<p>Each game should have at least one theme so theming is optional, but if you won't use themes then you will have to use
-the default theme built in. This theme will not change your style. It is the empty theme for filling space purposes. It is
-strongly recommended to use at least one theme to make sure that your screen is not responsible for styling and this is
-delegated to themes. This will improve code readability and project maintenance.</p>
+<p>Each game should have at least one theme so theming is required, but if you won't use themes then you will have to use
+the default built in theme. The default theme will not change your style. It is the empty theme for filling requirment.</p>
+<p>It is strongly recommended to use at least one theme to style your screen.</p>
 <h3 id="how-to-use">How to use</h3>
-<p>To use themes you have to create a base interface that extends <strong>ICmThemeBase</strong> interface like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IMyExampleTheme</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmThemeBase</span>
+<p>To use themes you have to create an abstract base class that extends <strong>ICmThemeBase</strong> interface like this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyExampleTheme</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmThemeBase</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>IMyExampleTheme</strong> interface will be passed as a generic argument to:</p>
+<p><strong>MyExampleTheme</strong> class will be passed as a generic argument to:</p>
 <ul>
-<li>screen manager: CmScreenManager\&lt;<strong>IMyExampleTheme</strong>&gt; more about <a href="screen_manager.html">here</a>.</li>
-<li>screens: CmScreen\&lt;<strong>IMyExampleTheme</strong>&gt;  <a href="screen.html">here</a>.</li>
-<li><strong>(optionally)</strong> screen part: CmScreenPart\&lt;<strong>IMyExampleTheme</strong>&gt; <a href="screen_part.html">here</a>.</li>
+<li>screen manager: CmScreenManager\&lt;<strong>MyExampleTheme</strong>&gt; more about <a href="screen_manager.html">here in screen_manager section</a>.</li>
+<li>screens: CmScreen\&lt;<strong>MyExampleTheme</strong>&gt;  <a href="screen.html">here in screen section</a>.</li>
+<li><strong>(optionally)</strong> screen part: CmScreenPart\&lt;<strong>MyExampleTheme</strong>&gt; <a href="screen_part.html">here in screen_part section</a>.</li>
 </ul>
-<p>The next thing to do is to create your implementation for our theme</p>
-<p>We will style the button with modifiers - please read the modifiers section <a href="modifiers.html">here</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">MyThemeWhite</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IMyExampleTheme</span>
+<p>The next thing to do is to create your implementation for this theme that will contain styling code for example CmButton control.</p>
+<p>We will style the button with modifiers - please read about the modifiers <a href="modifiers.html">here in modifiers section</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyThemeWhite</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MyExampleTheme</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// each controls has its own set of methods to style. We will get style interface for this button</span>
+<span class="w">        </span><span class="c1">// image have other group of function, than for example text. We use different interface for styling different controls</span>
+<span class="w">        </span><span class="c1">// Because we don&#39;t want to style font for image - it has no sense</span>
+
+<span class="w">        </span><span class="c1">// so get modifiers for styling</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
 <span class="w">        </span><span class="c1">// style with modifiers</span>
-<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+<span class="w">                </span><span class="c1">// change background color and textfont size for the button in default state, so not for state like mouse hover over control or disabled state. Default state is for all states for control, but if you add styles for mouse hover then it will override this styles while mouse is hovering otherwise it will use default modifiers. </span>
 <span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
 <span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
 <span class="w">                    </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">30</span><span class="p">.</span><span class="n">px</span><span class="p">())</span>
 <span class="w">            </span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>optionally you can create a second theme like this (as an example)</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">MyThemeBlack</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IMyExampleTheme</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
-<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
-<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">black</span><span class="p">)</span>
-<span class="w">            </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>As you can see we have two themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong>. These themes you will have to add to the screen
-manager:</p>
+<p>optionally you can create a second theme like this (as an example)</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyThemeBlack</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MyExampleTheme</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">black</span><span class="p">)</span>
+<span class="w">            </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>As you can see we have two themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong>.</p>
+<p>These themes you will have to add to the screen manager, so that it will know when you will set your current theme that it is one of themes for your screens.</p>
+<h2 id="important-note-to-understand-how-it-works">IMPORTANT NOTE TO UNDERSTAND how it works:</h2>
+<blockquote>
+<p>UI Toolkit works in a way that you will create uss files and assign them to your controls and the similar thing is with CoDriven Advanced UI tool.</p>
+<p>You will have to add all your styling to methods in your base theme <strong>MyExampleTheme</strong> class to style your controls, or create abstract methods there and override it in your theme implementation classes like <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong>, <strong>because the engine will loop through all your public methods in your base theme or in your implementations and will generate uss files for all of these methods. Then when you pass GetTheme().StyleButton method adress to SetStyle method of your control it will assign runtime your uss style generated during editor pass.</strong></p>
+</blockquote>
+<p>So lets add these themes to our screen manager.</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// IMyExampleTheme is a base theme interface</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="p">...</span>
 
 <span class="w">        </span><span class="c1">//This is called by the system to add themes to the list</span>
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">themes</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">themes</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//Add all themes here for this screen manager</span>
 <span class="w">            </span><span class="n">themes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyThemeWhite</span><span class="p">());</span>
@@ -215,20 +232,22 @@ manager:</p>
 <span class="w">        </span><span class="p">...</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>and now you can use themes in your screens. Or change themes. More about screen manager <a href="screen_manager.html">here</a>.</p>
-<p>You will use the theme in part of your code responsible for creating controls:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">createMainButton</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">buttonTitle</span><span class="p">)</span>
+<p>and now you can use themes in your screens, or change current theme in runtime. More about screen manager <a href="screen_manager.html">here in screen_manager section</a>.</p>
+<p>You will use the theme in part of your code responsible for creating controls. Here is some fragment of your CmScreen - remember this is not CmScreenManager but CmScreen:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// code for creating button with a style from your theme method StyleButton()</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">createMainButton</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">buttonTitle</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">//Create a simple button with buttonTitle and UI event handler from this screen to handle events in this screen</span>
+<span class="w">        </span><span class="c1">// Create a simple button with buttonTitle and UI event handler from this screen to handle events in this screen</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(</span><span class="n">buttonTitle</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">GetCmUiEventsHandler</span><span class="p">());</span>
 
 <span class="w">        </span><span class="c1">//Get the current assigned theme to this screen and use your function to style this button</span>
 <span class="w">        </span><span class="c1">//This theme could be one of your added themes: MyThemeWhite, MyThemeBlack</span>
-<span class="w">        </span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>
+<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetStlye</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">);</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>Now you know how to add a theme and use it.</p>
+<p>Time to read more about CmScreenManager, CmScreen, and CmScreenPart</p>
               
             </div>
           </div><footer>

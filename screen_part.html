@@ -45,6 +45,8 @@
 <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
 <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">How to install</a>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
 </li>
 <li class="toctree-l1"><a class="" href="print_page">print</a>
@@ -143,19 +145,14 @@
 <h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="index.html">Go back</a></p>
 <h3 id="introduction">Introduction</h3>
-<p><strong>CmScreenPart</strong> is a part of the screen container for controls. This is an optional component. You can add controls to screens
-directly, but this separation of concerns will help you manage larger projects and reuse parts of your screen UI. You
-can have multiple <strong>CmScreenPart</strong> added to <strong>CmScreen</strong>.</p>
+<p><strong>CmScreenPart</strong> is a part of the screen container for controls. This is an optional component. You can add controls to screens directly, but this separation of concerns will help you manage larger projects and reuse parts of your screen UI. You can have multiple <strong>CmScreenPart</strong> added to <strong>CmScreen</strong>.</p>
 <h3 id="how-to-use">How to use</h3>
 <blockquote>
-<p>NOTE: Before you will read about CmScreenPart please read about theming <a href="theming.html">here</a>,
-CmScreenManager <a href="screen_manager.html">here</a> and CmScreen <a href="screen.html">here</a>. This way you will understand how it's working
-all-together</p>
+<p>NOTE: Before you will read about CmScreenPart please read about theming <a href="theming.html">here in theming section</a>, CmScreenManager <a href="screen_manager.html">here in screen_manager section</a> and CmScreen <a href="screen.html">here in screen section</a>. This way you will understand how it's working all-together</p>
 </blockquote>
 <p>To create your own <strong>CmScreenPart</strong> you will have to select if you will use theme or not.</p>
 <blockquote>
-<p>NOTE: If you won't use the theme then you can pass the default builtin <strong>CmThemeDefault</strong> empty theme interface like in
-example below:</p>
+<p>NOTE: If you won't use the theme then you can pass the default builtin <strong>CmThemeDefault</strong> empty theme interface like in example below:</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// CmThemeDefault will be used as a base theme and this is the empty theme for filling purposes</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyMainScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">CmThemeDefault</span><span class="o">&gt;</span>
@@ -172,9 +169,9 @@ example below:</p>
 implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong>:</p>
 <p>So let's use this here. This is how it would look like</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// CmThemeDefault will be used as a base theme and this is the empty theme for filling purposes</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmScreenPartTopSectionExampleSP</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmScreenPartTopSectionExampleSP</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">CmScreenPartTopSectionExampleSP</span><span class="p">(</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">screen</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">CmScreenPartTopSectionExampleSP</span><span class="p">(</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">screen</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">        </span><span class="p">}</span>
 
@@ -196,32 +193,30 @@ implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">getUIEventsHandler</span><span class="p">());</span>
 <span class="w">            </span><span class="n">button</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
-<span class="w">            </span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">// pass style function address to SetStyle to style button by it</span>
+<span class="w">            </span><span class="c1">// GetTheme() returns current assigned theme MyThemeWhite or MyThemeBlack</span>
+<span class="w">            </span><span class="n">button</span><span class="p">.</span><span class="n">SetSyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">);</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>This is a simple screen part that could be reused on screens.</p>
 <h3 id="makecontent">MakeContent()</h3>
-<p>The screen part is not CmControl. So when you want to add it to the screen you need to create content with controls from this
-screen part.
+<p>The screen part is not CmControl. So when you want to add it to the screen you need to create content with controls from this screen part.
 That is why there is a method <strong>MakeContent</strong>() which will return some control or container with controls.</p>
 <p>In the above example, the content is built with a CmRow control container with two CmButtons added.
-To learn more about controls see <a href="controls.md">there</a></p>
+To learn more about controls see <a href="controls.md">there in controls section</a></p>
 <h3 id="binduieventsonstart">BindUIEventsOnStart()</h3>
-<p>Here <strong>BindUIEventsOnStart</strong>() function is the same as in CmScreenManager, CmScreen but you can handle UI event
-whenever you want.</p>
-<p>CmScreenPart is the lowest place where you can handle events. Events will go up and will be handled in such direction :</p>
+<p>Here <strong>BindUIEventsOnStart</strong>() function is the same as in CmScreenManager, CmScreen but you can handle UI event whenever you want.</p>
+<p>CmScreenPart is the lowest place where you can handle events. Events will go up and will be handled in such direction:</p>
 <pre class="mermaid"><code>graph LR
     A[CmScreenPart.OnClick] --&gt; B[CmScreen.OnClick]
-    B --&gt; C[CmScreenManager.OnClick]</code></pre>
+    B --&gt; C[CmScreenManager.OnClick]
+</code></pre>
 <p>So you can handle events whenever you want.</p>
 <blockquote>
-<p>Note: when you create control you will pass CmUIEventsHandler as a parameter. You will have to pass CmUiEventHandler for
-current CmScreenPart by using the method of CmScreenPart.getUIEventsHandler(). This way events will be propagated upper in the view
-hierarchy like in the above diagram. If you create your event handler and pass it or null, then CmScreenPart and its
-parent won't know about the event being triggered so you won't receive events in BindUIEventsOnStart(). To learn more
-about events click <a href="ui_events.html">here</a></p>
+<p>Note: when you create control you will pass CmUIEventsHandler as a parameter. You will have to pass CmUiEventHandler for current <strong>CmScreenPart</strong>. You can get current event handler by using the method <strong>CmScreenPart.getUIEventsHandler</strong>(). This way events will be propagated upper in the view hierarchy like in the above diagram.</p>
+<p>If you create your event handler and pass it or null, then <strong>CmScreenPart</strong> and its parent won't know about the event being triggered so you won't receive events in BindUIEventsOnStart(). To learn more about events click <a href="ui_events.html">here in ui_events section</a></p>
 </blockquote>
 </div>
 </div><footer>
@@ -257,5 +252,8 @@ about events click <a href="ui_events.html">here</a></p>
             SphinxRtdTheme.Navigation.enable(true);
         });
     </script>
-</body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script></body>
 </html>

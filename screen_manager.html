@@ -49,6 +49,8 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Getting Started</span></p>
               <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="install.html">How to install</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="print_page">print</a>
@@ -150,6 +152,7 @@
                 <h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="index.html">Go back</a></p>
 <!-- TOC -->
+
 <ul>
 <li><a href="#codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
 <li><a href="#introduction">Introduction</a></li>
@@ -180,10 +183,9 @@ example below:</p>
 <span class="w">        </span><span class="p">...</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>But in the theming section of the documentation we created a base interface for theme <strong>IMyExampleTheme</strong> and two
-implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong> so let's use it here:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// IMyExampleTheme will be used as a base theme</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span>
+<p>But in the theming section of the documentation we created a base interface for theme <strong>MyExampleTheme</strong> and two implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong> so let's use it here:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// abstract base class MyExampleTheme for theming this window will be used as a base theme</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnBindUiEventsHandler</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
@@ -198,13 +200,13 @@ implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack
 <span class="w">            </span><span class="p">};</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedScreens</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">supportedScreens</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedScreens</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">supportedScreens</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//Here you will add all your screens for this screen manager, and you will be able to change screen runtime</span>
 <span class="w">            </span><span class="n">supportedScreens</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyMainScreen</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">theme</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">theme</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//Add all your themes here for this screen manager</span>
 <span class="w">            </span><span class="n">themes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyThemeWhite</span><span class="p">());</span>
@@ -220,12 +222,10 @@ implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>As you can see, your themes were added in <strong>OnAddSupportedThemes</strong> function. So the system will know how to style
-controls.</p>
-<p>and you can change the theme anytime runtime using:</p>
+<p>As you can see, your themes were added in <strong>OnAddSupportedThemes</strong> function. So the system will know how many styles will be used for theming and you can change the theme anytime runtime using:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">SetCurrentTheme</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyThemeBlack</span><span class="p">());</span>
 </code></pre></div>
-<p>the <strong>SetCurrentTheme</strong> is available in your CmScreenManager, CmScreen, CmScreenPart</p>
+<p>the <strong>SetCurrentTheme</strong> is available in your <strong>CmScreenManager</strong>, <strong>CmScreen</strong>, <strong>CmScreenPart</strong></p>
 <p>Definition:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetCurrentTheme</span><span class="p">(</span><span class="n">THEME</span><span class="w"> </span><span class="n">originalTheme</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">rebuildControlsWithNewTheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">)</span>
 </code></pre></div>
@@ -234,24 +234,22 @@ controls.</p>
 <h2 id="other-functionality">Other functionality</h2>
 <p><strong>MyScreenManager</strong> from the above example has also functions like:</p>
 <ul>
-<li>OnBindUiEventsHandler() - responsible for handling UI events generated by controls created inside screens. Because
-  these controls were created inside you will handle their events inside screens but sometimes you will have to handle
-  events globally. To reduce code duplication on multiple screens you could handle this event here. More about events
-  see the ui_events section <a href="ui_events.html">here</a> ,</li>
+<li>OnBindUiEventsHandler() - responsible for handling UI events emitted by controls created inside screens. Because these controls were created inside you will handle their events inside screens, but sometimes you will have to handle events globally.
+  To reduce code duplication on multiple screens you could handle this event here. More about events</li>
+<li>see the ui_events section <a href="ui_events.html">here</a> ,</li>
 <li>OnAddSupportedScreens() - here you will add all your screen instances for this screen manager.</li>
 </ul>
 <p>You will be able to use <strong>setCurrentScreen</strong> to switch screen runtime.</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetCurrentScreen</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">currentScreenName</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">makeContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">)</span>
 </code></pre></div>
-<p>this function is available in CmScreenManager, CmScreen, CmScreenPart</p>
-<ul>
-<li><strong>OnSetMainScreen</strong>() - is called by the system on start so you can set the main screen here.</li>
-</ul>
+<p>this function is available in <strong>CmScreenManager</strong>, <strong>CmScreen</strong>, <strong>CmScreenPart</strong></p>
+<p>When game starts the first screen what will be shown is set in:</p>
+<p><strong>OnSetMainScreen</strong>() - which is called by the system on start so you can set the main screen here.</p>
 <blockquote>
-<p><strong>NOTE</strong>: If you won't set the screen here then the first screen from OnAddSupportedScreens() will be used</p>
+<p><strong>NOTE</strong>: If you won't set the screen here then the first screen from screens list in OnAddSupportedScreens() will be used</p>
 </blockquote>
 <hr />
-<p><strong>CmScreenManager</strong> has more functionality. Here is a more complete overview:</p>
+<p><strong>CmScreenManager</strong> has more functionality. Here are more methods overview:</p>
 <ul>
 <li><strong>MakeScreenContent</strong>() - you will use it to rebuild the whole screen (if you want to refresh the screen)</li>
 </ul>
@@ -269,9 +267,9 @@ controls.</p>
 </ul>
 <hr />
 <ul>
-<li><strong>ShowMenu(string currentScreenName)</strong> - will activate UI to show CmScreenManager on screen. When you show the screen
-  the manager you will have to tell the system which Screen to show by passing <strong>currentScreenName</strong> parameter</li>
+<li><strong>ShowMenu(string currentScreenName)</strong> - will activate UI to show CmScreenManager on screen.</li>
 </ul>
+<p>When you show the screen the manager you will have to tell the system which Screen to show by passing screen name to <strong>currentScreenName</strong> parameter</p>
 <hr />
 <ul>
 <li><strong>SetUserData(Object data)</strong> - while in the game you can pass your own data as an object to <strong>data</strong> parameter.</li>
@@ -287,12 +285,11 @@ controls.</p>
 <span class="w">       </span><span class="n">_screensManager</span><span class="p">.</span><span class="n">SetUserData</span><span class="p">(</span><span class="n">someUserData</span><span class="p">);</span>
 <span class="w">   </span><span class="p">}</span>
 </code></pre></div>
-<p>This data change will trigger callback <strong>OnUserDataChange</strong> for your active screen (CmScreen and other components like
-CmScreenPart)</p>
+<p>This data change will trigger callback <strong>OnUserDataChange</strong> for your active screen (CmScreen and other components like CmScreenPart)</p>
 <div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnUserDataChange</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
 <p>so you can update UI state there</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span><span class="p">{</span>
 <span class="w">   </span><span class="p">...</span>
 <span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnUserDataChange</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
 <span class="w">   </span><span class="p">{</span>
@@ -307,7 +304,7 @@ CmScreenPart)</p>
 <hr />
 <h2 id="complete-example">Complete example</h2>
 <p>here is a complete example of CmScreenManager implementation from "One Theme scene example"</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmExample2ThemesScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">ICmExample2ThemesBase</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmExample2ThemesScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">CmExample2ThemesBase</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnBindUiEventsHandler</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
@@ -315,13 +312,13 @@ CmScreenPart)</p>
 <span class="w">            </span><span class="n">eventsHandler</span><span class="p">.</span><span class="n">ButtonClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">@base</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">};</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedScreens</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">ICmExample2ThemesBase</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">supportedScreenList</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedScreens</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">CmExample2ThemesBase</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">supportedScreenList</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//Add all screens here for this screen manager</span>
 <span class="w">            </span><span class="n">supportedScreenList</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmSimpleThemeMainScreen</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ICmExample2ThemesBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">themeBases</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmExample2ThemesBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">themeBases</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//Add all themes here for this screen manager</span>
 <span class="w">            </span><span class="n">themeBases</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmExample2ThemeOne</span><span class="p">());</span>

@@ -49,6 +49,8 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Getting Started</span></p>
               <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="install.html">How to install</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Overview</a>
     <ul class="current">
     </ul>
@@ -141,7 +143,9 @@
                 <h1 id="codriven-advanced-ui-documentation-version-100">CoDriven Advanced UI documentation version 1.0.0</h1>
 <p><img alt="" src="images/codriven_advanced_ui_logo.png" /></p>
 <p>Thank you for buying CoDriven Advanced UI. I hope it will speed up your workflow and help to finish your game faster 😄.</p>
+<p>I am a professional Android developer with many years of experience, but I love creating games. During my game development journey, I came across a problem related to UI and decided to fix it by creating CoDriven Advanced UI. In android environment, I could conveniently create UI for apps and games using code. I decided to add this capability in this tool, thanks to this, you will be able to create UI by simply using code, which is generally easier than any existing solutions. Maybe just for me but try it and you will know what I mean.</p>
 <!-- TOC -->
+
 <ul>
 <li><a href="#codriven-advanced-ui-documentation-version-100">CoDriven Advanced UI documentation version 1.0.0</a></li>
 <li><a href="#the-main-benefits-of-codriven-advanced-ui-is">The main <strong>benefits</strong> of CoDriven Advanced UI is:</a></li>
@@ -165,100 +169,75 @@
 <h1 id="the-main-benefits-of-codriven-advanced-ui-is">The main <strong>benefits</strong> of CoDriven Advanced UI is:</h1>
 <ul>
 <li>full source code included</li>
-<li>build in nodes with screen preview so you can connect them by actions and use these actions to move between screens,
-  but you can move between screens without it by just a simple method call with screen
-  name <a href="graph_editor.html">(more about here)</a></li>
+<li>build in nodes with screen preview so you can connect them by actions <a href="graph_editor.html">(more about in graph editor section)</a></li>
 </ul>
 <h2 id="_1"><img alt="graph editor image" src="images/features/graph_editor.png" /></h2>
 <ul>
-<li>easy language change and translation editor (built-in) <a href="translation_editor.html">(more about here)</a></li>
+<li>easy language change and translation editor (built-in) <a href="translation_editor.html">(more about in translation editor section)</a></li>
 </ul>
 <p><img alt="langage change image" src="images/features/lang_change.gif" />
 <img alt="translation editor image" src="images/features/translation_editor.png" /></p>
 <hr />
 <ul>
-<li>easy theming and changing of the current theme! <a href="theming.html">(more about here)</a></li>
+<li>easy theming and changing of the current theme! <a href="theming.html">(more about in theming section)</a></li>
 </ul>
 <p><img alt="themes image" src="images/features/themes.gif" /></p>
 <hr />
 <ul>
-<li>easy and powerful styling but in the code - no more CSS/USS! and much easier, because you will not modify text style
-  for any component :) <a href="modifiers.html">(more about here)</a>,</li>
-<li>easily add your own custom Editors in Unity. You can check how Translation Editor was made - because it was made with
-  its own code I mean CoDriven Advanced UI :)</li>
-<li>really easy event handling! (you can handle events on part of your screen, screen as a whole, globally, or event in
-  many places at the same time) <a href="ui_events.html">(more about here)</a></li>
-<li>CoDriven Advanced UI contains controls from UI Toolkit and a few more, like a floating window, and a draggable panel. This will
-  be probably improved in the future <a href="visual_controls.html">(more about here)</a></li>
-<li>implemented with observer pattern in mind to observe changes in UI or trigger UI changes from external
-  events <a href="cmlive_data.html">(more about here)</a></li>
-<li>multiple scenes with examples like simple one theme, simple two themes, a few game scenes with maps and main menu,
-  other <a href="tutorials.md">(more about here)</a></li>
+<li>powerful styling in the c# code using probably all modifiers available in USS - no more raw CSS/USS pseudocode (it will be generated automatically based on your styles) <a href="modifiers.html">(more about in modifiers section)</a>,</li>
+<li>add your own custom Editors in Unity. You can check how Translation Editor was made - because it was made with its own code I mean CoDriven Advanced UI :)</li>
+<li>east event handling! (you can handle events on part of your screen, screen as a whole, globally, or the same event in many places at the same time) <a href="ui_events.html">(more about in events section)</a></li>
+<li>CoDriven Advanced UI contains controls from UI Toolkit and a few more, like a floating window, and a draggable panel. This will be improved in the future <a href="visual_controls.html">(more about in visual controls section)</a></li>
+<li>implemented with observer pattern in mind to observe changes in UI or trigger UI changes from external events <a href="cmlive_data.html">(more about in cmLive data section)</a></li>
+<li>multiple scenes with examples like simple one theme, simple two themes, a few game scenes with maps and main menu, other <a href="tutorials.md">(more about in toturials section)</a></li>
 <li>easy passing player data to UI by event callback</li>
 <li>helper functions for your game and tools for multiplayer with a mirror</li>
-<li>**included: FULLY working 3D multiplayer FPS (mirror/LAN) with main menu and in-game
-  menu ** <a href="multiplayer_game.html">click here</a></li>
+<li><strong>included: FULLY working 3D multiplayer FPS (mirror/LAN) with main menu and in-game menu</strong> <a href="multiplayer_game.html">more about in multiplayer game section</a></li>
+<li>documentation in the code</li>
 </ul>
 <h2 id="note-this-tool-include-fully-working-3d-multiplayer-fps-mirrorlan-with">Note: this tool <strong>include: FULLY working 3D multiplayer FPS (mirror/LAN) with</strong>:</h2>
 <ul>
-<li>grappling hook weapon created from scratch using math in code for springs (without using the build in spring classes),
-  so you can do more,</li>
-<li>car driving logic: spring camera attached to the seat and shooting while driving + free camera rotation +
-  FPP/TPP camera during driving 😄,</li>
-<li>car models includec (not top quality 😄)</li>
+<li>grappling hook weapon created from scratch using math in code for springs (without using the build in spring classes), so you can do more,</li>
+<li>car driving logic: spring camera attached to the seat and shooting while driving + free camera rotation + FPP/TPP camera during driving 😄,</li>
+<li>car models included (not top quality 😄)</li>
 <li>weapon recoil using spring,</li>
 <li>weapon attached to the hand bone</li>
-<li>jumping</li>
-<li>muzzle flashes,</li>
-<li>sounds for actions,</li>
-<li>health status</li>
-<li>fully working menu</li>
-<li>settings changes like resolution/refresh rate, sound, music, mouse sensitivity, and more</li>
-<li>multiple weapons like pistol, machinegun, grenade launcher, sniper with simple zooming, rocket launcher (all model included with blender files .blend)</li>
+<li>player can jump</li>
+<li>weapon, hit muzzle flashes,</li>
+<li>sounds for many actions,</li>
+<li>health status during game,</li>
+<li>fully working game menu, pause menu, lobby,</li>
+<li>settings changes like resolution/refresh rate, sound, music, mouse sensitivity, and more. Changes is saved.</li>
+<li>multiple weapons like pistol, machinegun, grenade launcher, sniper with simple zooming, rocket launcher</li>
 <li>weapon recoil</li>
-<li>maps for the game and simple models like trees, houses,</li>
-<li>you can play with friends :)</li>
+<li>maps for the game and simple models like trees, houses, etc.</li>
+<li>you can play with friends over Lan :)</li>
 </ul>
 <p><img alt="Fps game image1" src="images/features/multiplayer_fps_screen1.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen2.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen3.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen4.png" /></p>
-<p>More about multiplayer games <a href="multiplayer_game.html">click here</a></p>
+<p>More about multiplayer games <a href="multiplayer_game.html">more in multiplayer game section</a></p>
 <p>Please read the below brief overview of all important sections that will help you to understand how it works all
 together.</p>
 <h2 id="limitations-of-the-current-version-of-codriven-advanced-ui">Limitations of the current version of CoDriven Advanced UI:</h2>
 <p>CoDriven Advanced UI is styling controls by generating USS code in the background. The system will generate all styles for all
 your themes and selectors from the code to the Resources/UssStyles folder and it will be loaded runtime.</p>
-<p>Limitation: currently UIToolkit enforces the limitation that USS code can't created and parsed runtime to style sheet
+<p>Limitation: currently UI Toolkit enforces the limitation that USS code can't created and parsed runtime to style sheet
 because The USS importer makes heavy use of the AssetDatabase to resolve asset paths. To make the importer
-runtime-ready, the UI Toolkit needs to come up with other ways to resolve asset paths.</p>
-<p>So that you can change any style of your controls (during project creation in the editor) for any selector for example :
-Hover when the mouse is hovering over the control. This can be done before the final build and will work runtime, but we
-can't generate runtime a new style.</p>
-<p>CoDriven Advanced UI will build all styles and selectors for all you screens before final build so that you will be able to use it
-runtime normally, but you won't be able to generate styles runtime. You can of course change styles runtime by using
-fields from controls but not by USS code.</p>
+runtime-ready.</p>
+<p>So that you will create theme, or more themes with styles for your controls and assign them to your controls. Everything in code. You can assign animations. For example hover animation. Then under the hood this tool will automatically generate uss styles in editor, and load them runtime - without your actions. You can of course change styles runtime by using fields from controls but not by USS code.</p>
 <blockquote>
-<p>Because of that the new version of CoDriven Advanced UI will propably depend only on dynamic code generation, but current
-version is enought - it works like UI Toolkit, so don't worry.</p>
+<p>Because of that the new version of CoDriven Advanced UI will propably depend only on dynamic code generation, but current version is enought - it works like UI Toolkit, so don't worry.</p>
 </blockquote>
-<p>So, we can:</p>
+<p>You can:</p>
 <ul>
 <li>create styles for any visual look before build and set at runtime to change it dynamically runtime,</li>
-<li>create custom selectors and activate/deactivate it runtime (that will change the visual look and feel of control for
-  certain conditions)</li>
-<li>dynamically change the visual of any control by accessing the stylesheet property of any CmControl.getVisualElement()
-  .stylesheet. So we can for example dynamically load any image and change it runtime.</li>
+<li>create custom selectors and activate/deactivate it runtime (that will change the visual look and feel of control for certain conditions)</li>
+<li>dynamically change the visual of any control by accessing the stylesheet property of any CmControl.getVisualElement().stylesheet. So we can for example dynamically load any image and change it runtime.</li>
 </ul>
 <p>Because of all of that - CoDriven Advanced UI has an additional custom selector that will allow you to execute runtime. So you want to make control half opacity and red in certain conditions runtime. You will create that style for it with your custom name and activate or deactivate that style runtime.</p>
-<blockquote>
-<p>Important!. <strong>The next version</strong> of the CoDriven Advanced UI will be probably fully based on dynamic changes without using
-CSS/USS so any dynamic changes runtime would be dynamic by default.</p>
-</blockquote>
-<hr />
-<blockquote>
-<p>Anyway - all the unity UI Toolkit selectors will work normally in runtime, so you will normally create a style for each selector you want. For example when the mouse is hovered, when control is disabled, or checked:</p>
-</blockquote>
+<p>Below is an example how to change visual style of the toogle check mark icon for multiple states - when the mouse is hovered, when control is disabled, or checked:</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">cmToggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmToggle</span><span class="p">(..);</span>
 <span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">modifiers</span><span class="p">.</span><span class="n">CheckMark</span><span class="p">(</span>
 <span class="w">     </span><span class="c1">// create modifier for DEFAULT_STATE but we will add other state using ____NextSelector</span>
@@ -281,74 +260,99 @@ CSS/USS so any dynamic changes runtime would be dynamic by default.</p>
 <span class="w"> </span><span class="p">);</span>
 </code></pre></div>
 <p>to learn more about changing visual look see <a href="theming.html">theming</a>, <a href="modifiers.html">modifiers</a>
-and <a href="visual_controls.html">controls</a></p>
+and <a href="visual_controls.html">visual controls</a></p>
 <h2 id="codriven-advanced-ui-components">CoDriven Advanced UI components</h2>
+<p>Almost every game has a menu made up of several windows. <strong>CoDriven Advanced UI</strong> allows you to create multiple <strong>CmScreen</strong> windows. Switching between them, and other actions. The windows are managed by the <strong>CmScreenManager</strong>.</p>
+<p>Each window can be divided into <strong>CmScreenPart</strong> sections. You can add controls both in the window and in the window section. A more detailed description below.</p>
 <h3 id="screen-manager-cmscreenmanager">Screen Manager (CmScreenManager)</h3>
 <p>The main component of CoDriven Advanced UI is <strong>CmScreenManager</strong> which is a container for all screens and themes in your game.
-You can create many screen managers. For example: One for the main menu, and one for in-game. You Provide a list of *
-<em>CmScreen</em>* and a list of Themes CmThemeBase. Here you can handle global UI events by clicking on the buttons.
-To learn more about it <a href="screen_manager.html">click here</a></p>
+You can create many screen managers. For example: One for the main menu, and one for in-game. You Provide a list of <strong>CmScreen</strong> and a list of Themes CmThemeBase. Here you can handle global UI events by clicking on the buttons.
+To learn more about it <a href="screen_manager.html">click here - sceen manager section</a></p>
 <h3 id="screen-cmscreen">Screen (CmScreen)</h3>
-<p>This is a single screen visible as a whole on the monitor screen currently. The screen is tightly coupled with a theme.
-If you don't use a theme then you can create a screen based on the default theme. Here you can handle screen-related UI
-events like clicking on the buttons.
-To learn more about it <a href="screen.html">click here</a></p>
+<p>This is a single screen visible as a whole on the monitor screen currently. The screen is tightly coupled with a theme. If you don't use a theme then you can create a screen based on the default theme. Here you can handle screen-related UI events like clicking on the buttons.</p>
+<p>To learn more about it <a href="screen.html">click here - sceen section</a></p>
+<h3 id="screen-part-cmscreenpart">Screen Part (CmScreenPart)</h3>
+<p>This is an optional element. It was added to divide the whole screen into sections. This way you can reuse certain sections on multiple screens. Like the game settings panel for changes in the main menu and in the game. This way it's more reusable. CmScreenPart is also usable to handle UI events (like button clicks or other events) and encapsulate this logic to this screen part. </p>
+<p>Of course, you can handle events in higher order parts of your system like <strong>CmScreen</strong> or <strong>CmScreenManager</strong> you can handle screen part-related UI events like clicking on the buttons.</p>
+<p>To learn more about CmScreenPart <a href="screen_part.html">click here - screen part section</a></p>
 <h3 id="theme-icmthemebase">Theme (ICmThemeBase)</h3>
-<p>The theme is just a base Interface inherited after <strong>ICmThemeBase</strong> which you will provide. It will contain methods
-like:</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">CmExample1ThemeBase</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmThemeBase</span>
+<p>When you make your game you will probably want to create multiple themes. For example one for WHITE UI Theme, another one for DARK UI theme</p>
+<p>CoDriven Advanced UI use base theme with abstract methods to extend them in implementations that will style your controls.</p>
+<p>This way you can create multiple implementations and choose what implementation of theme you want to use for styling.</p>
+<p>Even if you have one theme you must create class that will extend base tool class <strong>CmThemeBase</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmExample1ThemeBase</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmThemeBase</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>You will tell Screen Manager, or Screen that this interface will be used for theming, and create classes that will
-inherit this interface to actually style your control with the implemented method. So you can use the base interface
-when you create control and you won't worry about which theme is currently in use. You can have as many themes as you
-want and easily change theme runtime.</p>
-<p>To learn more about theming <a href="theming.html">click here</a></p>
-<h3 id="screen-part-cmscreenpart">Screen Part (CmScreenPart)</h3>
-<p>This is an optional element. It was added to divide the whole screen into sections. This way you can reuse certain
-sections on multiple screens. Like the game settings panel for changes in the main menu and in the game. This way it's
-more reusable. CmScreenPart is also usable to handle UI events (like button clicks or other events) and encapsulate this
-logic to this screen part. Of course, you can handle events in higher order parts of your system like <strong>CmScreen</strong> or *
-<em>CmScreenManager</em>* you can handle screen part-related UI events like clicking on the buttons.</p>
-<p>To learn more about CmScreenPart <a href="screen_part.html">click here</a></p>
+<p>then you will implement simple theme based on this:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmExample1ThemeOne</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmExample1ThemeBase</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// get style builder for button and set styles for two states - default, on mouse hover</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">            </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="c1">// 300 miliseconds</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">30</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+
+<span class="w">                    </span><span class="c1">// below section is for mouse hover state</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">Hover</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.2f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2f</span><span class="p">)</span><span class="w"> </span><span class="c1">// scale x and y</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">7.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">))</span><span class="w"> </span><span class="c1">// rgba</span>
+<span class="w">            </span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+</code></pre></div>
+<p>You will tell Screen Manager, or Screen that your base class <strong>CmExample1ThemeBase</strong> will be used for theming.</p>
+<p>CoDriven Advanced UI will automatically generate uss styles file in editor and load it runtime so UI Toolkit part is hidden from you.</p>
+<p>But you must assign styling method to your control so it will take this style</p>
+<div class="highlight"><pre><span></span><code><span class="w">     </span><span class="c1">// create simple button with text and UI event handler from this screen to handle events in this screen</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">GetCmUiEventsHandler</span><span class="p">());</span>
+
+<span class="w">    </span><span class="c1">// get theme assigned to this screen and use its function to style this button</span>
+<span class="w">    </span><span class="n">button</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">);</span>
+</code></pre></div>
+<p>To learn more about theming <a href="theming.html">click here - theming section</a></p>
 <h3 id="controls">Controls</h3>
-<p>CoDriven Advanced UI is an adapter for UI toolkit components with an extension. You can easily modify UI Toolkit controls as usual
-that are attached to adaptee control. but you can easily handle UI events and styling without needing the "USS/CSS"
-part.
-To see all available controls at the moment please <a href="controls.md">click here</a></p>
+<p>CoDriven Advanced UI is an adapter for UI toolkit components with an extension. 
+Almost each UI Toolkit control is encapsulated with the CoDriven Advanced UI control.
+So for example UI Toolkit <strong>Button</strong> is encapsulated into <strong>CmButton</strong> in this tool.</p>
+<p>To see all available controls at the moment please <a href="controls.md">click here - controls section</a></p>
 <h3 id="modifiers">Modifiers</h3>
-<p>Modifiers are properties that will change the look and feel of UI Toolkit controls like USS/CSS code, but they are
-managed in the code. Modifiers were divided into categories to make it more intuitive while modifying the control style.
-So for example you can have control with text that will have <strong>CmModifierBackground</strong> and more extensive modifier *
-<em>CmModifierText</em><em> for Text elements like labels. It doesn't make sense to use text modifiers on images. But *
-</em>CmModifierText<strong> is an extension of </strong>CmModifierBackground** so you can use all properties from the background on the
-text element but you cannot use the text element on the background.</p>
-<ol>
-<li>CmModifierText - for styling elements with text,</li>
-<li>CmModifierBackground - for elements with background,</li>
-<li>CmModifierImageAndBackground - for images,</li>
-<li>CmModifierColumn and CmModifierRow - for column and row components,</li>
-</ol>
-<p>to get more information about modifiers <a href="modifiers.html">click here</a></p>
+<p>Modifiers are properties that will change the look and feel of UI Toolkit controls like USS/CSS code, but they are managed in the code by custom method calls instead of uss pseudocode. </p>
+<p>here is an example how modifiers look like for styling simple CmButton</p>
+<div class="highlight"><pre><span></span><code><span class="w">            </span><span class="c1">// get style builder for button and set styles for two states - default, on mouse hover</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">            </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="c1">// 300 miliseconds</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">30</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+
+<span class="w">                    </span><span class="c1">// below section is for mouse hover state</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">Hover</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.2f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2f</span><span class="p">)</span><span class="w"> </span><span class="c1">// scale x and y</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">7.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">))</span><span class="w"> </span><span class="c1">// rgba</span>
+<span class="w">            </span><span class="p">);</span>
+</code></pre></div>
+<p>to get more information about modifiers <a href="modifiers.html">click here - modifiers section</a></p>
 <h3 id="ui-events">UI events</h3>
-<p>UIEvents are mapped internally to simple Class. This way you can easily use events in any place of your elements tree.</p>
-<p>The whole menu is built onto <strong>CmScreenManager</strong>, and next <strong>CmScreen</strong> which is attached to <strong>CmScreenManager</strong>, and
-next CmScreenPart (optional) which is attached to CmScreen, and finally, CmControlBase which is added to CmScreenPart.</p>
-<p>So basically there is a relation like this CmScreenManager &lt;- CmScreen &lt;- CmScreenPart &lt;- CmControl</p>
-<p>You can handle events the same way. The UI events are generated by CmControl. This event can be handled inside the
-function that creates CmControl, or upper in CmScreenPart or upper CmScreen, or globally in CmScreenManager. This way
-you can have a button "Change theme to My favorite" and handle click event (generated by this button) globally in
-CmScreenManager. This way you will not repeat code related to changing themes inside each visible screen.</p>
-<p>More about <a href="ui_events.html">UI events here</a>.</p>
+<p>UIEvents are mapped internally to simple class. This way you can easily use events in any place of your elements tree.</p>
+<p>The whole menu is built onto <strong>CmScreenManager</strong>, which contains one or multiple <strong>CmScreen</strong> which could contain controls or <strong>CmScreenPart</strong>. These are containers of <strong>CmControls</strong>.</p>
+<p>So basically there is a relation like this <strong>CmScreenManager</strong> &lt;- <strong>CmScreen</strong> &lt;- <strong>CmScreenPart</strong> &lt;- <strong>CmControl</strong></p>
+<p>You can handle events the same way. The UI events are generated by <strong>CmControl</strong>. The event can be handled inside the function that creates <strong>CmControl</strong>, or upper in <strong>CmScreenPart</strong> or upper <strong>CmScreen</strong>, or globally in <strong>CmScreenManager</strong>.
+This way you can have a <strong>CmButton</strong> "Change theme to My favorite" and handle click event globally in <strong>CmScreenManager</strong> even if <strong>CmButton</strong> is created in <strong>CmScreenPart</strong> or <strong>CmScreen</strong>.</p>
+<p>More about <a href="ui_events.html">in UI events section</a>.</p>
 <h3 id="tutorials">Tutorials</h3>
-<p>CoDriven Advanced UI contains a few sample scenes but it will be better to read the tutorial section
-first <a href="tutorials/tutorials.html">(here)</a></p>
+<p>CoDriven Advanced UI contains a few sample scenes but it will be better to read the tutorial section first <a href="tutorials/tutorials.html">(click here - tutorials section)</a></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="install.html" class="btn btn-neutral float-left" title="How to install"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="changelog.html" class="btn btn-neutral float-right" title="Change log">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -371,6 +375,8 @@ first <a href="tutorials/tutorials.html">(here)</a></p>
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
+    
+      <span><a href="install.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="changelog.html" style="color: #fcfcfc">Next &raquo;</a></span>

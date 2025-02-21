@@ -55,6 +55,8 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Getting Started</span></p>
               <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="install.html">How to install</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a>
                   </li>
                   <li class="toctree-l1"><a class="" href="print_page">print</a>
@@ -182,10 +184,37 @@
                         <h1 class='nav-section-title' id='section-getting-started'>
                             Getting Started <a class='headerlink' href='#section-getting-started' title='Permanent link'>↵</a>
                         </h1>
-                        <section class="print-page" id="index"><h1 id="index-codriven-advanced-ui-documentation-version-100">CoDriven Advanced UI documentation version 1.0.0</h1>
+                        <section class="print-page" id="install"><h1 id="install-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
+<p><a href="#index">Go back</a></p>
+<h1 id="install-how-to-install">How to install</h1>
+<p>CoDriven Advanced UI require some packages if you want to experiment with multiplayer game added as sample to StefanWyszynski\CoDrivenAdvancedUI\Examples\ folder.</p>
+<p>If you don't want to use this examples then you can remove that folder and you won't have to install below packages</p>
+<ol>
+<li><strong>Mirror</strong></li>
+</ol>
+<p>If you want to use/analyze multiplayer game sample which is bundled with CoDriven Advanced UI, then You will need to install Mirror package from asset store.</p>
+<p>Or you can add this to your project packages
+"com.mirror-networking.mirror": "https://github.com/vis2k/Mirror.git#release",</p>
+<ol>
+<li><strong>Animation Rigging (Optional)</strong></li>
+</ol>
+<p>This is required if you want proper character animation in multiplayer sample.</p>
+<p>you can install it from package manager or by adding to your procject packages
+"com.unity.animation.rigging": "1.2.1"</p>
+<ol>
+<li><strong>xNode (optional) - not required by game but by graph editor</strong></li>
+</ol>
+<p>CoDriven Advanced UI has graph node editor build-in, but it is optional.</p>
+<p>If you want to use it then you will have to unpack extension package located in CoDriven Advanced UI folder</p>
+<p>then you will have to install base xNode external package (see https://github.com/Siccity/xNode) by using package manager or inserting this to your project package.json</p>
+<p>"com.github.siccity.xnode": "https://github.com/siccity/xNode.git",</p>
+<p>this is what I mean by graph editor:</p>
+<p><img alt="graph editor image" src="images/features/graph_editor.png" /></p></section><section class="print-page" id="index"><h1 id="index-codriven-advanced-ui-documentation-version-100">CoDriven Advanced UI documentation version 1.0.0</h1>
 <p><img alt="" src="images/codriven_advanced_ui_logo.png" /></p>
 <p>Thank you for buying CoDriven Advanced UI. I hope it will speed up your workflow and help to finish your game faster 😄.</p>
+<p>I am a professional Android developer with many years of experience, but I love creating games. During my game development journey, I came across a problem related to UI and decided to fix it by creating CoDriven Advanced UI. In android environment, I could conveniently create UI for apps and games using code. I decided to add this capability in this tool, thanks to this, you will be able to create UI by simply using code, which is generally easier than any existing solutions. Maybe just for me but try it and you will know what I mean.</p>
 <!-- TOC -->
+
 <ul>
 <li><a href="#index-codriven-advanced-ui-documentation-version-100">CoDriven Advanced UI documentation version 1.0.0</a></li>
 <li><a href="#index-the-main-benefits-of-codriven-advanced-ui-is">The main <strong>benefits</strong> of CoDriven Advanced UI is:</a></li>
@@ -209,100 +238,75 @@
 <h1 id="index-the-main-benefits-of-codriven-advanced-ui-is">The main <strong>benefits</strong> of CoDriven Advanced UI is:</h1>
 <ul>
 <li>full source code included</li>
-<li>build in nodes with screen preview so you can connect them by actions and use these actions to move between screens,
-  but you can move between screens without it by just a simple method call with screen
-  name <a href="#graph_editor">(more about here)</a></li>
+<li>build in nodes with screen preview so you can connect them by actions <a href="#graph_editor">(more about in graph editor section)</a></li>
 </ul>
 <h2 id="index-_1"><img alt="graph editor image" src="images/features/graph_editor.png" /></h2>
 <ul>
-<li>easy language change and translation editor (built-in) <a href="#translation_editor">(more about here)</a></li>
+<li>easy language change and translation editor (built-in) <a href="#translation_editor">(more about in translation editor section)</a></li>
 </ul>
 <p><img alt="langage change image" src="images/features/lang_change.gif" />
 <img alt="translation editor image" src="images/features/translation_editor.png" /></p>
 <hr />
 <ul>
-<li>easy theming and changing of the current theme! <a href="#theming">(more about here)</a></li>
+<li>easy theming and changing of the current theme! <a href="#theming">(more about in theming section)</a></li>
 </ul>
 <p><img alt="themes image" src="images/features/themes.gif" /></p>
 <hr />
 <ul>
-<li>easy and powerful styling but in the code - no more CSS/USS! and much easier, because you will not modify text style
-  for any component :) <a href="#modifiers">(more about here)</a>,</li>
-<li>easily add your own custom Editors in Unity. You can check how Translation Editor was made - because it was made with
-  its own code I mean CoDriven Advanced UI :)</li>
-<li>really easy event handling! (you can handle events on part of your screen, screen as a whole, globally, or event in
-  many places at the same time) <a href="#ui_events">(more about here)</a></li>
-<li>CoDriven Advanced UI contains controls from UI Toolkit and a few more, like a floating window, and a draggable panel. This will
-  be probably improved in the future <a href="#visual_controls">(more about here)</a></li>
-<li>implemented with observer pattern in mind to observe changes in UI or trigger UI changes from external
-  events <a href="#cmlive_data">(more about here)</a></li>
-<li>multiple scenes with examples like simple one theme, simple two themes, a few game scenes with maps and main menu,
-  other <a href="#tutorials.md">(more about here)</a></li>
+<li>powerful styling in the c# code using probably all modifiers available in USS - no more raw CSS/USS pseudocode (it will be generated automatically based on your styles) <a href="#modifiers">(more about in modifiers section)</a>,</li>
+<li>add your own custom Editors in Unity. You can check how Translation Editor was made - because it was made with its own code I mean CoDriven Advanced UI :)</li>
+<li>east event handling! (you can handle events on part of your screen, screen as a whole, globally, or the same event in many places at the same time) <a href="#ui_events">(more about in events section)</a></li>
+<li>CoDriven Advanced UI contains controls from UI Toolkit and a few more, like a floating window, and a draggable panel. This will be improved in the future <a href="#visual_controls">(more about in visual controls section)</a></li>
+<li>implemented with observer pattern in mind to observe changes in UI or trigger UI changes from external events <a href="#cmlive_data">(more about in cmLive data section)</a></li>
+<li>multiple scenes with examples like simple one theme, simple two themes, a few game scenes with maps and main menu, other <a href="#tutorials.md">(more about in toturials section)</a></li>
 <li>easy passing player data to UI by event callback</li>
 <li>helper functions for your game and tools for multiplayer with a mirror</li>
-<li>**included: FULLY working 3D multiplayer FPS (mirror/LAN) with main menu and in-game
-  menu ** <a href="#multiplayer_game">click here</a></li>
+<li><strong>included: FULLY working 3D multiplayer FPS (mirror/LAN) with main menu and in-game menu</strong> <a href="#multiplayer_game">more about in multiplayer game section</a></li>
+<li>documentation in the code</li>
 </ul>
 <h2 id="index-note-this-tool-include-fully-working-3d-multiplayer-fps-mirrorlan-with">Note: this tool <strong>include: FULLY working 3D multiplayer FPS (mirror/LAN) with</strong>:</h2>
 <ul>
-<li>grappling hook weapon created from scratch using math in code for springs (without using the build in spring classes),
-  so you can do more,</li>
-<li>car driving logic: spring camera attached to the seat and shooting while driving + free camera rotation +
-  FPP/TPP camera during driving 😄,</li>
-<li>car models includec (not top quality 😄)</li>
+<li>grappling hook weapon created from scratch using math in code for springs (without using the build in spring classes), so you can do more,</li>
+<li>car driving logic: spring camera attached to the seat and shooting while driving + free camera rotation + FPP/TPP camera during driving 😄,</li>
+<li>car models included (not top quality 😄)</li>
 <li>weapon recoil using spring,</li>
 <li>weapon attached to the hand bone</li>
-<li>jumping</li>
-<li>muzzle flashes,</li>
-<li>sounds for actions,</li>
-<li>health status</li>
-<li>fully working menu</li>
-<li>settings changes like resolution/refresh rate, sound, music, mouse sensitivity, and more</li>
-<li>multiple weapons like pistol, machinegun, grenade launcher, sniper with simple zooming, rocket launcher (all model included with blender files .blend)</li>
+<li>player can jump</li>
+<li>weapon, hit muzzle flashes,</li>
+<li>sounds for many actions,</li>
+<li>health status during game,</li>
+<li>fully working game menu, pause menu, lobby,</li>
+<li>settings changes like resolution/refresh rate, sound, music, mouse sensitivity, and more. Changes is saved.</li>
+<li>multiple weapons like pistol, machinegun, grenade launcher, sniper with simple zooming, rocket launcher</li>
 <li>weapon recoil</li>
-<li>maps for the game and simple models like trees, houses,</li>
-<li>you can play with friends :)</li>
+<li>maps for the game and simple models like trees, houses, etc.</li>
+<li>you can play with friends over Lan :)</li>
 </ul>
 <p><img alt="Fps game image1" src="images/features/multiplayer_fps_screen1.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen2.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen3.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen4.png" /></p>
-<p>More about multiplayer games <a href="#multiplayer_game">click here</a></p>
+<p>More about multiplayer games <a href="#multiplayer_game">more in multiplayer game section</a></p>
 <p>Please read the below brief overview of all important sections that will help you to understand how it works all
 together.</p>
 <h2 id="index-limitations-of-the-current-version-of-codriven-advanced-ui">Limitations of the current version of CoDriven Advanced UI:</h2>
 <p>CoDriven Advanced UI is styling controls by generating USS code in the background. The system will generate all styles for all
 your themes and selectors from the code to the Resources/UssStyles folder and it will be loaded runtime.</p>
-<p>Limitation: currently UIToolkit enforces the limitation that USS code can't created and parsed runtime to style sheet
+<p>Limitation: currently UI Toolkit enforces the limitation that USS code can't created and parsed runtime to style sheet
 because The USS importer makes heavy use of the AssetDatabase to resolve asset paths. To make the importer
-runtime-ready, the UI Toolkit needs to come up with other ways to resolve asset paths.</p>
-<p>So that you can change any style of your controls (during project creation in the editor) for any selector for example :
-Hover when the mouse is hovering over the control. This can be done before the final build and will work runtime, but we
-can't generate runtime a new style.</p>
-<p>CoDriven Advanced UI will build all styles and selectors for all you screens before final build so that you will be able to use it
-runtime normally, but you won't be able to generate styles runtime. You can of course change styles runtime by using
-fields from controls but not by USS code.</p>
+runtime-ready.</p>
+<p>So that you will create theme, or more themes with styles for your controls and assign them to your controls. Everything in code. You can assign animations. For example hover animation. Then under the hood this tool will automatically generate uss styles in editor, and load them runtime - without your actions. You can of course change styles runtime by using fields from controls but not by USS code.</p>
 <blockquote>
-<p>Because of that the new version of CoDriven Advanced UI will propably depend only on dynamic code generation, but current
-version is enought - it works like UI Toolkit, so don't worry.</p>
+<p>Because of that the new version of CoDriven Advanced UI will propably depend only on dynamic code generation, but current version is enought - it works like UI Toolkit, so don't worry.</p>
 </blockquote>
-<p>So, we can:</p>
+<p>You can:</p>
 <ul>
 <li>create styles for any visual look before build and set at runtime to change it dynamically runtime,</li>
-<li>create custom selectors and activate/deactivate it runtime (that will change the visual look and feel of control for
-  certain conditions)</li>
-<li>dynamically change the visual of any control by accessing the stylesheet property of any CmControl.getVisualElement()
-  .stylesheet. So we can for example dynamically load any image and change it runtime.</li>
+<li>create custom selectors and activate/deactivate it runtime (that will change the visual look and feel of control for certain conditions)</li>
+<li>dynamically change the visual of any control by accessing the stylesheet property of any CmControl.getVisualElement().stylesheet. So we can for example dynamically load any image and change it runtime.</li>
 </ul>
 <p>Because of all of that - CoDriven Advanced UI has an additional custom selector that will allow you to execute runtime. So you want to make control half opacity and red in certain conditions runtime. You will create that style for it with your custom name and activate or deactivate that style runtime.</p>
-<blockquote>
-<p>Important!. <strong>The next version</strong> of the CoDriven Advanced UI will be probably fully based on dynamic changes without using
-CSS/USS so any dynamic changes runtime would be dynamic by default.</p>
-</blockquote>
-<hr />
-<blockquote>
-<p>Anyway - all the unity UI Toolkit selectors will work normally in runtime, so you will normally create a style for each selector you want. For example when the mouse is hovered, when control is disabled, or checked:</p>
-</blockquote>
+<p>Below is an example how to change visual style of the toogle check mark icon for multiple states - when the mouse is hovered, when control is disabled, or checked:</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">cmToggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmToggle</span><span class="p">(..);</span>
 <span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">modifiers</span><span class="p">.</span><span class="n">CheckMark</span><span class="p">(</span>
 <span class="w">     </span><span class="c1">// create modifier for DEFAULT_STATE but we will add other state using ____NextSelector</span>
@@ -325,84 +329,108 @@ CSS/USS so any dynamic changes runtime would be dynamic by default.</p>
 <span class="w"> </span><span class="p">);</span>
 </code></pre></div>
 <p>to learn more about changing visual look see <a href="#theming">theming</a>, <a href="#modifiers">modifiers</a>
-and <a href="#visual_controls">controls</a></p>
+and <a href="#visual_controls">visual controls</a></p>
 <h2 id="index-codriven-advanced-ui-components">CoDriven Advanced UI components</h2>
+<p>Almost every game has a menu made up of several windows. <strong>CoDriven Advanced UI</strong> allows you to create multiple <strong>CmScreen</strong> windows. Switching between them, and other actions. The windows are managed by the <strong>CmScreenManager</strong>.</p>
+<p>Each window can be divided into <strong>CmScreenPart</strong> sections. You can add controls both in the window and in the window section. A more detailed description below.</p>
 <h3 id="index-screen-manager-cmscreenmanager">Screen Manager (CmScreenManager)</h3>
 <p>The main component of CoDriven Advanced UI is <strong>CmScreenManager</strong> which is a container for all screens and themes in your game.
-You can create many screen managers. For example: One for the main menu, and one for in-game. You Provide a list of *
-<em>CmScreen</em>* and a list of Themes CmThemeBase. Here you can handle global UI events by clicking on the buttons.
-To learn more about it <a href="#screen_manager">click here</a></p>
+You can create many screen managers. For example: One for the main menu, and one for in-game. You Provide a list of <strong>CmScreen</strong> and a list of Themes CmThemeBase. Here you can handle global UI events by clicking on the buttons.
+To learn more about it <a href="#screen_manager">click here - sceen manager section</a></p>
 <h3 id="index-screen-cmscreen">Screen (CmScreen)</h3>
-<p>This is a single screen visible as a whole on the monitor screen currently. The screen is tightly coupled with a theme.
-If you don't use a theme then you can create a screen based on the default theme. Here you can handle screen-related UI
-events like clicking on the buttons.
-To learn more about it <a href="#screen">click here</a></p>
+<p>This is a single screen visible as a whole on the monitor screen currently. The screen is tightly coupled with a theme. If you don't use a theme then you can create a screen based on the default theme. Here you can handle screen-related UI events like clicking on the buttons.</p>
+<p>To learn more about it <a href="#screen">click here - sceen section</a></p>
+<h3 id="index-screen-part-cmscreenpart">Screen Part (CmScreenPart)</h3>
+<p>This is an optional element. It was added to divide the whole screen into sections. This way you can reuse certain sections on multiple screens. Like the game settings panel for changes in the main menu and in the game. This way it's more reusable. CmScreenPart is also usable to handle UI events (like button clicks or other events) and encapsulate this logic to this screen part. </p>
+<p>Of course, you can handle events in higher order parts of your system like <strong>CmScreen</strong> or <strong>CmScreenManager</strong> you can handle screen part-related UI events like clicking on the buttons.</p>
+<p>To learn more about CmScreenPart <a href="#screen_part">click here - screen part section</a></p>
 <h3 id="index-theme-icmthemebase">Theme (ICmThemeBase)</h3>
-<p>The theme is just a base Interface inherited after <strong>ICmThemeBase</strong> which you will provide. It will contain methods
-like:</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">CmExample1ThemeBase</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmThemeBase</span>
+<p>When you make your game you will probably want to create multiple themes. For example one for WHITE UI Theme, another one for DARK UI theme</p>
+<p>CoDriven Advanced UI use base theme with abstract methods to extend them in implementations that will style your controls.</p>
+<p>This way you can create multiple implementations and choose what implementation of theme you want to use for styling.</p>
+<p>Even if you have one theme you must create class that will extend base tool class <strong>CmThemeBase</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmExample1ThemeBase</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmThemeBase</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>You will tell Screen Manager, or Screen that this interface will be used for theming, and create classes that will
-inherit this interface to actually style your control with the implemented method. So you can use the base interface
-when you create control and you won't worry about which theme is currently in use. You can have as many themes as you
-want and easily change theme runtime.</p>
-<p>To learn more about theming <a href="#theming">click here</a></p>
-<h3 id="index-screen-part-cmscreenpart">Screen Part (CmScreenPart)</h3>
-<p>This is an optional element. It was added to divide the whole screen into sections. This way you can reuse certain
-sections on multiple screens. Like the game settings panel for changes in the main menu and in the game. This way it's
-more reusable. CmScreenPart is also usable to handle UI events (like button clicks or other events) and encapsulate this
-logic to this screen part. Of course, you can handle events in higher order parts of your system like <strong>CmScreen</strong> or *
-<em>CmScreenManager</em>* you can handle screen part-related UI events like clicking on the buttons.</p>
-<p>To learn more about CmScreenPart <a href="#screen_part">click here</a></p>
+<p>then you will implement simple theme based on this:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmExample1ThemeOne</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmExample1ThemeBase</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// get style builder for button and set styles for two states - default, on mouse hover</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">            </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="c1">// 300 miliseconds</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">30</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+
+<span class="w">                    </span><span class="c1">// below section is for mouse hover state</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">Hover</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.2f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2f</span><span class="p">)</span><span class="w"> </span><span class="c1">// scale x and y</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">7.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">))</span><span class="w"> </span><span class="c1">// rgba</span>
+<span class="w">            </span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+</code></pre></div>
+<p>You will tell Screen Manager, or Screen that your base class <strong>CmExample1ThemeBase</strong> will be used for theming.</p>
+<p>CoDriven Advanced UI will automatically generate uss styles file in editor and load it runtime so UI Toolkit part is hidden from you.</p>
+<p>But you must assign styling method to your control so it will take this style</p>
+<div class="highlight"><pre><span></span><code><span class="w">     </span><span class="c1">// create simple button with text and UI event handler from this screen to handle events in this screen</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">GetCmUiEventsHandler</span><span class="p">());</span>
+
+<span class="w">    </span><span class="c1">// get theme assigned to this screen and use its function to style this button</span>
+<span class="w">    </span><span class="n">button</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">);</span>
+</code></pre></div>
+<p>To learn more about theming <a href="#theming">click here - theming section</a></p>
 <h3 id="index-controls">Controls</h3>
-<p>CoDriven Advanced UI is an adapter for UI toolkit components with an extension. You can easily modify UI Toolkit controls as usual
-that are attached to adaptee control. but you can easily handle UI events and styling without needing the "USS/CSS"
-part.
-To see all available controls at the moment please <a href="#controls.md">click here</a></p>
+<p>CoDriven Advanced UI is an adapter for UI toolkit components with an extension. 
+Almost each UI Toolkit control is encapsulated with the CoDriven Advanced UI control.
+So for example UI Toolkit <strong>Button</strong> is encapsulated into <strong>CmButton</strong> in this tool.</p>
+<p>To see all available controls at the moment please <a href="#controls.md">click here - controls section</a></p>
 <h3 id="index-modifiers">Modifiers</h3>
-<p>Modifiers are properties that will change the look and feel of UI Toolkit controls like USS/CSS code, but they are
-managed in the code. Modifiers were divided into categories to make it more intuitive while modifying the control style.
-So for example you can have control with text that will have <strong>CmModifierBackground</strong> and more extensive modifier *
-<em>CmModifierText</em><em> for Text elements like labels. It doesn't make sense to use text modifiers on images. But *
-</em>CmModifierText<strong> is an extension of </strong>CmModifierBackground** so you can use all properties from the background on the
-text element but you cannot use the text element on the background.</p>
-<ol>
-<li>CmModifierText - for styling elements with text,</li>
-<li>CmModifierBackground - for elements with background,</li>
-<li>CmModifierImageAndBackground - for images,</li>
-<li>CmModifierColumn and CmModifierRow - for column and row components,</li>
-</ol>
-<p>to get more information about modifiers <a href="#modifiers">click here</a></p>
+<p>Modifiers are properties that will change the look and feel of UI Toolkit controls like USS/CSS code, but they are managed in the code by custom method calls instead of uss pseudocode. </p>
+<p>here is an example how modifiers look like for styling simple CmButton</p>
+<div class="highlight"><pre><span></span><code><span class="w">            </span><span class="c1">// get style builder for button and set styles for two states - default, on mouse hover</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">            </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span><span class="w"> </span><span class="c1">// 300 miliseconds</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">30</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+
+<span class="w">                    </span><span class="c1">// below section is for mouse hover state</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">Hover</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.2f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2f</span><span class="p">)</span><span class="w"> </span><span class="c1">// scale x and y</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">7.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">))</span><span class="w"> </span><span class="c1">// rgba</span>
+<span class="w">            </span><span class="p">);</span>
+</code></pre></div>
+<p>to get more information about modifiers <a href="#modifiers">click here - modifiers section</a></p>
 <h3 id="index-ui-events">UI events</h3>
-<p>UIEvents are mapped internally to simple Class. This way you can easily use events in any place of your elements tree.</p>
-<p>The whole menu is built onto <strong>CmScreenManager</strong>, and next <strong>CmScreen</strong> which is attached to <strong>CmScreenManager</strong>, and
-next CmScreenPart (optional) which is attached to CmScreen, and finally, CmControlBase which is added to CmScreenPart.</p>
-<p>So basically there is a relation like this CmScreenManager &lt;- CmScreen &lt;- CmScreenPart &lt;- CmControl</p>
-<p>You can handle events the same way. The UI events are generated by CmControl. This event can be handled inside the
-function that creates CmControl, or upper in CmScreenPart or upper CmScreen, or globally in CmScreenManager. This way
-you can have a button "Change theme to My favorite" and handle click event (generated by this button) globally in
-CmScreenManager. This way you will not repeat code related to changing themes inside each visible screen.</p>
-<p>More about <a href="#ui_events">UI events here</a>.</p>
+<p>UIEvents are mapped internally to simple class. This way you can easily use events in any place of your elements tree.</p>
+<p>The whole menu is built onto <strong>CmScreenManager</strong>, which contains one or multiple <strong>CmScreen</strong> which could contain controls or <strong>CmScreenPart</strong>. These are containers of <strong>CmControls</strong>.</p>
+<p>So basically there is a relation like this <strong>CmScreenManager</strong> &lt;- <strong>CmScreen</strong> &lt;- <strong>CmScreenPart</strong> &lt;- <strong>CmControl</strong></p>
+<p>You can handle events the same way. The UI events are generated by <strong>CmControl</strong>. The event can be handled inside the function that creates <strong>CmControl</strong>, or upper in <strong>CmScreenPart</strong> or upper <strong>CmScreen</strong>, or globally in <strong>CmScreenManager</strong>.
+This way you can have a <strong>CmButton</strong> "Change theme to My favorite" and handle click event globally in <strong>CmScreenManager</strong> even if <strong>CmButton</strong> is created in <strong>CmScreenPart</strong> or <strong>CmScreen</strong>.</p>
+<p>More about <a href="#ui_events">in UI events section</a>.</p>
 <h3 id="index-tutorials">Tutorials</h3>
-<p>CoDriven Advanced UI contains a few sample scenes but it will be better to read the tutorial section
-first <a href="#tutorials-tutorials">(here)</a></p></section><h1 class='nav-section-title-end'>Ended: Getting Started</h1>
+<p>CoDriven Advanced UI contains a few sample scenes but it will be better to read the tutorial section first <a href="#tutorials-tutorials">(click here - tutorials section)</a></p></section><h1 class='nav-section-title-end'>Ended: Getting Started</h1>
                         <h1 class='nav-section-title' id='section-changelog'>
                             Changelog <a class='headerlink' href='#section-changelog' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="changelog"><h1 id="changelog-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#index">Go back</a></p>
 <h1 id="changelog-changelog">Changelog</h1>
-<h2 id="changelog-v111"><a href="https://github.com/hibbitts-design/docsify-open-publishing-starter-kit/releases/tag/v1.2.13">v1.1.1</a></h2>
-<h3 id="changelog-03042024">03/04/2024</h3>
+<h2 id="changelog-v100"><a href="https://github.com/hibbitts-design/docsify-open-publishing-starter-kit/releases/tag/v1.2.13">v1.0.0</a></h2>
+<h3 id="changelog-01012025">01/01/2025</h3>
 <p><strong>New:</strong>
-* added enemies to multiplayer game. Now there will be flying planes attacking you</p>
+* none</p>
 <p><strong>Improved:</strong>
-- reduced fire rate of flying enemies to improve fps</p>
+- none</p>
 <p><strong>Bugfix:</strong>
-* fixed big crosshair</p></section><h1 class='nav-section-title-end'>Ended: Changelog</h1>
+* none</p></section><h1 class='nav-section-title-end'>Ended: Changelog</h1>
                         <h1 class='nav-section-title' id='section-documentation'>
                             Documentation <a class='headerlink' href='#section-documentation' title='Permanent link'>↵</a>
                         </h1>
@@ -410,71 +438,86 @@ first <a href="#tutorials-tutorials">(here)</a></p></section><h1 class='nav-sect
 <p><a href="#index">Go back</a></p>
 <h1 id="theming-themes">Themes</h1>
 <!-- TOC -->
+
 <ul>
 <li><a href="#theming-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
-<li><a href="#theming-themes">Themes</a><ul>
+<li><a href="#theming-themes">Themes</a></li>
 <li><a href="#theming-introduction">Introduction</a></li>
 <li><a href="#theming-how-to-use">How to use</a></li>
-</ul>
-</li>
 </ul>
 <!-- TOC -->
 
 <p><img alt="themes image" src="images/features/themes.gif" /></p>
 <h3 id="theming-introduction">Introduction</h3>
-<p>Each game should have at least one theme so theming is optional, but if you won't use themes then you will have to use
-the default theme built in. This theme will not change your style. It is the empty theme for filling space purposes. It is
-strongly recommended to use at least one theme to make sure that your screen is not responsible for styling and this is
-delegated to themes. This will improve code readability and project maintenance.</p>
+<p>Each game should have at least one theme so theming is required, but if you won't use themes then you will have to use
+the default built in theme. The default theme will not change your style. It is the empty theme for filling requirment.</p>
+<p>It is strongly recommended to use at least one theme to style your screen.</p>
 <h3 id="theming-how-to-use">How to use</h3>
-<p>To use themes you have to create a base interface that extends <strong>ICmThemeBase</strong> interface like this:</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">IMyExampleTheme</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmThemeBase</span>
+<p>To use themes you have to create an abstract base class that extends <strong>ICmThemeBase</strong> interface like this:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyExampleTheme</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmThemeBase</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">);</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>IMyExampleTheme</strong> interface will be passed as a generic argument to:</p>
+<p><strong>MyExampleTheme</strong> class will be passed as a generic argument to:</p>
 <ul>
-<li>screen manager: CmScreenManager\&lt;<strong>IMyExampleTheme</strong>&gt; more about <a href="#screen_manager">here</a>.</li>
-<li>screens: CmScreen\&lt;<strong>IMyExampleTheme</strong>&gt;  <a href="#screen">here</a>.</li>
-<li><strong>(optionally)</strong> screen part: CmScreenPart\&lt;<strong>IMyExampleTheme</strong>&gt; <a href="#screen_part">here</a>.</li>
+<li>screen manager: CmScreenManager\&lt;<strong>MyExampleTheme</strong>&gt; more about <a href="#screen_manager">here in screen_manager section</a>.</li>
+<li>screens: CmScreen\&lt;<strong>MyExampleTheme</strong>&gt;  <a href="#screen">here in screen section</a>.</li>
+<li><strong>(optionally)</strong> screen part: CmScreenPart\&lt;<strong>MyExampleTheme</strong>&gt; <a href="#screen_part">here in screen_part section</a>.</li>
 </ul>
-<p>The next thing to do is to create your implementation for our theme</p>
-<p>We will style the button with modifiers - please read the modifiers section <a href="#modifiers">here</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">MyThemeWhite</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IMyExampleTheme</span>
+<p>The next thing to do is to create your implementation for this theme that will contain styling code for example CmButton control.</p>
+<p>We will style the button with modifiers - please read about the modifiers <a href="#modifiers">here in modifiers section</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyThemeWhite</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MyExampleTheme</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">)</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// each controls has its own set of methods to style. We will get style interface for this button</span>
+<span class="w">        </span><span class="c1">// image have other group of function, than for example text. We use different interface for styling different controls</span>
+<span class="w">        </span><span class="c1">// Because we don&#39;t want to style font for image - it has no sense</span>
+
+<span class="w">        </span><span class="c1">// so get modifiers for styling</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
 <span class="w">        </span><span class="c1">// style with modifiers</span>
-<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+<span class="w">                </span><span class="c1">// change background color and textfont size for the button in default state, so not for state like mouse hover over control or disabled state. Default state is for all states for control, but if you add styles for mouse hover then it will override this styles while mouse is hovering otherwise it will use default modifiers. </span>
 <span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
 <span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
 <span class="w">                    </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">30</span><span class="p">.</span><span class="n">px</span><span class="p">())</span>
 <span class="w">            </span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>optionally you can create a second theme like this (as an example)</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">interface</span><span class="w"> </span><span class="n">MyThemeBlack</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IMyExampleTheme</span>
-<span class="p">{</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">)</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
-<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
-<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">black</span><span class="p">)</span>
-<span class="w">            </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>As you can see we have two themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong>. These themes you will have to add to the screen
-manager:</p>
+<p>optionally you can create a second theme like this (as an example)</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyThemeBlack</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MyExampleTheme</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">(</span><span class="n">CmButton</span><span class="w"> </span><span class="n">button</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">black</span><span class="p">)</span>
+<span class="w">            </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>As you can see we have two themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong>.</p>
+<p>These themes you will have to add to the screen manager, so that it will know when you will set your current theme that it is one of themes for your screens.</p>
+<h2 id="theming-important-note-to-understand-how-it-works">IMPORTANT NOTE TO UNDERSTAND how it works:</h2>
+<blockquote>
+<p>UI Toolkit works in a way that you will create uss files and assign them to your controls and the similar thing is with CoDriven Advanced UI tool.</p>
+<p>You will have to add all your styling to methods in your base theme <strong>MyExampleTheme</strong> class to style your controls, or create abstract methods there and override it in your theme implementation classes like <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong>, <strong>because the engine will loop through all your public methods in your base theme or in your implementations and will generate uss files for all of these methods. Then when you pass GetTheme().StyleButton method adress to SetStyle method of your control it will assign runtime your uss style generated during editor pass.</strong></p>
+</blockquote>
+<p>So lets add these themes to our screen manager.</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// IMyExampleTheme is a base theme interface</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="p">...</span>
 
 <span class="w">        </span><span class="c1">//This is called by the system to add themes to the list</span>
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">themes</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">themes</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//Add all themes here for this screen manager</span>
 <span class="w">            </span><span class="n">themes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyThemeWhite</span><span class="p">());</span>
@@ -483,26 +526,29 @@ manager:</p>
 <span class="w">        </span><span class="p">...</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>and now you can use themes in your screens. Or change themes. More about screen manager <a href="#screen_manager">here</a>.</p>
-<p>You will use the theme in part of your code responsible for creating controls:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">createMainButton</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">buttonTitle</span><span class="p">)</span>
+<p>and now you can use themes in your screens, or change current theme in runtime. More about screen manager <a href="#screen_manager">here in screen_manager section</a>.</p>
+<p>You will use the theme in part of your code responsible for creating controls. Here is some fragment of your CmScreen - remember this is not CmScreenManager but CmScreen:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// code for creating button with a style from your theme method StyleButton()</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">createMainButton</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">buttonTitle</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="c1">//Create a simple button with buttonTitle and UI event handler from this screen to handle events in this screen</span>
+<span class="w">        </span><span class="c1">// Create a simple button with buttonTitle and UI event handler from this screen to handle events in this screen</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(</span><span class="n">buttonTitle</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">GetCmUiEventsHandler</span><span class="p">());</span>
 
 <span class="w">        </span><span class="c1">//Get the current assigned theme to this screen and use your function to style this button</span>
 <span class="w">        </span><span class="c1">//This theme could be one of your added themes: MyThemeWhite, MyThemeBlack</span>
-<span class="w">        </span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>
+<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetStlye</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">);</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>Now you know how to add a theme and use it.</p></section>
+<p>Now you know how to add a theme and use it.</p>
+<p>Time to read more about CmScreenManager, CmScreen, and CmScreenPart</p></section>
                         <h2 class='nav-section-title' id='section-screen-containers'>
                             Screen containers <a class='headerlink' href='#section-screen-containers' title='Permanent link'>↵</a>
                         </h2>
                         <section class="print-page" id="screen_manager"><h1 id="screen_manager-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#index">Go back</a></p>
 <!-- TOC -->
+
 <ul>
 <li><a href="#screen_manager-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
 <li><a href="#screen_manager-introduction">Introduction</a></li>
@@ -533,10 +579,9 @@ example below:</p>
 <span class="w">        </span><span class="p">...</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>But in the theming section of the documentation we created a base interface for theme <strong>IMyExampleTheme</strong> and two
-implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong> so let's use it here:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// IMyExampleTheme will be used as a base theme</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span>
+<p>But in the theming section of the documentation we created a base interface for theme <strong>MyExampleTheme</strong> and two implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong> so let's use it here:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// abstract base class MyExampleTheme for theming this window will be used as a base theme</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnBindUiEventsHandler</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
@@ -551,13 +596,13 @@ implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack
 <span class="w">            </span><span class="p">};</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedScreens</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">supportedScreens</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedScreens</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">supportedScreens</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//Here you will add all your screens for this screen manager, and you will be able to change screen runtime</span>
 <span class="w">            </span><span class="n">supportedScreens</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyMainScreen</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">theme</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">theme</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//Add all your themes here for this screen manager</span>
 <span class="w">            </span><span class="n">themes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyThemeWhite</span><span class="p">());</span>
@@ -573,12 +618,10 @@ implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>As you can see, your themes were added in <strong>OnAddSupportedThemes</strong> function. So the system will know how to style
-controls.</p>
-<p>and you can change the theme anytime runtime using:</p>
+<p>As you can see, your themes were added in <strong>OnAddSupportedThemes</strong> function. So the system will know how many styles will be used for theming and you can change the theme anytime runtime using:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">SetCurrentTheme</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyThemeBlack</span><span class="p">());</span>
 </code></pre></div>
-<p>the <strong>SetCurrentTheme</strong> is available in your CmScreenManager, CmScreen, CmScreenPart</p>
+<p>the <strong>SetCurrentTheme</strong> is available in your <strong>CmScreenManager</strong>, <strong>CmScreen</strong>, <strong>CmScreenPart</strong></p>
 <p>Definition:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetCurrentTheme</span><span class="p">(</span><span class="n">THEME</span><span class="w"> </span><span class="n">originalTheme</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">rebuildControlsWithNewTheme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">)</span>
 </code></pre></div>
@@ -587,24 +630,22 @@ controls.</p>
 <h2 id="screen_manager-other-functionality">Other functionality</h2>
 <p><strong>MyScreenManager</strong> from the above example has also functions like:</p>
 <ul>
-<li>OnBindUiEventsHandler() - responsible for handling UI events generated by controls created inside screens. Because
-  these controls were created inside you will handle their events inside screens but sometimes you will have to handle
-  events globally. To reduce code duplication on multiple screens you could handle this event here. More about events
-  see the ui_events section <a href="#ui_events">here</a> ,</li>
+<li>OnBindUiEventsHandler() - responsible for handling UI events emitted by controls created inside screens. Because these controls were created inside you will handle their events inside screens, but sometimes you will have to handle events globally.
+  To reduce code duplication on multiple screens you could handle this event here. More about events</li>
+<li>see the ui_events section <a href="#ui_events">here</a> ,</li>
 <li>OnAddSupportedScreens() - here you will add all your screen instances for this screen manager.</li>
 </ul>
 <p>You will be able to use <strong>setCurrentScreen</strong> to switch screen runtime.</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetCurrentScreen</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">currentScreenName</span><span class="p">,</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">makeContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">)</span>
 </code></pre></div>
-<p>this function is available in CmScreenManager, CmScreen, CmScreenPart</p>
-<ul>
-<li><strong>OnSetMainScreen</strong>() - is called by the system on start so you can set the main screen here.</li>
-</ul>
+<p>this function is available in <strong>CmScreenManager</strong>, <strong>CmScreen</strong>, <strong>CmScreenPart</strong></p>
+<p>When game starts the first screen what will be shown is set in:</p>
+<p><strong>OnSetMainScreen</strong>() - which is called by the system on start so you can set the main screen here.</p>
 <blockquote>
-<p><strong>NOTE</strong>: If you won't set the screen here then the first screen from OnAddSupportedScreens() will be used</p>
+<p><strong>NOTE</strong>: If you won't set the screen here then the first screen from screens list in OnAddSupportedScreens() will be used</p>
 </blockquote>
 <hr />
-<p><strong>CmScreenManager</strong> has more functionality. Here is a more complete overview:</p>
+<p><strong>CmScreenManager</strong> has more functionality. Here are more methods overview:</p>
 <ul>
 <li><strong>MakeScreenContent</strong>() - you will use it to rebuild the whole screen (if you want to refresh the screen)</li>
 </ul>
@@ -622,9 +663,9 @@ controls.</p>
 </ul>
 <hr />
 <ul>
-<li><strong>ShowMenu(string currentScreenName)</strong> - will activate UI to show CmScreenManager on screen. When you show the screen
-  the manager you will have to tell the system which Screen to show by passing <strong>currentScreenName</strong> parameter</li>
+<li><strong>ShowMenu(string currentScreenName)</strong> - will activate UI to show CmScreenManager on screen.</li>
 </ul>
+<p>When you show the screen the manager you will have to tell the system which Screen to show by passing screen name to <strong>currentScreenName</strong> parameter</p>
 <hr />
 <ul>
 <li><strong>SetUserData(Object data)</strong> - while in the game you can pass your own data as an object to <strong>data</strong> parameter.</li>
@@ -640,12 +681,11 @@ controls.</p>
 <span class="w">       </span><span class="n">_screensManager</span><span class="p">.</span><span class="n">SetUserData</span><span class="p">(</span><span class="n">someUserData</span><span class="p">);</span>
 <span class="w">   </span><span class="p">}</span>
 </code></pre></div>
-<p>This data change will trigger callback <strong>OnUserDataChange</strong> for your active screen (CmScreen and other components like
-CmScreenPart)</p>
+<p>This data change will trigger callback <strong>OnUserDataChange</strong> for your active screen (CmScreen and other components like CmScreenPart)</p>
 <div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">virtual</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnUserDataChange</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
 </code></pre></div>
 <p>so you can update UI state there</p>
-<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span><span class="p">{</span>
 <span class="w">   </span><span class="p">...</span>
 <span class="w">   </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnUserDataChange</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">data</span><span class="p">)</span>
 <span class="w">   </span><span class="p">{</span>
@@ -660,7 +700,7 @@ CmScreenPart)</p>
 <hr />
 <h2 id="screen_manager-complete-example">Complete example</h2>
 <p>here is a complete example of CmScreenManager implementation from "One Theme scene example"</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmExample2ThemesScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">ICmExample2ThemesBase</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmExample2ThemesScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">CmExample2ThemesBase</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnBindUiEventsHandler</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
@@ -668,13 +708,13 @@ CmScreenPart)</p>
 <span class="w">            </span><span class="n">eventsHandler</span><span class="p">.</span><span class="n">ButtonClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">@base</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">};</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedScreens</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">ICmExample2ThemesBase</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">supportedScreenList</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedScreens</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">CmExample2ThemesBase</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">supportedScreenList</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//Add all screens here for this screen manager</span>
 <span class="w">            </span><span class="n">supportedScreenList</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmSimpleThemeMainScreen</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ICmExample2ThemesBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">themeBases</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmExample2ThemesBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">themeBases</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//Add all themes here for this screen manager</span>
 <span class="w">            </span><span class="n">themeBases</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmExample2ThemeOne</span><span class="p">());</span>
@@ -692,26 +732,25 @@ CmScreenPart)</p>
 <p><a href="#index">Go back</a></p>
 <h1 id="screen-cmscreen">CmScreen</h1>
 <!-- TOC -->
+
 <ul>
 <li><a href="#screen-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
-<li><a href="#screen-cmscreen">CmScreen</a><ul>
+<li><a href="#screen-cmscreen">CmScreen</a></li>
 <li><a href="#screen-introduction">Introduction</a></li>
 <li><a href="#screen-how-to-use">How to use</a></li>
 <li><a href="#screen-getscreenname">GetScreenName()</a></li>
 <li><a href="#screen-binduieventsonstart">bindUIEventsOnStart()</a></li>
 <li><a href="#screen-onmakescreencontentlistcmcontrolbase-contentlist-the-most-important-section">OnMakeScreenContent(List<CmControlBase> contentList) the most important section</a></li>
-</ul>
-</li>
 <li><a href="#screen-complete-example-of-cmscreen-implementation-from-one-theme-scene-example">Complete example of CmScreen implementation from "One Theme scene example"</a></li>
 </ul>
 <!-- TOC -->
 
 <h3 id="screen-introduction">Introduction</h3>
-<p>CmScreen is a screen container for controls. You can have multiple screens but you show only one screen at once.</p>
+<p>CmScreen is a screen container for controls on your game screen. You can have multiple screens but you show only one screen at once. For example map select screen, main menu screen or in game lobby screen</p>
 <h3 id="screen-how-to-use">How to use</h3>
 <blockquote>
-<p>NOTE: Before you will read about CmScreen please read about theming <a href="#theming">here</a> and CmScreenManager which is a
-container for CmScreen <a href="#screen_manager">here</a>.</p>
+<p>NOTE: Before you will read about CmScreen please read about theming <a href="#theming">here in theming section</a> and CmScreenManager which is a
+container for CmScreen <a href="#screen_manager">here in screen manager section</a>.</p>
 </blockquote>
 <p>To create your own CmScreen you will have to select if you will use a theme or not.</p>
 <blockquote>
@@ -729,15 +768,14 @@ example below:</p>
 <span class="w">        </span><span class="p">...</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>But in the theming section of the documentation we created a base interface for theme <strong>IMyExampleTheme</strong> and two
-implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong>:</p>
+<p>But in the theming section of the documentation we created a base class for theme <strong>MyExampleTheme</strong> and two implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong> that inherit the base class. Now we can create screen using our theme as base, so that we can use it for theming:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// CmThemeDefault will be used as a base theme and this is the empty theme for filling purposes</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyMainScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyMainScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">MYMAIN_SCREEN_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MyMainScreen&quot;</span><span class="p">;</span>
 
-<span class="w">        </span><span class="c1">// needed constructor </span>
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">MyMainScreen</span><span class="p">(</span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">VisualElement</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span>
+<span class="w">        </span><span class="c1">// needed empty constructor </span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">MyMainScreen</span><span class="p">(</span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">VisualElement</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span>
 <span class="w">            </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">bindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
@@ -747,7 +785,7 @@ implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMakeScreenContent</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">contentList</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="c1">//Add content to the list</span>
+<span class="w">            </span><span class="c1">//create controls here and add them to contentList</span>
 <span class="w">            </span><span class="n">contentList</span><span class="p">.</span><span class="n">Add</span><span class="p">(...</span><span class="n">create</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="n">here</span><span class="p">...);</span>
 <span class="w">        </span><span class="p">}</span>
 
@@ -759,24 +797,25 @@ implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>As you can see adding a screen is nothing difficult.</p>
+<p>I will tell you what are the reason for this methods.</p>
 <h3 id="screen-getscreenname">GetScreenName()</h3>
 <p>We need to override <strong>GetScreenName</strong>() to return the screen name string (you can use an enum with the names of your screens and
-cast enum to string here)</p>
+cast enum to string here so you wouldn't use magic strings)</p>
+<p>Screen name is used to move to screen by its name so it is good practice to use constants or static to hold that name.</p>
 <hr />
 <h3 id="screen-binduieventsonstart">bindUIEventsOnStart()</h3>
-<p>If you read the section about ScreenManager which I will suggest doing first then you will notice method *
-<em>bindUIEventsOnStart</em>*(). On CmScreenManager this method was for handling global UI events but here we handle events
-more local because it will be connected with this screen. This way we can handle events here and in CmScreenManager if
-you want. More about events see the ui_events section <a href="#ui_events">here</a></p>
+<p>If you read the section about ScreenManager which I will suggest doing first then you will notice method <strong>bindUIEventsOnStart</strong>(). On CmScreenManager this method was for handling global UI events but here we handle events
+more local because it will be connected with this screen.</p>
+<p>This way we can handle events here and additionaly in CmScreenManager if you want. More about events see the ui_events section <a href="#ui_events">here in ui_events section</a></p>
 <hr />
 <h3 id="screen-onmakescreencontentlist-contentlist-the-most-important-section">OnMakeScreenContent(List<CmControlBase> contentList) the most important section</h3>
 <p>content of the screen needs to be filled with controls. <strong>OnMakeScreenContent</strong>() function is just for that purpose.
 Below will be added a full working example from example projects that will show you how to create a simple screen with
-a button
-You can create any control extended from CmControl in OnMakeScreenContent and add it to contentList.</p>
-<p>You can also split your game menu into sections and each section could be CmScreenPart which is a part of the main menu
-see <a href="#screen_part">here</a>. You can use this screenPart inside multiple screens. For example to create a simple static
-header which is the same on a few screens. so you will fulfill the known pattern "don't repeat yourself (DRY)"</p>
+a button</p>
+<p>You can create any control extended from CmControl in OnMakeScreenContent and add it to contentList. For example CmButton, CmToggle, CmScrollView, CmColumn, CmRow ect.</p>
+<p>You can also split your game menu into sections and each section could be <strong>CmScreenPart</strong> which is a part of the main menu see <a href="#screen_part">here in screen_part section</a>.</p>
+<p>You can use this screenPart inside multiple screens. For example to create a simple static header which is the same on a few screens.</p>
+<p>So you will fulfill the known programming pattern "don't repeat yourself (DRY)"</p>
 <hr />
 <h2 id="screen-complete-example-of-cmscreen-implementation-from-one-theme-scene-example">Complete example of CmScreen implementation from "One Theme scene example"</h2>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
@@ -794,8 +833,7 @@ header which is the same on a few screens. so you will fulfill the known pattern
 <span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">MainButtonName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MyButtonName&quot;</span><span class="p">;</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">CmExample1MainScreen</span><span class="p">(</span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">CmExample1ThemeBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">VisualElement</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="p">:</span>
-<span class="w">            </span><span class="k">base</span><span class="p">(</span>
-<span class="w">                </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">)</span>
+<span class="w">            </span><span class="k">base</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">        </span><span class="p">}</span>
 
@@ -804,7 +842,7 @@ header which is the same on a few screens. so you will fulfill the known pattern
 <span class="w">            </span><span class="c1">// handle clicks for all buttons on this screen</span>
 <span class="w">            </span><span class="n">eventsHandler</span><span class="p">.</span><span class="n">ButtonClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=&gt;</span>
 <span class="w">            </span><span class="p">{</span>
-<span class="w">                </span><span class="c1">//Check if the user clicked mainButton</span>
+<span class="w">                </span><span class="c1">//Check if the user clicked button with name &quot;MyButtonName&quot;</span>
 <span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">button</span><span class="p">.</span><span class="n">GetName</span><span class="p">().</span><span class="n">Equals</span><span class="p">(</span><span class="n">MainButtonName</span><span class="p">))</span>
 <span class="w">                </span><span class="p">{</span>
 <span class="w">                    </span><span class="c1">// handle on click for the main button</span>
@@ -847,8 +885,9 @@ header which is the same on a few screens. so you will fulfill the known pattern
 <span class="w">            </span><span class="c1">//Set button name for further event handling</span>
 <span class="w">            </span><span class="n">button</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
 
-<span class="w">            </span><span class="c1">//Get the theme assigned to this screen and use its function to style this button</span>
-<span class="w">            </span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">// Get the theme assigned to this screen and use its function to style this button.</span>
+<span class="w">            </span><span class="c1">// We will not call theme method but pass method address to StyleButton function</span>
+<span class="w">            </span><span class="n">button</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">);</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 
@@ -858,22 +897,18 @@ header which is the same on a few screens. so you will fulfill the known pattern
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">MAIN_SCREEN_NAME</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
-</code></pre></div></section><section class="print-page" id="screen_part"><h1 id="screen_part-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
+</code></pre></div>
+<p>For more information about this example. See examples for project. Just read the code and you will know how to use this</p></section><section class="print-page" id="screen_part"><h1 id="screen_part-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#index">Go back</a></p>
 <h3 id="screen_part-introduction">Introduction</h3>
-<p><strong>CmScreenPart</strong> is a part of the screen container for controls. This is an optional component. You can add controls to screens
-directly, but this separation of concerns will help you manage larger projects and reuse parts of your screen UI. You
-can have multiple <strong>CmScreenPart</strong> added to <strong>CmScreen</strong>.</p>
+<p><strong>CmScreenPart</strong> is a part of the screen container for controls. This is an optional component. You can add controls to screens directly, but this separation of concerns will help you manage larger projects and reuse parts of your screen UI. You can have multiple <strong>CmScreenPart</strong> added to <strong>CmScreen</strong>.</p>
 <h3 id="screen_part-how-to-use">How to use</h3>
 <blockquote>
-<p>NOTE: Before you will read about CmScreenPart please read about theming <a href="#theming">here</a>,
-CmScreenManager <a href="#screen_manager">here</a> and CmScreen <a href="#screen">here</a>. This way you will understand how it's working
-all-together</p>
+<p>NOTE: Before you will read about CmScreenPart please read about theming <a href="#theming">here in theming section</a>, CmScreenManager <a href="#screen_manager">here in screen_manager section</a> and CmScreen <a href="#screen">here in screen section</a>. This way you will understand how it's working all-together</p>
 </blockquote>
 <p>To create your own <strong>CmScreenPart</strong> you will have to select if you will use theme or not.</p>
 <blockquote>
-<p>NOTE: If you won't use the theme then you can pass the default builtin <strong>CmThemeDefault</strong> empty theme interface like in
-example below:</p>
+<p>NOTE: If you won't use the theme then you can pass the default builtin <strong>CmThemeDefault</strong> empty theme interface like in example below:</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// CmThemeDefault will be used as a base theme and this is the empty theme for filling purposes</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyMainScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">CmThemeDefault</span><span class="o">&gt;</span>
@@ -890,9 +925,9 @@ example below:</p>
 implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack</strong>:</p>
 <p>So let's use this here. This is how it would look like</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// CmThemeDefault will be used as a base theme and this is the empty theme for filling purposes</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmScreenPartTopSectionExampleSP</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmScreenPartTopSectionExampleSP</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">CmScreenPartTopSectionExampleSP</span><span class="p">(</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">IMyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">screen</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">CmScreenPartTopSectionExampleSP</span><span class="p">(</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyExampleTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">screen</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">        </span><span class="p">}</span>
 
@@ -914,32 +949,30 @@ implementations of themes <strong>MyThemeWhite</strong> and <strong>MyThemeBlack
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">getUIEventsHandler</span><span class="p">());</span>
 <span class="w">            </span><span class="n">button</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
-<span class="w">            </span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">(</span><span class="n">button</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">// pass style function address to SetStyle to style button by it</span>
+<span class="w">            </span><span class="c1">// GetTheme() returns current assigned theme MyThemeWhite or MyThemeBlack</span>
+<span class="w">            </span><span class="n">button</span><span class="p">.</span><span class="n">SetSyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">);</span>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>This is a simple screen part that could be reused on screens.</p>
 <h3 id="screen_part-makecontent">MakeContent()</h3>
-<p>The screen part is not CmControl. So when you want to add it to the screen you need to create content with controls from this
-screen part.
+<p>The screen part is not CmControl. So when you want to add it to the screen you need to create content with controls from this screen part.
 That is why there is a method <strong>MakeContent</strong>() which will return some control or container with controls.</p>
 <p>In the above example, the content is built with a CmRow control container with two CmButtons added.
-To learn more about controls see <a href="#controls.md">there</a></p>
+To learn more about controls see <a href="#controls.md">there in controls section</a></p>
 <h3 id="screen_part-binduieventsonstart">BindUIEventsOnStart()</h3>
-<p>Here <strong>BindUIEventsOnStart</strong>() function is the same as in CmScreenManager, CmScreen but you can handle UI event
-whenever you want.</p>
-<p>CmScreenPart is the lowest place where you can handle events. Events will go up and will be handled in such direction :</p>
-<pre class="mermaid"><code>graph LR
-    A[CmScreenPart.OnClick] --&gt; B[CmScreen.OnClick]
-    B --&gt; C[CmScreenManager.OnClick]</code></pre>
+<p>Here <strong>BindUIEventsOnStart</strong>() function is the same as in CmScreenManager, CmScreen but you can handle UI event whenever you want.</p>
+<p>CmScreenPart is the lowest place where you can handle events. Events will go up and will be handled in such direction:</p>
+<pre  class="mermaid"><code>graph LR
+    A[CmScreenPart.OnClick] --> B[CmScreen.OnClick]
+    B --> C[CmScreenManager.OnClick]
+</code></pre>
 <p>So you can handle events whenever you want.</p>
 <blockquote>
-<p>Note: when you create control you will pass CmUIEventsHandler as a parameter. You will have to pass CmUiEventHandler for
-current CmScreenPart by using the method of CmScreenPart.getUIEventsHandler(). This way events will be propagated upper in the view
-hierarchy like in the above diagram. If you create your event handler and pass it or null, then CmScreenPart and its
-parent won't know about the event being triggered so you won't receive events in BindUIEventsOnStart(). To learn more
-about events click <a href="#ui_events">here</a></p>
+<p>Note: when you create control you will pass CmUIEventsHandler as a parameter. You will have to pass CmUiEventHandler for current <strong>CmScreenPart</strong>. You can get current event handler by using the method <strong>CmScreenPart.getUIEventsHandler</strong>(). This way events will be propagated upper in the view hierarchy like in the above diagram.</p>
+<p>If you create your event handler and pass it or null, then <strong>CmScreenPart</strong> and its parent won't know about the event being triggered so you won't receive events in BindUIEventsOnStart(). To learn more about events click <a href="#ui_events">here in ui_events section</a></p>
 </blockquote></section><h1 class='nav-section-title-end'>Ended: Screen containers</h1><section class="print-page" id="ui_events"><h1 id="ui_events-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#index">Go back</a></p>
 <h2 id="ui_events-cmuieventshandler">CmUIEventsHandler</h2>
@@ -961,7 +994,7 @@ from the above list and add your control to CmScreen directly.</p>
 select the button "Start game"</p>
 <p>This function exists in CmScreenManager, CmScreen, or CmScreenPart.</p>
 <p>Below is a part of the code for the main menu panel of the included example multiplayer game</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainMenuPanelSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">ICmThemeTestBase</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MainMenuPanelSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">CmThemeTestBase</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">uiEventsHandler</span><span class="p">)</span>
@@ -988,10 +1021,11 @@ select the button "Start game"</p>
 </code></pre></div>
 <p>CmScreenPart is the lowest place where you can handle BindUIEventsOnStart events. Events will go up and will be handled
 in such direction :</p>
-<pre class="mermaid"><code>graph TD
-    A[CmControl.OnClick] --&gt; B[CmScreenPart.BindUIEventsOnStart]
-    B[CmScreenPart.BindUIEventsOnStart] --&gt; C[CmScreen.BindUIEventsOnStart]
-    C --&gt; D[CmScreenManager.BindUIEventsOnStart]</code></pre>
+<pre  class="mermaid"><code>graph TD
+    A[CmControl.OnClick] --> B[CmScreenPart.BindUIEventsOnStart]
+    B[CmScreenPart.BindUIEventsOnStart] --> C[CmScreen.BindUIEventsOnStart]
+    C --> D[CmScreenManager.BindUIEventsOnStart]
+</code></pre>
 <p>So event will move through parents until it reaches the target which is CmScreenManager.
 You can handle onClick event on each step simultaneously. This way you can add on click sound globally for each onClick
 from all controls and add on click in CmScreenPart to handle some logic.</p>
@@ -1004,7 +1038,7 @@ the parent's tree until they reach the grandparent CmScreenManager and propagati
 </blockquote>
 <h3 id="ui_events-cmuieventshandler_1">CmUIEventsHandler</h3>
 <p>when you create your control you will have to pass CmUIEventsHandler instance.</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameStatsSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">ICmThemeTestBase</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameStatsSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">CmThemeTestBase</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">uiEventsHandler</span><span class="p">)</span>
@@ -1029,7 +1063,7 @@ CmScreenPart and its
 Parent won't know about the event being triggered in controls so you won't receive events in BindUIEventsOnStart().</p>
 </blockquote>
 <p>Of course, you can create your event handler like this, but you will have to handle events by yourself</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameStatsSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">ICmThemeTestBase</span><span class="o">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerInGameStatsSp</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">CmThemeTestBase</span><span class="o">&gt;</span>
 <span class="w">    </span><span class="p">{</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">createExitButton</span><span class="p">()</span>
@@ -1243,15 +1277,15 @@ than for text. Because the text has font size/color etc. but the background does
 <p>This is why modifier builder - the class that we will be using for building style for specific control is divided into
 groups that inherit from other groups modifiers to build modifiers depend on their type like text, background etc.</p>
 <p>This is how it looks</p>
-<pre class="mermaid"><code>graph TD
-;
-    A[CmModifierBase] -- abstract class --&gt; B[CmModifierBaseBackground];
-    B --&gt; C[CmModifierBackground];
-    B --&gt; D[CmModifierText];
-    B -- abstract class --&gt; E[CmModifierBaseImageAndBackground];
-    B --&gt; F[CmModifierColumn];
-    B --&gt; G[CmModifierRow];
-    E --&gt; H[CmModifierImageAndBackground];</code></pre>
+<pre  class="mermaid"><code>graph TD;
+    A[CmModifierBase] -- abstract class --> B[CmModifierBaseBackground];
+    B --> C[CmModifierBackground];
+    B --> D[CmModifierText];
+    B -- abstract class --> E[CmModifierBaseImageAndBackground];
+    B --> F[CmModifierColumn];
+    B --> G[CmModifierRow];
+    E --> H[CmModifierImageAndBackground];
+</code></pre>
 <blockquote>
 <p>Note: you shouldn't use classes with the text "<strong>Base</strong>" in their names from the above diagram. Only if you need to create
 your own class with your own modifiers that inherit from them.</p>
@@ -1887,14 +1921,15 @@ controls are the same as in UI toolkit. So what is the benefit of this?. CoDrive
 <li>the whole system is better solution for styling, theming and language change.</li>
 </ul>
 <h2 id="visual_controls-controls">Controls</h2>
-<pre class="mermaid"><code>graph TD
+<pre  class="mermaid"><code>graph TD
 ;
-    A[CmControlBase] -- abstract class --&gt; B[CmControlModifiable];
-    B -- abstract class --&gt; C[CmControlContainer];
-    B -- abstract class --&gt; D[CmControlModifiableForSelfHandleSubitems];
-    D --&gt; E[Special container controls];
-    C --&gt; F[All container controls];
-    B --&gt; G[All normal controls]</code></pre>
+    A[CmControlBase] -- abstract class --> B[CmControlModifiable];
+    B -- abstract class --> C[CmControlContainer];
+    B -- abstract class --> D[CmControlModifiableForSelfHandleSubitems];
+    D --> E[Special container controls];
+    C --> F[All container controls];
+    B --> G[All normal controls]
+</code></pre>
 <blockquote>
 <p>important - read this section before the documentation for indivitual controls.</p>
 </blockquote>
@@ -2105,7 +2140,7 @@ modifier:</p>
 <h3 id="translation_editor-introduction">Introduction</h3>
 <p>Translation editor will allow you to create translations for your texts, manage languages, and generate translation files.</p>
 <p>To create your translations open the translation editor by clicking in Unity from the top menu:</p>
-<p><strong>windows -&gt; CoDrivenAdvancedUI -&gt; Translation Editor</strong></p>
+<p><strong>windows -&gt; CoDriven Advanced UI -&gt; Translation Editor</strong></p>
 <p>Translations are divided into columns.</p>
 <p>The first column "Translation ID" are ids for your translations because you will have to use the translation_ID name to access
 translation text.
@@ -2161,17 +2196,6 @@ table.</p>
 <span class="w">        </span><span class="n">CmLanguageManager</span><span class="p">.</span><span class="n">SetCurrentLang</span><span class="p">(</span><span class="s">&quot;Polish&quot;</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="c1">// TRANSLATION extension methods</span>
-<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text_str_settings</span><span class="o">&lt;</span><span class="n">Theme</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">Theme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">screen</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">Theme</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmThemeBase</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">screen</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">settings</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="k">public</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text_str_settings</span><span class="o">&lt;</span><span class="n">Theme</span><span class="o">&gt;</span><span class="p">(</span><span class="k">this</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">Theme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">screen</span><span class="p">)</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">Theme</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmThemeBase</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">screen</span><span class="p">.</span><span class="n">GetString</span><span class="p">(</span><span class="n">settings</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-
 <span class="p">}</span>
 </code></pre></div>
 <p>As you can see this generated class will contain all your translation IDS as variable names with types of int and index
@@ -2187,26 +2211,6 @@ value.</p>
 </code></pre></div>
 <p>As you noticed there are extension methods "text_str_settings()" generated for our str_settings translation ID that can
 be used as a shortcut for our previous code with CmGeneratedTranslations.GetString(CmGeneratedTranslations.str_settings);</p>
-<p>because text_str_settings() is extension method for <strong>CmScreenPart</strong> and <strong>CmScreen</strong>, you can use this method to get
-our str_settings translation for the current language like this:</p>
-<p>inside <strong>CmScreenPart</strong> code</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreenPart</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenPart</span><span class="o">&lt;</span><span class="n">MyTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">      </span>
-<span class="w">        </span><span class="p">....</span>
-<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">someMethod</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">settingsText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">text_str_settings</span><span class="p">();</span>
-<span class="w">            </span><span class="c1">// use text settingsText for button text or other component</span>
-</code></pre></div>
-<p>or inside <strong>CmScreen</strong> code</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">      </span>
-<span class="w">        </span><span class="p">....</span>
-
-<span class="w">        </span><span class="k">void</span><span class="w"> </span><span class="nf">someMethod</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">settingsText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">text_str_settings</span><span class="p">();</span>
-<span class="w">            </span><span class="c1">// use text settingsText for button text or other component</span>
-</code></pre></div>
-<p>this method name is built by connecting "text_" + our translation ID. - text_str_settings() in this example, because we
-had str_settings translation ID, because of that we have to keep the same naming rules for translation IDs as for a
-functions or variables</p>
 <h4 id="translation_editor-set-current-language">Set current language:</h4>
 <p>For example, to set English as the current language you can use</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="n">CmGeneratedTranslations</span><span class="p">.</span><span class="n">setCurrentLang_English</span><span class="p">();</span>
@@ -2219,7 +2223,8 @@ functions or variables</p>
 <p>CmGeneratedTranslations.LANGUAGE_Polish</p>
 <p>are constants because we had two languages in our example table "English" and "Polish"</p></section><section class="print-page" id="graph_editor"><h1 id="graph_editor-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#index">Go back</a></p>
-<p><img alt="graph editor image" src="images/features/graph_editor.png" /></p></section><h1 class='nav-section-title-end'>Ended: Tools</h1>
+<p><img alt="graph editor image" src="images/features/graph_editor.png" /></p>
+<p>Documentation under construction</p></section><h1 class='nav-section-title-end'>Ended: Tools</h1>
                         <h2 class='nav-section-title' id='section-utils'>
                             Utils <a class='headerlink' href='#section-utils' title='Permanent link'>↵</a>
                         </h2>
@@ -2272,7 +2277,7 @@ by using </p>
 <h1 id="tutorials-tutorials-introduction">Introduction</h1>
 <p>All below scenes contains UI_Toolkit_Prefab located in tool subfolder <strong>ui_prefabs/UI_Toolkit_Prefab.prefab</strong></p>
 <p>Just add it to the scene and attach your own Screen Manager Monobehaviour.</p>
-<p><img alt="ui_toolkit_prefab_instalation" src="images/ui_toolkit_prefab_instalation.png" /></p>
+<p><img alt="codriven_advanced_ui_prefab_instalation" src="images/codriven_advanced_ui_prefab_instalation.png" /></p>
 <p>Or you can just create an empty object in the scene and add a UI document to it with typical panel settings and add an empty Source
 Asset (don't add your controls just add empty because it will be used by CoDriven Advanced UI as a UI document)</p>
 <h1 id="tutorials-tutorials-tutorials">Tutorials</h1>
@@ -2444,7 +2449,9 @@ Open the <strong>MapSelectPanelSp.cs</strong> class for more details</p>
 <h1 id="contact-contact-information">Contact information</h1>
 <p>you can ask questions in the discord server:</p>
 <p>Discord:</p>
-<p>More information and help you can find on youtube channel:</p></section><h1 class='nav-section-title-end'>Ended: Documentation</h1></div>
+<p>More information and help you can be find on my youtube channel:</p>
+<p>https://www.youtube.com/@ThwackStudio/videos</p>
+<p>email: thwackstudio@gmail.com</p></section><h1 class='nav-section-title-end'>Ended: Documentation</h1></div>
               
             </div>
           </div><footer>
