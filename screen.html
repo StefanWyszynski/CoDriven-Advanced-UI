@@ -153,7 +153,7 @@
 <li><a href="#how-to-use">How to use</a></li>
 <li><a href="#getscreenname">GetScreenName()</a></li>
 <li><a href="#binduieventsonstart">bindUIEventsOnStart()</a></li>
-<li><a href="#onmakescreencontentlistcmcontrolbase-contentlist-the-most-important-section">OnMakeScreenContent(List<CmControlBase> contentList) the most important section</a></li>
+<li><a href="#onmakescreencontentlistcmcontrolbase-contentlist-the-most-important-section">OnMakeScreenContent(ScreenContentBuilder contentBuilder) the most important section</a></li>
 <li><a href="#complete-example-of-cmscreen-implementation-from-one-theme-scene-example">Complete example of CmScreen implementation from "One Theme scene example"</a></li>
 </ul>
 <!-- TOC -->
@@ -196,10 +196,10 @@ example below:</p>
 <span class="w">            </span><span class="c1">// handle events here</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMakeScreenContent</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">contentList</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMakeScreenContent</span><span class="p">(</span><span class="n">ScreenContentBuilder</span><span class="w"> </span><span class="n">contentBuilder</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//create controls here and add them to contentList</span>
-<span class="w">            </span><span class="n">contentList</span><span class="p">.</span><span class="n">Add</span><span class="p">(...</span><span class="n">create</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="n">here</span><span class="p">...);</span>
+<span class="w">            </span><span class="n">contentBuilder</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(...</span><span class="n">create</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="n">here</span><span class="p">...);</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetScreenName</span><span class="p">()</span>
@@ -263,9 +263,9 @@ a button</p>
 <span class="w">            </span><span class="p">};</span>
 <span class="w">        </span><span class="p">}</span>
 
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMakeScreenContent</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmControlBase</span><span class="o">&gt;</span><span class="w"> </span><span class="n">contentList</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMakeScreenContent</span><span class="p">(</span><span class="n">ScreenContentBuilder</span><span class="w"> </span><span class="n">contentBuilder</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">contentList</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">createMainPanel</span><span class="p">());</span>
+<span class="w">            </span><span class="n">contentBuilder</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">createMainPanel</span><span class="p">());</span>
 <span class="w">        </span><span class="p">}</span>
 
 <span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">CmColumn</span><span class="w"> </span><span class="nf">createMainPanel</span><span class="p">()</span>
