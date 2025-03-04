@@ -83,11 +83,79 @@
     <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../visual_controls.html">Controls</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">CmColumn</a>
+                <li class="toctree-l2"><a class="reference internal" >Single</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="cmbutton.html">CmButton</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmimage.html">CmImage</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmlabel.html">CmLabel</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmprogressbar.html">CmProgressBar</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmradiobutton.html">CmRadioButton</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmslider.html">CmSlider</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmtextfield.html">CmTextField</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmtoggle.html">CmToggle</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Containers</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">CmColumn</a>
     <ul class="current">
     </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="cmrow.html">CmRow</a>
+                <li class="toctree-l3"><a class="reference internal" href="cmrow.html">CmRow</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmdraggablescrollview.html">CmDraggableScrollView</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmdropdownfield.html">CmDropdownField</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmfoldout.html">CmFoldout</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmgroupbox.html">CmGroupBox</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmhelpbox.html">CmHelpBox</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmlistview.html">CmListView</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmmulticolumnlistview.html">CmMultiColumnListView</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmpopupwindow.html">CmPopupWindow</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmscroller.html">CmScroller</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmscrollview.html">CmScrollView</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Other</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="cmcurvefield.html">CmCurveField</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmenumflagsfield.html">CmEnumFlagsField</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmfloatfield.html">CmFloatField</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmintegerfield.html">CmIntegerField</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmlongfield.html">CmLongField</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmmaskfield.html">CmMaskField</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmobjectfield.html">CmObjectField</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmpropertyfield.html">CmPropertyField</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmtagfield.html">CmTagField</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="cmtoolbar.html">CmToolbar</a>
+                </li>
+    </ul>
                 </li>
     </ul>
                   </li>
@@ -132,6 +200,7 @@
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Documentation</li>
           <li class="breadcrumb-item">Controls</li>
+          <li class="breadcrumb-item">Containers</li>
       <li class="breadcrumb-item active">CmColumn</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -144,7 +213,7 @@
                 <h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="../visual_controls.html">Go back</a></p>
 <h1 id="cmcolumn">CmColumn</h1>
-<p>CmColumn a container. Is is based on VisualElement. You can add controls to it by using:</p>
+<p>CmColumn a container. It is based on VisualElement. You can add controls to it by using:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmButton</span><span class="w"> </span><span class="n">someButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">();</span>
 <span class="w">    </span><span class="n">CmColumn</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">();</span>
 <span class="w">    </span><span class="n">column</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">someButton</span><span class="p">);</span>
@@ -152,6 +221,20 @@
 <p>All controls added to CmColumn will be hold in column way. To change how added controls will be positioned you can use
 modifier:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmColumn</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">();</span>
+<span class="w">    </span><span class="n">column</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">ExampleColumn</span><span class="p">);</span>
+
+
+<span class="w">    </span><span class="c1">// in your theme</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">ICmControlModifiers</span><span class="w"> </span><span class="nf">ExampleColumn</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">VerticalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">HorizontalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="n">Weight</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <ul>
 <li>HorizontalArrangement allow you to set how added controls to this container will be positioned horizontally. Available
@@ -179,7 +262,7 @@ modifier:</p>
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../visual_controls.html" class="btn btn-neutral float-left" title="Controls"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="cmtoggle.html" class="btn btn-neutral float-left" title="CmToggle"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="cmrow.html" class="btn btn-neutral float-right" title="CmRow">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -203,7 +286,7 @@ modifier:</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../visual_controls.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="cmtoggle.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="cmrow.html" style="color: #fcfcfc">Next &raquo;</a></span>

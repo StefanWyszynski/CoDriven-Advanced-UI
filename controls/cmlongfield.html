@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>CmRow - CoDriven Advanced UI</title>
+    <title>CmLongField - CoDriven Advanced UI</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -20,8 +20,8 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "CmRow";
-        var mkdocs_page_input_path = "controls\\cmrow.md";
+        var mkdocs_page_name = "CmLongField";
+        var mkdocs_page_input_path = "controls\\cmlongfield.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -103,13 +103,11 @@
                 </li>
     </ul>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" >Containers</a>
-    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" >Containers</a>
+    <ul>
                 <li class="toctree-l3"><a class="reference internal" href="cmcolumn.html">CmColumn</a>
                 </li>
-                <li class="toctree-l3 current"><a class="reference internal current" href="#">CmRow</a>
-    <ul class="current">
-    </ul>
+                <li class="toctree-l3"><a class="reference internal" href="cmrow.html">CmRow</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="cmdraggablescrollview.html">CmDraggableScrollView</a>
                 </li>
@@ -133,8 +131,8 @@
                 </li>
     </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" >Other</a>
-    <ul>
+                <li class="toctree-l2 current"><a class="reference internal current" >Other</a>
+    <ul class="current">
                 <li class="toctree-l3"><a class="reference internal" href="cmcurvefield.html">CmCurveField</a>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="cmenumflagsfield.html">CmEnumFlagsField</a>
@@ -143,7 +141,9 @@
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="cmintegerfield.html">CmIntegerField</a>
                 </li>
-                <li class="toctree-l3"><a class="reference internal" href="cmlongfield.html">CmLongField</a>
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">CmLongField</a>
+    <ul class="current">
+    </ul>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="cmmaskfield.html">CmMaskField</a>
                 </li>
@@ -200,8 +200,8 @@
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Documentation</li>
           <li class="breadcrumb-item">Controls</li>
-          <li class="breadcrumb-item">Containers</li>
-      <li class="breadcrumb-item active">CmRow</li>
+          <li class="breadcrumb-item">Other</li>
+      <li class="breadcrumb-item active">CmLongField</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -212,62 +212,15 @@
               
                 <h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="../visual_controls.html">Go back</a></p>
-<h1 id="cmrow">CmRow</h1>
-<p>CmRow is a container. It is based on VisualElement. You can add controls to it by using:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmButton</span><span class="w"> </span><span class="n">someButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">();</span>
-<span class="w">    </span><span class="c1">//</span>
-<span class="w">    </span><span class="n">CmRow</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">();</span>
-<span class="w">    </span><span class="n">row</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">someButton</span><span class="p">);</span>
-</code></pre></div>
-<p>This is similar to CmColumn <a href="cmcolumn.html">read here</a></p>
-<p>All controls added to CmRow will be hold in column way. To change how added controls will be positioned you can use
-modifier:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// create row somewhere</span>
-<span class="w">    </span><span class="n">CmRow</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">();</span>
-<span class="w">    </span><span class="n">row</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">ProfileNickNameRowStyle</span><span class="p">);</span>
-
-<span class="w">    </span><span class="p">....</span>
-
-<span class="w">    </span><span class="c1">// in your theme    </span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ICmControlModifiers</span><span class="w"> </span><span class="nf">ProfileNickNameRowStyle</span><span class="p">()</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmRow</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
-<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Container</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierRow</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
-<span class="w">            </span><span class="p">.</span><span class="n">HorizontalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
-<span class="w">            </span><span class="p">.</span><span class="n">VerticalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
-<span class="w">            </span><span class="p">.</span><span class="n">WidthWrapContent</span><span class="p">()</span>
-<span class="w">            </span><span class="p">.</span><span class="n">FillMaxHeight</span><span class="p">()</span>
-<span class="w">        </span><span class="p">);</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-</code></pre></div>
-<ul>
-<li>HorizontalArrangement allow you to set how added controls to this container will be positioned horizontally. Available
-  values: START, CENTER, END, SPACE_BETWEEN, SPACE_AROUND.</li>
-<li>VerticalAlignment allow you to set how added controls to this container will be positioned vetrically. Available
-  values: START, CENTER, END, STRETCH, TEXT_BASELINE
-  STRETCH will stretch control to parent size vertically.</li>
-</ul>
-<h1 id="style-cmrow-elements">Style CmRow elements</h1>
-<p>CmRow modifiers contains only one element to style - the "Container"</p>
-<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmRow</span><span class="w"> </span><span class="nf">createRow</span><span class="p">()</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">CmRow</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">();</span>
-<span class="w">            </span><span class="n">row</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">Container</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierRow</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">HorizontalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">VerticalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="p">.</span><span class="n">STRETCH</span><span class="p">)</span>
-<span class="w">            </span><span class="p">);</span>
-
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">container</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-</code></pre></div>
-<p>to learn about modifiers for all controls <a href="../modifiers.html">click here</a></p>
+<h1 id="cmlongfield">CmLongField</h1>
+<p>Under construction</p>
+<p>Control code under construction</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="cmcolumn.html" class="btn btn-neutral float-left" title="CmColumn"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="cmdraggablescrollview.html" class="btn btn-neutral float-right" title="CmDraggableScrollView">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="cmintegerfield.html" class="btn btn-neutral float-left" title="CmIntegerField"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="cmmaskfield.html" class="btn btn-neutral float-right" title="CmMaskField">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -290,10 +243,10 @@ modifier:</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="cmcolumn.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="cmintegerfield.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="cmdraggablescrollview.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="cmmaskfield.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

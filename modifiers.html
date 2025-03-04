@@ -81,9 +81,77 @@
 <ul>
 <li class="toctree-l2"><a class="reference internal" href="visual_controls.html">Controls</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="controls/cmcolumn.html">CmColumn</a>
+<li class="toctree-l2"><a class="reference internal">Single</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmbutton.html">CmButton</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="controls/cmrow.html">CmRow</a>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmimage.html">CmImage</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmlabel.html">CmLabel</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmprogressbar.html">CmProgressBar</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmradiobutton.html">CmRadioButton</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmslider.html">CmSlider</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmtextfield.html">CmTextField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmtoggle.html">CmToggle</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal">Containers</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmcolumn.html">CmColumn</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmrow.html">CmRow</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmdraggablescrollview.html">CmDraggableScrollView</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmdropdownfield.html">CmDropdownField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmfoldout.html">CmFoldout</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmgroupbox.html">CmGroupBox</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmhelpbox.html">CmHelpBox</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmlistview.html">CmListView</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmmulticolumnlistview.html">CmMultiColumnListView</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmpopupwindow.html">CmPopupWindow</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmscroller.html">CmScroller</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmscrollview.html">CmScrollView</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal">Other</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmcurvefield.html">CmCurveField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmenumflagsfield.html">CmEnumFlagsField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmfloatfield.html">CmFloatField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmintegerfield.html">CmIntegerField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmlongfield.html">CmLongField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmmaskfield.html">CmMaskField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmobjectfield.html">CmObjectField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmpropertyfield.html">CmPropertyField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmtagfield.html">CmTagField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="controls/cmtoolbar.html">CmToolbar</a>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -149,7 +217,7 @@
 </li>
 <li><a href="#custom-modifiers-for-your-own-visual-change-for-control-runtime">Custom modifiers (for your own visual change for control runtime)</a></li>
 <li><a href="#cmselector-controls-visual-state">CmSelector (controls visual state)</a></li>
-<li><a href="#simple-list-of-all-modifiers">Simple list of all modifiers</a><ul>
+<li><a href="#simple-list-of-all-modifiers">Simple list of all modifiers</a></li>
 <li><a href="#cmmodifierbase-modifiers">CmModifierBase modifiers</a></li>
 <li><a href="#cmmodifierbasebackground-modifiers">CmModifierBaseBackground modifiers</a></li>
 <li><a href="#cmmodifierbaseimageandbackground-modifiers">CmModifierBaseImageAndBackground modifiers</a></li>
@@ -157,8 +225,6 @@
 <li><a href="#cmmodifierrow-modifiers">CmModifierRow modifiers</a></li>
 <li><a href="#cmmodifiercolumn-modifiers">CmModifierColumn modifiers</a></li>
 <li><a href="#what-next">What next</a></li>
-</ul>
-</li>
 </ul>
 <!-- TOC -->
 <h1 id="introduction">Introduction</h1>
@@ -170,6 +236,7 @@ than for text. Because the text has font size/color etc. but the background does
 <p>This is why modifier builder - the class that we will be using for building style for specific control is divided into
 groups that inherit from other groups modifiers to build modifiers depend on their type like text, background etc.</p>
 <p>This is how it looks</p>
+<p><a href="images/graphs/graph_modifiers_tree.png">graphs</a></p>
 <pre class="mermaid"><code>graph TD;
     A[CmModifierBase] -- abstract class --&gt; B[CmModifierBaseBackground];
     B --&gt; C[CmModifierBackground];

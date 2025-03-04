@@ -6,7 +6,7 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../img/favicon.ico" rel="shortcut icon"/>
-<title>CoDriven Advanced UI documentation - CoDriven Advanced UI</title>
+<title>CmButton - CoDriven Advanced UI</title>
 <link href="../css/theme.css" rel="stylesheet"/>
 <link href="../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
@@ -20,7 +20,7 @@
 <link href="../css/print-site-readthedocs.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "CoDriven Advanced UI documentation";
+        var mkdocs_page_name = "CmButton";
         var mkdocs_page_input_path = "controls\\cmbutton.md";
         var mkdocs_page_url = null;
       </script>
@@ -58,7 +58,7 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Documentation</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../theming.html">Theming</a>
 </li>
 <li class="toctree-l1"><a class="reference internal">Screen containers</a>
@@ -75,13 +75,85 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../modifiers.html">Modifiers</a>
 </li>
-<li class="toctree-l1"><a class="reference internal">Controls</a>
-<ul>
+<li class="toctree-l1 current"><a class="reference internal current">Controls</a>
+<ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../visual_controls.html">Controls</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="cmcolumn.html">CmColumn</a>
+<li class="toctree-l2 current"><a class="reference internal current">Single</a>
+<ul class="current">
+<li class="toctree-l3 current"><a class="reference internal current" href="#">CmButton</a>
+<ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="#introduction">introduction</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="cmrow.html">CmRow</a>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmimage.html">CmImage</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmlabel.html">CmLabel</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmprogressbar.html">CmProgressBar</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmradiobutton.html">CmRadioButton</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmslider.html">CmSlider</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmtextfield.html">CmTextField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmtoggle.html">CmToggle</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal">Containers</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="cmcolumn.html">CmColumn</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmrow.html">CmRow</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmdraggablescrollview.html">CmDraggableScrollView</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmdropdownfield.html">CmDropdownField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmfoldout.html">CmFoldout</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmgroupbox.html">CmGroupBox</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmhelpbox.html">CmHelpBox</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmlistview.html">CmListView</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmmulticolumnlistview.html">CmMultiColumnListView</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmpopupwindow.html">CmPopupWindow</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmscroller.html">CmScroller</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmscrollview.html">CmScrollView</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal">Other</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="cmcurvefield.html">CmCurveField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmenumflagsfield.html">CmEnumFlagsField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmfloatfield.html">CmFloatField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmintegerfield.html">CmIntegerField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmlongfield.html">CmLongField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmmaskfield.html">CmMaskField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmobjectfield.html">CmObjectField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmpropertyfield.html">CmPropertyField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmtagfield.html">CmTagField</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cmtoolbar.html">CmToolbar</a>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -122,7 +194,10 @@
 <div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
 <ul class="wy-breadcrumbs">
 <li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
-<li class="breadcrumb-item active">CoDriven Advanced UI documentation</li>
+<li class="breadcrumb-item">Documentation</li>
+<li class="breadcrumb-item">Controls</li>
+<li class="breadcrumb-item">Single</li>
+<li class="breadcrumb-item active">CmButton</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -134,8 +209,10 @@
 <p><a href="../visual_controls.html">Go back</a>.</p>
 <!-- TOC -->
 <ul>
-<li><a href="#co-driven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
+<li><a href="#codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
 <li><a href="#introduction">introduction</a></li>
+<li><a href="#cmbutton">CmButton</a></li>
+<li><a href="#style-cmbutton-elements">Style CmButton elements</a></li>
 </ul>
 <!-- TOC -->
 <h2 id="introduction">introduction</h2>
@@ -152,52 +229,47 @@
 <p>CmButton modifiers contains only one element to style - the "Button"</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">OptionButton</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// create button somewhere</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">getUIEventsHandler</span><span class="p">());</span>
 <span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
 <span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetEnabled</span><span class="p">(</span><span class="n">enabled</span><span class="p">);</span>
 
-<span class="w">        </span><span class="c1">// tyle Button element of Button control</span>
-<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
-<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color32</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">))</span>
-<span class="w">                </span><span class="p">.</span><span class="n">TextColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color32</span><span class="p">(</span><span class="mi">225</span><span class="p">,</span><span class="w"> </span><span class="mi">225</span><span class="p">,</span><span class="w"> </span><span class="mi">242</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">))</span>
-<span class="w">                </span><span class="p">.</span><span class="n">Weight</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">FlexDontShrink</span><span class="p">()</span>
-<span class="w">                </span><span class="c1">// for hover selector ==========================================================</span>
-<span class="w">                </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">HOVER</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.02f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2f</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">TextOutlineWidth</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">TextOutlineColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">black</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">BackgroundImageTintRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">cyan</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">39</span><span class="p">)</span>
-<span class="w">                </span><span class="c1">// for focused selector ==========================================================</span>
-<span class="w">                </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">FOCUS</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">TextOutlineWidth</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">39</span><span class="p">)</span>
-<span class="w">                </span><span class="c1">// copy common style from generic modifier builder </span>
-<span class="w">                </span><span class="c1">// (you can copy it in multiple places to reduce code)</span>
-<span class="w">                </span><span class="c1">// (you can copy this on all selectors - so create your own fucntion with common modifiers and copy)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">CopyFrom</span><span class="p">(</span><span class="n">scaleWithAnimation</span><span class="p">())</span>
-<span class="w">                </span><span class="c1">// for disabled selector ==========================================================</span>
-<span class="w">                </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DISABLED</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">BackgroundImageTintRGBA</span><span class="p">(</span><span class="n">_inputDisabledBgColor</span><span class="p">)</span>
-<span class="w">        </span><span class="p">);</span>
-
+<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">ExampleButton</span><span class="p">);</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">CmModifierBuilder</span><span class="w"> </span><span class="nf">scaleWithAnimation</span><span class="p">()</span>
+<span class="w">    </span><span class="c1">// in your theme</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">ExampleButton</span><span class="p">()</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierBuilder</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
-<span class="w">            </span><span class="c1">// animation for 300 milliseconds</span>
-<span class="w">            </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
-<span class="w">            </span><span class="c1">// scale control a little bit</span>
-<span class="w">            </span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.02f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.05f</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">TextAlign</span><span class="p">(</span><span class="n">CmTextAlign</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">PaddingHorizVert</span><span class="p">(</span><span class="mi">10</span><span class="p">.</span><span class="n">Px</span><span class="p">(),</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+<span class="w">            </span><span class="p">.</span><span class="n">MarginHorizVert</span><span class="p">(</span><span class="mi">10</span><span class="p">.</span><span class="n">Px</span><span class="p">(),</span><span class="w"> </span><span class="mi">10</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+<span class="w">            </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">15</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+<span class="w">            </span><span class="p">.</span><span class="n">WidthWrapContent</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">HeightWrapContent</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">BorderRadius</span><span class="p">(</span><span class="mi">10</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+<span class="w">            </span><span class="p">.</span><span class="n">BorderWidth</span><span class="p">(</span><span class="mi">2</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+<span class="w">            </span><span class="p">.</span><span class="n">BorderColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.2f</span><span class="p">))</span>
+<span class="w">            </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">0.3f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3f</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">))</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">Hover</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.05f</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">BorderColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8f</span><span class="p">))</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>to learn about modifiers for all controls <a href="../modifiers.html">click here</a></p>
 </div>
 </div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../visual_controls.html" title="Controls"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="cmimage.html" title="CmImage">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
 <hr/>
 <div role="contentinfo">
 <!-- Copyright etc -->
@@ -211,6 +283,8 @@
 </div>
 <div aria-label="Versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../visual_controls.html" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="cmimage.html" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="../js/jquery-3.6.0.min.js"></script>
