@@ -209,7 +209,9 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="codriven-advanced-ui-documentation-version-100">CoDriven Advanced UI documentation version 1.0.0</h1>
-<p><img alt="" src="images/codriven_advanced_ui_logo.png" /></p>
+<p><img alt="CoDrivenLogo" src="images/codriven_advanced_ui_logo.png" />
+<img alt="CoDrivenLogo" src="images/features/MultiplayerGame.png" />
+<img alt="CoDrivenLogo" src="images/features/MultiplayerGame_screens.png" /></p>
 <p>Thank you for buying CoDriven Advanced UI. I hope it will speed up your workflow and help to finish your game faster 😄.</p>
 <p>I am a professional Android developer with many years of experience, but I love creating games. During my game development journey, I came across a problem related to UI and decided to fix it by creating CoDriven Advanced UI. In android environment, I could conveniently create UI for apps and games using code. I decided to add this capability in this tool, thanks to this, you will be able to create UI by simply using code, which is generally easier than any existing solutions. Maybe just for me but try it and you will know what I mean.</p>
 <!-- TOC -->
@@ -217,14 +219,14 @@
 <ul>
 <li><a href="#codriven-advanced-ui-documentation-version-100">CoDriven Advanced UI documentation version 1.0.0</a></li>
 <li><a href="#the-main-benefits-of-codriven-advanced-ui-is">The main <strong>benefits</strong> of CoDriven Advanced UI is:</a></li>
-<li><a href="#"><img alt="graph editor image" src="images/features/graph_editor.png" /></a></li>
+<li><a href="#">graph editor</a></li>
 <li><a href="#note-this-tool-include-fully-working-3d-multiplayer-fps-mirrorlan-with">Note: this tool <strong>include: FULLY working 3D multiplayer FPS (mirror/LAN) with</strong>:</a></li>
 <li><a href="#limitations-of-the-current-version-of-codriven-advanced-ui">Limitations of the current version of CoDriven Advanced UI:</a></li>
 <li><a href="#codriven-advanced-ui-components">CoDriven Advanced UI components</a><ul>
 <li><a href="#screen-manager-cmscreenmanager">Screen Manager (CmScreenManager)</a></li>
 <li><a href="#screen-cmscreen">Screen (CmScreen)</a></li>
-<li><a href="#theme-icmthemebase">Theme (ICmThemeBase)</a></li>
 <li><a href="#screen-part-cmscreenpart">Screen Part (CmScreenPart)</a></li>
+<li><a href="#theme-icmthemebase">Theme (ICmThemeBase)</a></li>
 <li><a href="#controls">Controls</a></li>
 <li><a href="#modifiers">Modifiers</a></li>
 <li><a href="#ui-events">UI events</a></li>
@@ -234,6 +236,11 @@
 </ul>
 <!-- TOC -->
 
+<p><a href="https://www.youtube.com/watch?v=BnRL_QJd8gI"><img alt="Feature video" src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DBnRL_QJd8gI" /></a></p>
+<h1 id="now-released-on-the-unity-asset-store">Now released on the Unity asset store</h1>
+<p><a href="https://assetstore.unity.com/packages/tools/gui/codriven-advanced-ui-multiplayer-game-311367">https://assetstore.unity.com/packages/tools/gui/codriven-advanced-ui-multiplayer-game-311367</a></p>
+<h1 id="our-discord-join-now-and-ask-questions">OUR DISCORD - JOIN NOW AND ASK QUESTIONS :)</h1>
+<p><a href="https://discord.gg/XnjTwJBjqY">https://discord.gg/XnjTwJBjqY</a></p>
 <h1 id="the-main-benefits-of-codriven-advanced-ui-is">The main <strong>benefits</strong> of CoDriven Advanced UI is:</h1>
 <ul>
 <li>full source code included</li>
@@ -249,20 +256,22 @@
 <ul>
 <li>easy theming and changing of the current theme! <a href="theming.html">(more about in theming section)</a></li>
 </ul>
-<p><img alt="themes image" src="images/features/themes.gif" /></p>
+<p><img alt="themes image" src="images/features/themes.gif" />
+  <img alt="themes" src="images/features/themes_support.png" /></p>
 <hr />
 <ul>
 <li>powerful styling in the c# code using probably all modifiers available in USS - no more raw CSS/USS pseudocode (it will be generated automatically based on your styles) <a href="modifiers.html">(more about in modifiers section)</a>,</li>
-<li>add your own custom Editors in Unity. You can check how Translation Editor was made - because it was made with its own code I mean CoDriven Advanced UI :)</li>
-<li>east event handling! (you can handle events on part of your screen, screen as a whole, globally, or the same event in many places at the same time) <a href="ui_events.html">(more about in events section)</a></li>
-<li>CoDriven Advanced UI contains controls from UI Toolkit and a few more, like a floating window, and a draggable panel. This will be improved in the future <a href="visual_controls.html">(more about in visual controls section)</a></li>
-<li>implemented with observer pattern in mind to observe changes in UI or trigger UI changes from external events <a href="cmlive_data.html">(more about in cmLive data section)</a></li>
-<li>multiple scenes with examples like simple one theme, simple two themes, a few game scenes with maps and main menu, other <a href="tutorials.md">(more about in toturials section)</a></li>
-<li>easy passing player data to UI by event callback</li>
-<li>helper functions for your game and tools for multiplayer with a mirror</li>
-<li><strong>included: FULLY working 3D multiplayer FPS (mirror/LAN) with main menu and in-game menu</strong> <a href="multiplayer_game.html">more about in multiplayer game section</a></li>
-<li>documentation in the code</li>
 </ul>
+<p><img alt="themes" src="images/features/styling_controls.png" />
+- add your own custom Editors in Unity. You can check how Translation Editor was made - because it was made with its own code I mean CoDriven Advanced UI :)
+- east event handling! (you can handle events on part of your screen, screen as a whole, globally, or the same event in many places at the same time) <a href="ui_events.html">(more about in events section)</a>
+- CoDriven Advanced UI contains controls from UI Toolkit and a few more, like a floating window, and a draggable panel. This will be improved in the future <a href="visual_controls.html">(more about in visual controls section)</a>
+- implemented with observer pattern in mind to observe changes in UI or trigger UI changes from external events <a href="cmlive_data.html">(more about in cmLive data section)</a>
+- multiple scenes with examples like simple one theme, simple two themes, a few game scenes with maps and main menu, other <a href="tutorials.md">(more about in toturials section)</a>
+- easy passing player data to UI by event callback
+- helper functions for your game and tools for multiplayer with a mirror
+- <strong>included: FULLY working 3D multiplayer FPS (mirror/LAN) with main menu and in-game menu</strong> <a href="multiplayer_game.html">more about in multiplayer game section</a>
+- documentation in the code</p>
 <h2 id="note-this-tool-include-fully-working-3d-multiplayer-fps-mirrorlan-with">Note: this tool <strong>include: FULLY working 3D multiplayer FPS (mirror/LAN) with</strong>:</h2>
 <ul>
 <li>grappling hook weapon created from scratch using math in code for springs (without using the build in spring classes), so you can do more,</li>
@@ -281,6 +290,7 @@
 <li>maps for the game and simple models like trees, houses, etc.</li>
 <li>you can play with friends over Lan :)</li>
 </ul>
+<p><img alt="settings" src="images/features/settings.png" /></p>
 <p><img alt="Fps game image1" src="images/features/multiplayer_fps_screen1.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen2.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen3.png" />
@@ -336,11 +346,12 @@ and <a href="visual_controls.html">visual controls</a></p>
 <p>The main component of CoDriven Advanced UI is <strong>CmScreenManager</strong> which is a container for all screens and themes in your game.
 You can create many screen managers. For example: One for the main menu, and one for in-game. You Provide a list of <strong>CmScreen</strong> and a list of Themes CmThemeBase. Here you can handle global UI events by clicking on the buttons.
 To learn more about it <a href="screen_manager.html">click here - sceen manager section</a></p>
+<p><img alt="themes" src="images/features/screen_manager.png" /></p>
 <h3 id="screen-cmscreen">Screen (CmScreen)</h3>
 <p>This is a single screen visible as a whole on the monitor screen currently. The screen is tightly coupled with a theme. If you don't use a theme then you can create a screen based on the default theme. Here you can handle screen-related UI events like clicking on the buttons.</p>
 <p>To learn more about it <a href="screen.html">click here - sceen section</a></p>
 <h3 id="screen-part-cmscreenpart">Screen Part (CmScreenPart)</h3>
-<p>This is an optional element. It was added to divide the whole screen into sections. This way you can reuse certain sections on multiple screens. Like the game settings panel for changes in the main menu and in the game. This way it's more reusable. CmScreenPart is also usable to handle UI events (like button clicks or other events) and encapsulate this logic to this screen part. </p>
+<p>This is an optional element. It was added to divide the whole screen into sections. This way you can reuse certain sections on multiple screens. Like the game settings panel for changes in the main menu and in the game. This way it's more reusable. CmScreenPart is also usable to handle UI events (like button clicks or other events) and encapsulate this logic to this screen part.</p>
 <p>Of course, you can handle events in higher order parts of your system like <strong>CmScreen</strong> or <strong>CmScreenManager</strong> you can handle screen part-related UI events like clicking on the buttons.</p>
 <p>To learn more about CmScreenPart <a href="screen_part.html">click here - screen part section</a></p>
 <h3 id="theme-icmthemebase">Theme (ICmThemeBase)</h3>
@@ -385,12 +396,12 @@ To learn more about it <a href="screen_manager.html">click here - sceen manager 
 </code></pre></div>
 <p>To learn more about theming <a href="theming.html">click here - theming section</a></p>
 <h3 id="controls">Controls</h3>
-<p>CoDriven Advanced UI is an adapter for UI toolkit components with an extension. 
+<p>CoDriven Advanced UI is an adapter for UI toolkit components with an extension.
 Almost each UI Toolkit control is encapsulated with the CoDriven Advanced UI control.
 So for example UI Toolkit <strong>Button</strong> is encapsulated into <strong>CmButton</strong> in this tool.</p>
 <p>To see all available controls at the moment please <a href="controls.md">click here - controls section</a></p>
 <h3 id="modifiers">Modifiers</h3>
-<p>Modifiers are properties that will change the look and feel of UI Toolkit controls like USS/CSS code, but they are managed in the code by custom method calls instead of uss pseudocode. </p>
+<p>Modifiers are properties that will change the look and feel of UI Toolkit controls like USS/CSS code, but they are managed in the code by custom method calls instead of uss pseudocode.</p>
 <p>here is an example how modifiers look like for styling simple CmButton</p>
 <div class="highlight"><pre><span></span><code><span class="w">            </span><span class="c1">// get style builder for button and set styles for two states - default, on mouse hover</span>
 <span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>

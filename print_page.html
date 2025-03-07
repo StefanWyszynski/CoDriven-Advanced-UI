@@ -252,8 +252,8 @@
                         <h1 class='nav-section-title' id='section-getting-started'>
                             Getting Started <a class='headerlink' href='#section-getting-started' title='Permanent link'>↵</a>
                         </h1>
-                        <section class="print-page" id="install"><h1 id="install-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+                        <section class="print-page" id="install"><p><a href="#index">Go back</a></p>
+<h1 id="install-install">Install</h1>
 <h1 id="install-how-to-install">How to install</h1>
 <p>CoDriven Advanced UI require some packages if you want to experiment with multiplayer game added as sample to StefanWyszynski\CoDrivenAdvancedUI\Examples\ folder.</p>
 <p>If you don't want to use this examples then you can remove that folder and you won't have to install below packages</p>
@@ -278,7 +278,9 @@
 <p>"com.github.siccity.xnode": "https://github.com/siccity/xNode.git",</p>
 <p>this is what I mean by graph editor:</p>
 <p><img alt="graph editor image" src="images/features/graph_editor.png" /></p></section><section class="print-page" id="index"><h1 id="index-codriven-advanced-ui-documentation-version-100">CoDriven Advanced UI documentation version 1.0.0</h1>
-<p><img alt="" src="images/codriven_advanced_ui_logo.png" /></p>
+<p><img alt="CoDrivenLogo" src="images/codriven_advanced_ui_logo.png" />
+<img alt="CoDrivenLogo" src="images/features/MultiplayerGame.png" />
+<img alt="CoDrivenLogo" src="images/features/MultiplayerGame_screens.png" /></p>
 <p>Thank you for buying CoDriven Advanced UI. I hope it will speed up your workflow and help to finish your game faster 😄.</p>
 <p>I am a professional Android developer with many years of experience, but I love creating games. During my game development journey, I came across a problem related to UI and decided to fix it by creating CoDriven Advanced UI. In android environment, I could conveniently create UI for apps and games using code. I decided to add this capability in this tool, thanks to this, you will be able to create UI by simply using code, which is generally easier than any existing solutions. Maybe just for me but try it and you will know what I mean.</p>
 <!-- TOC -->
@@ -286,14 +288,14 @@
 <ul>
 <li><a href="#index-codriven-advanced-ui-documentation-version-100">CoDriven Advanced UI documentation version 1.0.0</a></li>
 <li><a href="#index-the-main-benefits-of-codriven-advanced-ui-is">The main <strong>benefits</strong> of CoDriven Advanced UI is:</a></li>
-<li><a href="#index-"><img alt="graph editor image" src="images/features/graph_editor.png" /></a></li>
+<li><a href="#index-">graph editor</a></li>
 <li><a href="#index-note-this-tool-include-fully-working-3d-multiplayer-fps-mirrorlan-with">Note: this tool <strong>include: FULLY working 3D multiplayer FPS (mirror/LAN) with</strong>:</a></li>
 <li><a href="#index-limitations-of-the-current-version-of-codriven-advanced-ui">Limitations of the current version of CoDriven Advanced UI:</a></li>
 <li><a href="#index-codriven-advanced-ui-components">CoDriven Advanced UI components</a><ul>
 <li><a href="#index-screen-manager-cmscreenmanager">Screen Manager (CmScreenManager)</a></li>
 <li><a href="#index-screen-cmscreen">Screen (CmScreen)</a></li>
-<li><a href="#index-theme-icmthemebase">Theme (ICmThemeBase)</a></li>
 <li><a href="#index-screen-part-cmscreenpart">Screen Part (CmScreenPart)</a></li>
+<li><a href="#index-theme-icmthemebase">Theme (ICmThemeBase)</a></li>
 <li><a href="#index-controls">Controls</a></li>
 <li><a href="#index-modifiers">Modifiers</a></li>
 <li><a href="#index-ui-events">UI events</a></li>
@@ -303,6 +305,11 @@
 </ul>
 <!-- TOC -->
 
+<p><a href="https://www.youtube.com/watch?v=BnRL_QJd8gI"><img alt="Feature video" src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DBnRL_QJd8gI" /></a></p>
+<h1 id="index-now-released-on-the-unity-asset-store">Now released on the Unity asset store</h1>
+<p><a href="https://assetstore.unity.com/packages/tools/gui/codriven-advanced-ui-multiplayer-game-311367">https://assetstore.unity.com/packages/tools/gui/codriven-advanced-ui-multiplayer-game-311367</a></p>
+<h1 id="index-our-discord-join-now-and-ask-questions">OUR DISCORD - JOIN NOW AND ASK QUESTIONS :)</h1>
+<p><a href="https://discord.gg/XnjTwJBjqY">https://discord.gg/XnjTwJBjqY</a></p>
 <h1 id="index-the-main-benefits-of-codriven-advanced-ui-is">The main <strong>benefits</strong> of CoDriven Advanced UI is:</h1>
 <ul>
 <li>full source code included</li>
@@ -318,20 +325,22 @@
 <ul>
 <li>easy theming and changing of the current theme! <a href="#theming">(more about in theming section)</a></li>
 </ul>
-<p><img alt="themes image" src="images/features/themes.gif" /></p>
+<p><img alt="themes image" src="images/features/themes.gif" />
+  <img alt="themes" src="images/features/themes_support.png" /></p>
 <hr />
 <ul>
 <li>powerful styling in the c# code using probably all modifiers available in USS - no more raw CSS/USS pseudocode (it will be generated automatically based on your styles) <a href="#modifiers">(more about in modifiers section)</a>,</li>
-<li>add your own custom Editors in Unity. You can check how Translation Editor was made - because it was made with its own code I mean CoDriven Advanced UI :)</li>
-<li>east event handling! (you can handle events on part of your screen, screen as a whole, globally, or the same event in many places at the same time) <a href="#ui_events">(more about in events section)</a></li>
-<li>CoDriven Advanced UI contains controls from UI Toolkit and a few more, like a floating window, and a draggable panel. This will be improved in the future <a href="#visual_controls">(more about in visual controls section)</a></li>
-<li>implemented with observer pattern in mind to observe changes in UI or trigger UI changes from external events <a href="#cmlive_data">(more about in cmLive data section)</a></li>
-<li>multiple scenes with examples like simple one theme, simple two themes, a few game scenes with maps and main menu, other <a href="#tutorials.md">(more about in toturials section)</a></li>
-<li>easy passing player data to UI by event callback</li>
-<li>helper functions for your game and tools for multiplayer with a mirror</li>
-<li><strong>included: FULLY working 3D multiplayer FPS (mirror/LAN) with main menu and in-game menu</strong> <a href="#multiplayer_game">more about in multiplayer game section</a></li>
-<li>documentation in the code</li>
 </ul>
+<p><img alt="themes" src="images/features/styling_controls.png" />
+- add your own custom Editors in Unity. You can check how Translation Editor was made - because it was made with its own code I mean CoDriven Advanced UI :)
+- east event handling! (you can handle events on part of your screen, screen as a whole, globally, or the same event in many places at the same time) <a href="#ui_events">(more about in events section)</a>
+- CoDriven Advanced UI contains controls from UI Toolkit and a few more, like a floating window, and a draggable panel. This will be improved in the future <a href="#visual_controls">(more about in visual controls section)</a>
+- implemented with observer pattern in mind to observe changes in UI or trigger UI changes from external events <a href="#cmlive_data">(more about in cmLive data section)</a>
+- multiple scenes with examples like simple one theme, simple two themes, a few game scenes with maps and main menu, other <a href="#tutorials.md">(more about in toturials section)</a>
+- easy passing player data to UI by event callback
+- helper functions for your game and tools for multiplayer with a mirror
+- <strong>included: FULLY working 3D multiplayer FPS (mirror/LAN) with main menu and in-game menu</strong> <a href="#multiplayer_game">more about in multiplayer game section</a>
+- documentation in the code</p>
 <h2 id="index-note-this-tool-include-fully-working-3d-multiplayer-fps-mirrorlan-with">Note: this tool <strong>include: FULLY working 3D multiplayer FPS (mirror/LAN) with</strong>:</h2>
 <ul>
 <li>grappling hook weapon created from scratch using math in code for springs (without using the build in spring classes), so you can do more,</li>
@@ -350,6 +359,7 @@
 <li>maps for the game and simple models like trees, houses, etc.</li>
 <li>you can play with friends over Lan :)</li>
 </ul>
+<p><img alt="settings" src="images/features/settings.png" /></p>
 <p><img alt="Fps game image1" src="images/features/multiplayer_fps_screen1.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen2.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen3.png" />
@@ -405,11 +415,12 @@ and <a href="#visual_controls">visual controls</a></p>
 <p>The main component of CoDriven Advanced UI is <strong>CmScreenManager</strong> which is a container for all screens and themes in your game.
 You can create many screen managers. For example: One for the main menu, and one for in-game. You Provide a list of <strong>CmScreen</strong> and a list of Themes CmThemeBase. Here you can handle global UI events by clicking on the buttons.
 To learn more about it <a href="#screen_manager">click here - sceen manager section</a></p>
+<p><img alt="themes" src="images/features/screen_manager.png" /></p>
 <h3 id="index-screen-cmscreen">Screen (CmScreen)</h3>
 <p>This is a single screen visible as a whole on the monitor screen currently. The screen is tightly coupled with a theme. If you don't use a theme then you can create a screen based on the default theme. Here you can handle screen-related UI events like clicking on the buttons.</p>
 <p>To learn more about it <a href="#screen">click here - sceen section</a></p>
 <h3 id="index-screen-part-cmscreenpart">Screen Part (CmScreenPart)</h3>
-<p>This is an optional element. It was added to divide the whole screen into sections. This way you can reuse certain sections on multiple screens. Like the game settings panel for changes in the main menu and in the game. This way it's more reusable. CmScreenPart is also usable to handle UI events (like button clicks or other events) and encapsulate this logic to this screen part. </p>
+<p>This is an optional element. It was added to divide the whole screen into sections. This way you can reuse certain sections on multiple screens. Like the game settings panel for changes in the main menu and in the game. This way it's more reusable. CmScreenPart is also usable to handle UI events (like button clicks or other events) and encapsulate this logic to this screen part.</p>
 <p>Of course, you can handle events in higher order parts of your system like <strong>CmScreen</strong> or <strong>CmScreenManager</strong> you can handle screen part-related UI events like clicking on the buttons.</p>
 <p>To learn more about CmScreenPart <a href="#screen_part">click here - screen part section</a></p>
 <h3 id="index-theme-icmthemebase">Theme (ICmThemeBase)</h3>
@@ -454,12 +465,12 @@ To learn more about it <a href="#screen_manager">click here - sceen manager sect
 </code></pre></div>
 <p>To learn more about theming <a href="#theming">click here - theming section</a></p>
 <h3 id="index-controls">Controls</h3>
-<p>CoDriven Advanced UI is an adapter for UI toolkit components with an extension. 
+<p>CoDriven Advanced UI is an adapter for UI toolkit components with an extension.
 Almost each UI Toolkit control is encapsulated with the CoDriven Advanced UI control.
 So for example UI Toolkit <strong>Button</strong> is encapsulated into <strong>CmButton</strong> in this tool.</p>
 <p>To see all available controls at the moment please <a href="#controls.md">click here - controls section</a></p>
 <h3 id="index-modifiers">Modifiers</h3>
-<p>Modifiers are properties that will change the look and feel of UI Toolkit controls like USS/CSS code, but they are managed in the code by custom method calls instead of uss pseudocode. </p>
+<p>Modifiers are properties that will change the look and feel of UI Toolkit controls like USS/CSS code, but they are managed in the code by custom method calls instead of uss pseudocode.</p>
 <p>here is an example how modifiers look like for styling simple CmButton</p>
 <div class="highlight"><pre><span></span><code><span class="w">            </span><span class="c1">// get style builder for button and set styles for two states - default, on mouse hover</span>
 <span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
@@ -488,8 +499,7 @@ This way you can have a <strong>CmButton</strong> "Change theme to My favorite" 
                         <h1 class='nav-section-title' id='section-changelog'>
                             Changelog <a class='headerlink' href='#section-changelog' title='Permanent link'>↵</a>
                         </h1>
-                        <section class="print-page" id="changelog"><h1 id="changelog-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+                        <section class="print-page" id="changelog"><p><a href="#index">Go back</a></p>
 <h1 id="changelog-changelog">Changelog</h1>
 <h2 id="changelog-v100"><a href="https://github.com/hibbitts-design/docsify-open-publishing-starter-kit/releases/tag/v1.2.13">v1.0.0</a></h2>
 <h3 id="changelog-01012025">01/01/2025</h3>
@@ -502,8 +512,7 @@ This way you can have a <strong>CmButton</strong> "Change theme to My favorite" 
                         <h1 class='nav-section-title' id='section-documentation'>
                             Documentation <a class='headerlink' href='#section-documentation' title='Permanent link'>↵</a>
                         </h1>
-                        <section class="print-page" id="theming"><h1 id="theming-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+                        <section class="print-page" id="theming"><p><a href="#index">Go back</a></p>
 <h1 id="theming-themes">Themes</h1>
 <!-- TOC -->
 
@@ -613,8 +622,9 @@ the default built in theme. The default theme will not change your style. It is 
                         <h2 class='nav-section-title' id='section-screen-containers'>
                             Screen containers <a class='headerlink' href='#section-screen-containers' title='Permanent link'>↵</a>
                         </h2>
-                        <section class="print-page" id="screen_manager"><h1 id="screen_manager-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+                        <section class="print-page" id="screen_manager"><p><a href="#index">Go back to main</a></p>
+<h1 id="screen_manager-cmscreenmanager">CmScreenManager</h1>
+<p><img alt="themes" src="images/features/screen_manager.png" /></p>
 <!-- TOC -->
 
 <ul>
@@ -796,8 +806,7 @@ example below:</p>
 <span class="w">            </span><span class="n">SetCurrentScreen</span><span class="p">(</span><span class="n">CmSimpleThemeMainScreen</span><span class="p">.</span><span class="n">MAIN_SCREEN_NAME</span><span class="p">);</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
-</code></pre></div></section><section class="print-page" id="screen"><h1 id="screen-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+</code></pre></div></section><section class="print-page" id="screen"><p><a href="#index">Go back</a></p>
 <h1 id="screen-cmscreen">CmScreen</h1>
 <!-- TOC -->
 
@@ -966,8 +975,8 @@ a button</p>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>For more information about this example. See examples for project. Just read the code and you will know how to use this</p></section><section class="print-page" id="screen_part"><h1 id="screen_part-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+<p>For more information about this example. See examples for project. Just read the code and you will know how to use this</p></section><section class="print-page" id="screen_part"><p><a href="#index">Go back</a></p>
+<h1 id="screen_part-cmscreenpart">CmScreenPart</h1>
 <h3 id="screen_part-introduction">Introduction</h3>
 <p><strong>CmScreenPart</strong> is a part of the screen container for controls. This is an optional component. You can add controls to screens directly, but this separation of concerns will help you manage larger projects and reuse parts of your screen UI. You can have multiple <strong>CmScreenPart</strong> added to <strong>CmScreen</strong>.</p>
 <h3 id="screen_part-how-to-use">How to use</h3>
@@ -1033,16 +1042,12 @@ To learn more about controls see <a href="#controls.md">there in controls sectio
 <h3 id="screen_part-binduieventsonstart">BindUIEventsOnStart()</h3>
 <p>Here <strong>BindUIEventsOnStart</strong>() function is the same as in CmScreenManager, CmScreen but you can handle UI event whenever you want.</p>
 <p>CmScreenPart is the lowest place where you can handle events. Events will go up and will be handled in such direction:</p>
-<pre  class="mermaid"><code>graph LR
-    A[CmScreenPart.OnClick] --> B[CmScreen.OnClick]
-    B --> C[CmScreenManager.OnClick]
-</code></pre>
+<p><img alt="graphs" src="images/graphs/screen_part_graph.png" /></p>
 <p>So you can handle events whenever you want.</p>
 <blockquote>
 <p>Note: when you create control you will pass CmUIEventsHandler as a parameter. You will have to pass CmUiEventHandler for current <strong>CmScreenPart</strong>. You can get current event handler by using the method <strong>CmScreenPart.getUIEventsHandler</strong>(). This way events will be propagated upper in the view hierarchy like in the above diagram.</p>
 <p>If you create your event handler and pass it or null, then <strong>CmScreenPart</strong> and its parent won't know about the event being triggered so you won't receive events in BindUIEventsOnStart(). To learn more about events click <a href="#ui_events">here in ui_events section</a></p>
-</blockquote></section><h1 class='nav-section-title-end'>Ended: Screen containers</h1><section class="print-page" id="ui_events"><h1 id="ui_events-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+</blockquote></section><h1 class='nav-section-title-end'>Ended: Screen containers</h1><section class="print-page" id="ui_events"><h1 id="ui_events-ui-events">UI Events</h1><p><a href="#index">Go back</a></p>
 <h2 id="ui_events-cmuieventshandler">CmUIEventsHandler</h2>
 <p>UI events are mapped internally to simple Class <strong>CmUIEventsHandler</strong>. This way you can easily use events in any place
 of your elements tree.</p>
@@ -1089,11 +1094,7 @@ select the button "Start game"</p>
 </code></pre></div>
 <p>CmScreenPart is the lowest place where you can handle BindUIEventsOnStart events. Events will go up and will be handled
 in such direction :</p>
-<pre  class="mermaid"><code>graph TD
-    A[CmControl.OnClick] --> B[CmScreenPart.BindUIEventsOnStart]
-    B[CmScreenPart.BindUIEventsOnStart] --> C[CmScreen.BindUIEventsOnStart]
-    C --> D[CmScreenManager.BindUIEventsOnStart]
-</code></pre>
+<p><img alt="ui events" src="images/graphs/ui_events.png" /></p>
 <p>So event will move through parents until it reaches the target which is CmScreenManager.
 You can handle onClick event on each step simultaneously. This way you can add on click sound globally for each onClick
 from all controls and add on click in CmScreenPart to handle some logic.</p>
@@ -1307,8 +1308,8 @@ in previous examples:</p>
 <td>Called when dropdown field is selected</td>
 </tr>
 </tbody>
-</table></section><section class="print-page" id="modifiers"><h1 id="modifiers-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+</table></section><section class="print-page" id="modifiers"><p><a href="#index">Go back</a></p>
+<h1 id="modifiers-modifiers">Modifiers</h1>
 <!-- TOC -->
 
 <ul>
@@ -1344,16 +1345,7 @@ than for text. Because the text has font size/color etc. but the background does
 <p>This is why modifier builder - the class that we will be using for building style for specific control is divided into
 groups that inherit from other groups modifiers to build modifiers depend on their type like text, background etc.</p>
 <p>This is how it looks</p>
-<p><a href="images/graphs/graph_modifiers_tree.png">graphs</a></p>
-<pre  class="mermaid"><code>graph TD;
-    A[CmModifierBase] -- abstract class --> B[CmModifierBaseBackground];
-    B --> C[CmModifierBackground];
-    B --> D[CmModifierText];
-    B -- abstract class --> E[CmModifierBaseImageAndBackground];
-    B --> F[CmModifierColumn];
-    B --> G[CmModifierRow];
-    E --> H[CmModifierImageAndBackground];
-</code></pre>
+<p><img alt="graphs" src="images/graphs/graph_modifiers_tree.png" /></p>
 <blockquote>
 <p>Note: you shouldn't use classes with the text "<strong>Base</strong>" in their names from the above diagram. Only if you need to create
 your own class with your own modifiers that inherit from them.</p>
@@ -1971,9 +1963,8 @@ by extension function "px()" to <strong>UssPropertyVal</strong> class</p>
                         <h2 class='nav-section-title' id='section-controls'>
                             Controls <a class='headerlink' href='#section-controls' title='Permanent link'>↵</a>
                         </h2>
-                        <section class="print-page" id="visual_controls"><h1 id="visual_controls-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
-<h1 id="visual_controls-codriven-advanced-ui-controls">CoDriven Advanced UI controls</h1>
+                        <section class="print-page" id="visual_controls"><p><a href="#index">Go back</a></p>
+<h1 id="visual_controls-ui-controls">UI controls</h1>
 <h2 id="visual_controls-introduction">Introduction</h2>
 <p>CoDriven Advanced UI is based on UI toolkit. There are a few extension controls like CmDraggableScrollView and others, but mostly
 controls are the same as in UI toolkit. So what is the benefit of this?. CoDriven Advanced UI has a different approach to:</p>
@@ -1989,15 +1980,7 @@ controls are the same as in UI toolkit. So what is the benefit of this?. CoDrive
 <li>the whole system is better solution for styling, theming and language change.</li>
 </ul>
 <h2 id="visual_controls-controls">Controls</h2>
-<pre  class="mermaid"><code>graph TD
-;
-    A[CmControlBase] -- abstract class --> B[CmControlModifiable];
-    B -- abstract class --> C[CmControlContainer];
-    B -- abstract class --> D[CmControlModifiableForSelfHandleSubitems];
-    D --> E[Special container controls];
-    C --> F[All container controls];
-    B --> G[All normal controls]
-</code></pre>
+<p><img alt="graphs" src="images/graphs/controls_graph.png" /></p>
 <blockquote>
 <p>important - read this section before the documentation for indivitual controls.</p>
 </blockquote>
@@ -2126,10 +2109,6 @@ and events handling of these controls</p></section>
 <!-- TOC -->
 
 <h2 id="controls-cmbutton-introduction">introduction</h2>
-<pre  class="mermaid"><code>graph TD
-;
-    A[CmControlBase] --> B[CmButton];
-</code></pre>
 <p>CmControlBase is the base control <a href="#visual_controls">more in the introduction here</a></p>
 <h1 id="controls-cmbutton-cmbutton">CmButton</h1>
 <p>CmButton is a button control. Is is based on VisualElement. </p>
@@ -2374,8 +2353,7 @@ modifier:</p>
                         <h2 class='nav-section-title' id='section-tools'>
                             Tools <a class='headerlink' href='#section-tools' title='Permanent link'>↵</a>
                         </h2>
-                        <section class="print-page" id="translation_editor"><h1 id="translation_editor-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+                        <section class="print-page" id="translation_editor"><p><a href="#index">Go back</a></p>
 <h1 id="translation_editor-translation-editor">Translation editor</h1>
 <p><img alt="translation editor image" src="images/features/translation_editor.png" /></p>
 <h3 id="translation_editor-language-change-runtime">Language change runtime:</h3>
@@ -2478,15 +2456,14 @@ be used as a shortcut for our previous code with CmGeneratedTranslations.GetStri
 <p>as you can see there are variables generated based on the translation editor table</p>
 <p>CmGeneratedTranslations.LANGUAGE_English,</p>
 <p>CmGeneratedTranslations.LANGUAGE_Polish</p>
-<p>are constants because we had two languages in our example table "English" and "Polish"</p></section><section class="print-page" id="graph_editor"><h1 id="graph_editor-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+<p>are constants because we had two languages in our example table "English" and "Polish"</p></section><section class="print-page" id="graph_editor"><p><a href="#index">Go back</a></p>
+<h1 id="graph_editor-graph-editor">Graph editor</h1>
 <p><img alt="graph editor image" src="images/features/graph_editor.png" /></p>
 <p>under construction...</p></section><h1 class='nav-section-title-end'>Ended: Tools</h1>
                         <h2 class='nav-section-title' id='section-utils'>
                             Utils <a class='headerlink' href='#section-utils' title='Permanent link'>↵</a>
                         </h2>
-                        <section class="print-page" id="cmlive_data"><h1 id="cmlive_data-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+                        <section class="print-page" id="cmlive_data"><p><a href="#index">Go back</a></p>
 <h1 id="cmlive_data-cmlivedata-observable-field">CmLiveData - observable field</h1>
 <p>CmLiveData is for generic type observer. </p>
 <p>available methods:</p>
@@ -2530,8 +2507,9 @@ by using </p>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Observe</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">observer</span><span class="p">)</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">HasObservers</span><span class="p">()</span>
-</code></pre></div></section><h1 class='nav-section-title-end'>Ended: Utils</h1><section class="print-page" id="tutorials-tutorials"><h1 id="tutorials-tutorials-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<h1 id="tutorials-tutorials-introduction">Introduction</h1>
+</code></pre></div></section><h1 class='nav-section-title-end'>Ended: Utils</h1><section class="print-page" id="tutorials-tutorials"><p><a href="#tutorials-index.md">Go back</a></p>
+<h1 id="tutorials-tutorials-all-tutorials">All tutorials</h1>
+<h2 id="tutorials-tutorials-introduction">Introduction</h2>
 <p>All below scenes contains UI_Toolkit_Prefab located in tool subfolder <strong>ui_prefabs/UI_Toolkit_Prefab.prefab</strong></p>
 <p>Just add it to the scene and attach your own Screen Manager Monobehaviour.</p>
 <p><img alt="codriven_advanced_ui_prefab_instalation" src="images/codriven_advanced_ui_prefab_instalation.png" /></p>
@@ -2562,8 +2540,7 @@ Asset (don't add your controls just add empty because it will be used by CoDrive
 <li>Scene is placed in <strong>examples\advanced\scenes\ScreenPartExampleScene.unity</strong>. This scene is an extended version of One
   Theme example that just uses CmScreenPart as an example.</li>
 </ul>
-<p><img alt="advanced tutorial scene with working game" src="images/advanced_game_scene2.gif" /></p></section><section class="print-page" id="multiplayer_game"><h1 id="multiplayer_game-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+<p><img alt="advanced tutorial scene with working game" src="images/advanced_game_scene2.gif" /></p></section><section class="print-page" id="multiplayer_game"><p><a href="#index">Go back</a></p>
 <h1 id="multiplayer_game-multiplayer-game-with-full-menu-sample-and-scenes">Multiplayer Game With full menu sample and scenes</h1>
 <p><img alt="Fps game image2" src="images/features/multiplayer_fps_screen1.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen2.png" />
@@ -2701,11 +2678,12 @@ Open the <strong>MapSelectPanelSp.cs</strong> class for more details</p>
 <p>key: E - join vehicle</p>
 <p>key: Q - leave vehicle
 </p>
-</blockquote></section><section class="print-page" id="contact"><h1 id="contact-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
-<p><a href="#index">Go back</a></p>
+</blockquote></section><section class="print-page" id="contact"><p><a href="#index">Go back</a></p>
 <h1 id="contact-contact-information">Contact information</h1>
 <p>you can ask questions in the discord server:</p>
 <p>Discord:</p>
+<p>Join now and ask questions :)
+https://discord.gg/XnjTwJBjqY</p>
 <p>More information and help you can be find on my youtube channel:</p>
 <p>https://www.youtube.com/@ThwackStudio/videos</p>
 <p>email: thwackstudio@gmail.com</p></section><h1 class='nav-section-title-end'>Ended: Documentation</h1></div>
