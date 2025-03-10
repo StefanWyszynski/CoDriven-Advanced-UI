@@ -67,9 +67,11 @@
                   <li class="toctree-l1"><a class="reference internal" href="changelog.html">Change log</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Tutorial scenes</span></p>
+              <p class="caption"><span class="caption-text">Tutorials</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="tutorials/how_to_start.html">Change log</a>
+                  <li class="toctree-l1"><a class="reference internal" href="tutorials/how_to_start.html">IMPORTANT TUTORIAL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tutorials/tutorials.html">Tutorial scenes</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Documentation</span></p>
@@ -185,8 +187,6 @@
                 <li class="toctree-l2"><a class="" href="cmlive_data3.md">Multiplayer mirror helpers</a>
                 </li>
     </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="tutorials/tutorials.html">Tutorial scenes</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="multiplayer_game.html">Multiplayer game sample</a>
                   </li>
@@ -518,8 +518,8 @@ This way you can have a <strong>CmButton</strong> "Change theme to My favorite" 
 - none</p>
 <p><strong>Bugfix:</strong>
 * none</p></section><h1 class='nav-section-title-end'>Ended: Changelog</h1>
-                        <h1 class='nav-section-title' id='section-tutorial-scenes'>
-                            Tutorial scenes <a class='headerlink' href='#section-tutorial-scenes' title='Permanent link'>↵</a>
+                        <h1 class='nav-section-title' id='section-tutorials'>
+                            Tutorials <a class='headerlink' href='#section-tutorials' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="tutorials-how_to_start"><p><a href="#tutorials-index.md">Go back</a></p>
 <h1 id="tutorials-how_to_start-how-to-start">How to start</h1>
@@ -924,7 +924,40 @@ Now prepare for implementation :) - I know there is much code in implementation,
 <p><img alt="simple_scene.gif" src="images/how_to_start/simple_scene.gif" /></p>
 <blockquote>
 <p>I will complete the documentation soon. I am trying to add more and more every day.</p>
-</blockquote></section><h1 class='nav-section-title-end'>Ended: Tutorial scenes</h1>
+</blockquote></section><section class="print-page" id="tutorials-tutorials"><p><a href="#tutorials-index.md">Go back</a></p>
+<h1 id="tutorials-tutorials-all-tutorials">All tutorials</h1>
+<h2 id="tutorials-tutorials-introduction">Introduction</h2>
+<p>All below scenes contains UI_Toolkit_Prefab located in tool subfolder <strong>ui_prefabs/UI_Toolkit_Prefab.prefab</strong></p>
+<p>Just add it to the scene and attach your own Screen Manager Monobehaviour.</p>
+<p><img alt="codriven_advanced_ui_prefab_instalation" src="images/codriven_advanced_ui_prefab_instalation.png" /></p>
+<p>Or you can just create an empty object in the scene and add a UI document to it with typical panel settings and add an empty Source
+Asset (don't add your controls just add empty because it will be used by CoDriven Advanced UI as a UI document)</p>
+<h1 id="tutorials-tutorials-tutorials">Tutorials</h1>
+<p>There are a few tutorial scenes added. Tutorials are placed in <strong>examples</strong> folder. Here is a list</p>
+<h3 id="tutorials-tutorials-simple-one-theme-scene">Simple one theme scene</h3>
+<ul>
+<li>Scene is placed in <strong>examples\simple\one_theme\scenes\OneThemeExampleScene.unity</strong>. This scene contains simple buttons
+  styled by one theme. An example is simple for faster learning purposes.</li>
+</ul>
+<p><img alt="tutorial scene with one theme" src="images/scene_one_theme.gif" /></p>
+<h3 id="tutorials-tutorials-simple-two-theme-scene-with-click-actions">Simple two theme scene with click actions</h3>
+<ul>
+<li>Scene is placed in <strong>examples\simple\two_themes\scenes\TwoThemesExampleScene.unity</strong>. This scene is an extended version
+  of the One Theme example. You can change the theme runtime.</li>
+</ul>
+<p><img alt="tutorial scene with two themes" src="images/scene_two_themes.gif" /></p>
+<h3 id="tutorials-tutorials-simple-cmscenepart-usage-example-scene">Simple CmScenePart usage example scene</h3>
+<ul>
+<li>simple scene using CmScenePart. Scene is placed in <strong>examples\simple\screen_part\scenes\ScreenPartExampleScene.unity
+  </strong>. This scene is an extended version of the One Theme example that just uses CmScreenPart as an example.</li>
+</ul>
+<h2 id="tutorials-tutorials-advanced-tutorials">Advanced tutorials</h2>
+<h3 id="tutorials-tutorials-advanced-full-working-game-menu-scenes">Advanced full working game menu scenes.</h3>
+<ul>
+<li>Scene is placed in <strong>examples\advanced\scenes\ScreenPartExampleScene.unity</strong>. This scene is an extended version of One
+  Theme example that just uses CmScreenPart as an example.</li>
+</ul>
+<p><img alt="advanced tutorial scene with working game" src="images/advanced_game_scene2.gif" /></p></section><h1 class='nav-section-title-end'>Ended: Tutorials</h1>
                         <h1 class='nav-section-title' id='section-documentation'>
                             Documentation <a class='headerlink' href='#section-documentation' title='Permanent link'>↵</a>
                         </h1>
@@ -2923,40 +2956,7 @@ by using </p>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Observe</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">observer</span><span class="p">)</span>
 <span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">HasObservers</span><span class="p">()</span>
-</code></pre></div></section><h1 class='nav-section-title-end'>Ended: Utils</h1><section class="print-page" id="tutorials-tutorials"><p><a href="#tutorials-index.md">Go back</a></p>
-<h1 id="tutorials-tutorials-all-tutorials">All tutorials</h1>
-<h2 id="tutorials-tutorials-introduction">Introduction</h2>
-<p>All below scenes contains UI_Toolkit_Prefab located in tool subfolder <strong>ui_prefabs/UI_Toolkit_Prefab.prefab</strong></p>
-<p>Just add it to the scene and attach your own Screen Manager Monobehaviour.</p>
-<p><img alt="codriven_advanced_ui_prefab_instalation" src="images/codriven_advanced_ui_prefab_instalation.png" /></p>
-<p>Or you can just create an empty object in the scene and add a UI document to it with typical panel settings and add an empty Source
-Asset (don't add your controls just add empty because it will be used by CoDriven Advanced UI as a UI document)</p>
-<h1 id="tutorials-tutorials-tutorials">Tutorials</h1>
-<p>There are a few tutorial scenes added. Tutorials are placed in <strong>examples</strong> folder. Here is a list</p>
-<h3 id="tutorials-tutorials-simple-one-theme-scene">Simple one theme scene</h3>
-<ul>
-<li>Scene is placed in <strong>examples\simple\one_theme\scenes\OneThemeExampleScene.unity</strong>. This scene contains simple buttons
-  styled by one theme. An example is simple for faster learning purposes.</li>
-</ul>
-<p><img alt="tutorial scene with one theme" src="images/scene_one_theme.gif" /></p>
-<h3 id="tutorials-tutorials-simple-two-theme-scene-with-click-actions">Simple two theme scene with click actions</h3>
-<ul>
-<li>Scene is placed in <strong>examples\simple\two_themes\scenes\TwoThemesExampleScene.unity</strong>. This scene is an extended version
-  of the One Theme example. You can change the theme runtime.</li>
-</ul>
-<p><img alt="tutorial scene with two themes" src="images/scene_two_themes.gif" /></p>
-<h3 id="tutorials-tutorials-simple-cmscenepart-usage-example-scene">Simple CmScenePart usage example scene</h3>
-<ul>
-<li>simple scene using CmScenePart. Scene is placed in <strong>examples\simple\screen_part\scenes\ScreenPartExampleScene.unity
-  </strong>. This scene is an extended version of the One Theme example that just uses CmScreenPart as an example.</li>
-</ul>
-<h2 id="tutorials-tutorials-advanced-tutorials">Advanced tutorials</h2>
-<h3 id="tutorials-tutorials-advanced-full-working-game-menu-scenes">Advanced full working game menu scenes.</h3>
-<ul>
-<li>Scene is placed in <strong>examples\advanced\scenes\ScreenPartExampleScene.unity</strong>. This scene is an extended version of One
-  Theme example that just uses CmScreenPart as an example.</li>
-</ul>
-<p><img alt="advanced tutorial scene with working game" src="images/advanced_game_scene2.gif" /></p></section><section class="print-page" id="multiplayer_game"><p><a href="#index">Go back</a></p>
+</code></pre></div></section><h1 class='nav-section-title-end'>Ended: Utils</h1><section class="print-page" id="multiplayer_game"><p><a href="#index">Go back</a></p>
 <h1 id="multiplayer_game-multiplayer-game-with-full-menu-sample-and-scenes">Multiplayer Game With full menu sample and scenes</h1>
 <p><img alt="Fps game image2" src="images/features/multiplayer_fps_screen1.png" />
 <img alt="Fps game image2" src="images/features/multiplayer_fps_screen2.png" />
