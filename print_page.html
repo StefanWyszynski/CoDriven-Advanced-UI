@@ -67,6 +67,11 @@
                   <li class="toctree-l1"><a class="reference internal" href="changelog.html">Change log</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Tutorial scenes</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="tutorials/how_to_start.html">Change log</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Documentation</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="theming.html">Theming</a>
@@ -310,6 +315,8 @@
 <p><a href="https://assetstore.unity.com/packages/tools/gui/codriven-advanced-ui-multiplayer-game-311367">https://assetstore.unity.com/packages/tools/gui/codriven-advanced-ui-multiplayer-game-311367</a></p>
 <h1 id="index-our-discord-join-now-and-ask-questions">OUR DISCORD - JOIN NOW AND ASK QUESTIONS :)</h1>
 <p><a href="https://discord.gg/XnjTwJBjqY">https://discord.gg/XnjTwJBjqY</a></p>
+<h1 id="index-the-most-important-tutorial-here">THE MOST IMPORTANT TUTORIAL HERE:</h1>
+<p><a href="#tutorials-how_to_start">MOST IMPOTANT TUTORIAL</a>.</p>
 <h1 id="index-the-main-benefits-of-codriven-advanced-ui-is">The main <strong>benefits</strong> of CoDriven Advanced UI is:</h1>
 <ul>
 <li>full source code included</li>
@@ -495,6 +502,8 @@ So for example UI Toolkit <strong>Button</strong> is encapsulated into <strong>C
 This way you can have a <strong>CmButton</strong> "Change theme to My favorite" and handle click event globally in <strong>CmScreenManager</strong> even if <strong>CmButton</strong> is created in <strong>CmScreenPart</strong> or <strong>CmScreen</strong>.</p>
 <p>More about <a href="#ui_events">in UI events section</a>.</p>
 <h3 id="index-tutorials">Tutorials</h3>
+<p>THE MOST IMPORTANT TUTORIAL HERE:
+<a href="#tutorials-how_to_start">MOST IMPOTANT TUTORIAL</a>.</p>
 <p>CoDriven Advanced UI contains a few sample scenes but it will be better to read the tutorial section first <a href="#tutorials-tutorials">(click here - tutorials section)</a></p></section><h1 class='nav-section-title-end'>Ended: Getting Started</h1>
                         <h1 class='nav-section-title' id='section-changelog'>
                             Changelog <a class='headerlink' href='#section-changelog' title='Permanent link'>↵</a>
@@ -509,6 +518,413 @@ This way you can have a <strong>CmButton</strong> "Change theme to My favorite" 
 - none</p>
 <p><strong>Bugfix:</strong>
 * none</p></section><h1 class='nav-section-title-end'>Ended: Changelog</h1>
+                        <h1 class='nav-section-title' id='section-tutorial-scenes'>
+                            Tutorial scenes <a class='headerlink' href='#section-tutorial-scenes' title='Permanent link'>↵</a>
+                        </h1>
+                        <section class="print-page" id="tutorials-how_to_start"><p><a href="#tutorials-index.md">Go back</a></p>
+<h1 id="tutorials-how_to_start-how-to-start">How to start</h1>
+<h2 id="tutorials-how_to_start-create-your-first-screen-in-empty-scene">Create your first screen in empty scene</h2>
+<p>To create your first screen we need to add ui prefab.</p>
+<p>Create your first empty screen. </p>
+<p>Go to location from this folder from below screen:</p>
+<p><img alt="prefab_location" src="images/how_to_start/prefab_location.png" /></p>
+<p>prefab location: <strong>Assets\StefanWyszynski\CoDrivenAdvancedUI\Prefabs</strong></p>
+<p>drag this prefab to your scene hierarchy:</p>
+<p><img alt="scene_with_prefab.png" src="images/how_to_start/scene_with_prefab.png" /></p>
+<p>As you can see, there is similar to what you will do with UI Toolkit to start.</p>
+<p>Prefab contains UI Document filled with default values:</p>
+<ol>
+<li><strong>Panel Setting</strong> - section contains settings for your UI Toolkit screen.</li>
+<li><strong>Source Asset</strong> - this is filled with empty UI Builder. Why do we need this?. Because CoDriven Advanced UI will build all screens on this empty UI Builder for you from your code. When you move to a different screen, then it will be cleared and filled again. So you will not create any controls like in UI Toolkit. We will not use uss code for styling your controls and will not add your controls manually in UI Builder. So it will be empty.</li>
+</ol>
+<p>All your screens will be managed by CmScreenManager. We will add our implementation of screen manager to this prefab component, but for now we don't have any implementation.</p>
+<h2 id="tutorials-how_to_start-cmscreenmanager-for-all-your-screens">CmScreenManager for all your screens:</h2>
+<p><img alt="screen_manager_overview.png" src="images/how_to_start/screen_manager_overview.png" /></p>
+<p>It is time to create your CmScreenManager that will contain your screens, and you will move between them any time you want.</p>
+<p>So let's add our CmScreenManager. Create a class in any folder called, for example, MyFirstScreenManager</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">MyFirstTheme</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnBindUiEventsHandler</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// here you can handle events from your screens if you want.</span>
+<span class="w">        </span><span class="c1">// for example button clicks or other</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedScreens</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyFirstTheme</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">supportedScreenList</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// here we will add our screens for this scene. For example settings, about, map select</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyFirstTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">themeBases</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// here we will add all our themes or just one theme if we will not add more</span>
+<span class="w">        </span><span class="c1">// usually we will add one theme.</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnSetMainScreen</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// this is called on start. Here we set which screen is main by just moving to it</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>You will ask now what is <strong>MyFirstTheme</strong>?. This is our base class for themes.</p>
+<p>If we have themes A, B, C., How will this tool know which theme to use and how many themes are for this screen manager?. It is simple, we just have to use the base theme for all our themes. In this example <strong>MyFirstTheme</strong> is our base.</p>
+<p>So let's define it - create a class with the name <strong>MyFirstTheme</strong></p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstTheme</span><span class="p">:</span><span class="w"> </span><span class="n">CmThemeBase</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>We don't have anything to style now, so it is empty, but if we want to style a button, we will add an abstract method here called styleButton.</p>
+<p>This class is abstract, why?. Because we will add abstract methods to it, for example:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstTheme</span><span class="p">:</span><span class="w"> </span><span class="n">CmThemeBase</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>So abstract method for style button?. Why abstract?. Because we can implement it in child classes. This way we can create multiple themes. Change current theme runtime without knowing in the code which styling method implementation is used - this is polymorphism :).</p>
+<p>It will look like this for two themes MyFirstThemeWhite and MyFirstThemeBlack</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// white theme implementation</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstThemeWhite</span><span class="p">:</span><span class="w"> </span><span class="n">MyFirstTheme</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// here we would add styling for white button</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetThemeName</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;MyFirstThemeWhite&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// black theme implementation</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstThemeBlack</span><span class="p">:</span><span class="w"> </span><span class="n">MyFirstTheme</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// here we would add styling for black button</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetThemeName</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;MyFirstThemeBlack&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>We have to implement and return the name of our theme in our theme implementations by overriding GetThemeName.</p>
+<p>Ok, but we don't have two themes. This was an example. We will use one theme implementation, and we don't have any button to style, so first we will create an empty theme implementation</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// white theme implementation</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstThemeWhite</span><span class="p">:</span><span class="w"> </span><span class="n">MyFirstTheme</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetThemeName</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;MyFirstThemeWhite&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>We will letter add abstract methods to <strong>MyFirstTheme</strong> and implementations for them in <strong>MyFirstThemeWhite</strong></p>
+<p>Now we will add this theme to our screen manager.</p>
+<p>Let's go back to screen manager and add our theme</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstScreenManager</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">MyFirstTheme</span><span class="o">&gt;</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnBindUiEventsHandler</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// here you can handle events from your screens if you want.</span>
+<span class="w">        </span><span class="c1">// for example button clicks or other</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedScreens</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyFirstTheme</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">supportedScreenList</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// here we will add our screens for this scene. For example settings, about, map select</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAddSupportedThemes</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">MyFirstTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">themeBases</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// add our theme implementation (wchich is empty for now)</span>
+<span class="w">        </span><span class="n">themeBases</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MyFirstThemeWhite</span><span class="p">());</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnSetMainScreen</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// this is called on start. Here we set which screen is main by just moving to it</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Ok. Now we have to add our screens. We can have multiple screens. For example, the settings screen, the map select screen, the help screen, and other screens. Anything you want.</p>
+<p>We will add them to the above screen manager in <strong>OnAddSupportedScreens</strong> the same way we added themes in <strong>OnAddSupportedThemes</strong>. This way screen manager will know which screens are supported for this screen manager. You will be able to move between them.</p>
+<p>So let's add our empty CmScreen, we call it <strong>MyFirstMainMenuScreen</strong></p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstMainMenuScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyFirstTheme</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">MyFirstMainMenuScreen</span><span class="p">(</span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">MyFirstTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
+<span class="w">            </span><span class="n">VisualElement</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// this can be always empty</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// this method is the same as in your screen manager</span>
+<span class="w">            </span><span class="c1">// here you can handle events from your screen if you want.</span>
+<span class="w">            </span><span class="c1">// for example button clicks or other</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMakeScreenContent</span><span class="p">(</span><span class="n">ScreenContentBuilder</span><span class="w"> </span><span class="n">contentBuilder</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// here we will create our controls and set styling for our controls using mthods from base theme (as you remember these methods are abstract so we don&#39;t know need to know which implementation is currently used)</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetScreenName</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Screen name is useful for further screen changing in game/menu. You will change screens using their names</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;MainMenu&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>So we have screen but it is empty. We will create simple main menu screen - something like this:</p>
+<p><img alt="simple_scene.gif" src="images/how_to_start/simple_scene.gif" /></p>
+<p>But this is how it looks after styling our controls, but now we have no controls in our screen.</p>
+<p>So let's add controls. I will give you the full code of our MyFirstMainMenuScreen and I will explain how it works.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstMainMenuScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyFirstTheme</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">MyFirstMainMenuScreen</span><span class="p">(</span><span class="n">CmScreenManager</span><span class="o">&lt;</span><span class="n">MyFirstTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span>
+<span class="w">            </span><span class="n">VisualElement</span><span class="w"> </span><span class="n">root</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">root</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// this can be always empty</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// we don&#39;t handle any on click events now so it will be empty</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnMakeScreenContent</span><span class="p">(</span><span class="n">ScreenContentBuilder</span><span class="w"> </span><span class="n">contentBuilder</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// here we add:</span>
+<span class="w">            </span><span class="c1">// 1. Main contanier for the whole screen. This is background</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">mainContainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mainContainer</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">MainContainer</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// now we add center panel with buttons to this mainContainer</span>
+<span class="w">            </span><span class="n">AddCenterPanel</span><span class="p">(</span><span class="n">mainContainer</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// add whole content to</span>
+<span class="w">            </span><span class="n">contentBuilder</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">mainContainer</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">AddCenterPanel</span><span class="p">(</span><span class="n">CmColumn</span><span class="w"> </span><span class="n">mainContainer</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// create center panel</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">centerPanel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">            </span><span class="n">centerPanel</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">MenuPanel</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// create 3 buttons and add them to center panel</span>
+<span class="w">            </span><span class="n">centerPanel</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">CreateButton</span><span class="p">(</span><span class="s">&quot;Start game&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Start&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="n">centerPanel</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">CreateButton</span><span class="p">(</span><span class="s">&quot;Options&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Options&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="n">centerPanel</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">CreateButton</span><span class="p">(</span><span class="s">&quot;Exit game&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Exit&quot;</span><span class="p">));</span>
+
+<span class="w">            </span><span class="c1">// now we add center panel to main container</span>
+<span class="w">            </span><span class="n">mainContainer</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">centerPanel</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">CreateButton</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">label</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// create button</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">cmButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="p">,</span><span class="w"> </span><span class="n">GetCmUiEventsHandler</span><span class="p">());</span>
+<span class="w">            </span><span class="n">cmButton</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">MenuButton</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">cmButton</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">cmButton</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetScreenName</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Screen name is useful for further screen changing in game/menu. You will change screens using their names</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;MainMenu&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>I think the code is self-explanatory but some regions may be difficult to understand.</p>
+<p>As you can see we have used SetStyle() method 3 times for all controls</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">cmButton</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">MenuButton</span><span class="p">);</span>
+</code></pre></div>
+<p>because without styles the screen would look like this:</p>
+<p><img alt="simple_scene.png" src="images/how_to_start/simple_scene.png" /></p>
+<p>But why?. Because we have added a container for background, and inside of it a container for buttons, and inside of it three buttons.</p>
+<p>But these containers are columns. So controls are added in the columns way.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">cmButton</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">MenuButton</span><span class="p">);</span>
+</code></pre></div>
+<p>Above SetStyle() method will use the base theme interface that we have added at the beginning of the tutorial, but I have added some methods for styling</p>
+<p>I will show you these styling methods in our theme, but now I will explain further.</p>
+<blockquote>
+<p><strong>IMPORTANT</strong></p>
+<p><strong>As you can see - we didn't call GetTheme().MenuButton() method, but we pass pointer to it to SetStyle method.</strong></p>
+<p><strong>CoDriven Advanced UI will generate uss code under the hood for all styling methods for all our themes. Then it will use your pointer to method to find uss assigned to this method and set style sheet of UI Toolkit to your control. So you don't have to worry about uss code, stylesheet and other related stuff :).</strong> </p>
+</blockquote>
+<p>there is one more think to mention:</p>
+<p>when we create control we pass:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">cmButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="p">,</span><span class="w"> </span><span class="n">GetCmUiEventsHandler</span><span class="p">());</span>
+</code></pre></div>
+<ol>
+<li>parent container, </li>
+<li>label that will be displayed on the button in UI</li>
+<li>GetCmUiEventsHandler() method. We pass event handler that will handle events from controls. By calling GetCmUiEventsHandler() on our screen we inform below button that this screen will handle events from this control. We haven't used events in this example, but I will show how to use it on the end of this introduction.</li>
+</ol>
+<p>We have set the name of the control by SetName(). The name can be used to know, for example, which control was clicked. We can check if the clicked control has a specific name. I will show an example at the end of the tutorial.</p>
+<p>Ok. Now I will show you the code for base theme abstract class <strong>MyFirstTheme</strong> and implementation of the theme <strong>MyFirstThemeWhite</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstTheme</span><span class="p">:</span><span class="w"> </span><span class="n">CmThemeBase</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="n">ICmControlModifiers</span><span class="w"> </span><span class="nf">MainContainer</span><span class="p">();</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="n">ICmControlModifiers</span><span class="w"> </span><span class="nf">MenuPanel</span><span class="p">();</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="n">ICmControlModifiers</span><span class="w"> </span><span class="nf">MenuButton</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+Now prepare for implementation :) - I know there is much code in implementation, but you will understand if you just read it and comments</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstThemeWhite</span><span class="p">:</span><span class="w"> </span><span class="n">MyFirstTheme</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="nf">GetThemeName</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;MyFirstThemeWhite&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// style for main container background</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">ICmControlModifiers</span><span class="w"> </span><span class="nf">MainContainer</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// each control has method GetModifiersBuilder() so you can build style and return</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// I will explain this Column method under this code</span>
+<span class="w">            </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                </span><span class="c1">// set width and height to fullscreen (I could use weight() modifier) </span>
+<span class="w">                </span><span class="p">.</span><span class="n">FillMaxWidth</span><span class="p">()</span>
+<span class="w">                </span><span class="p">.</span><span class="n">FillMaxHeight</span><span class="p">()</span>
+<span class="w">                </span><span class="c1">// this is container called column and we want to add another panel to it and make it center </span>
+<span class="w">                </span><span class="p">.</span><span class="n">VerticalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">HorizontalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
+<span class="w">                </span><span class="c1">// this is background color of this fullscren container. R G B A, so Blue color = 1 full blue, and alpha 0.5f</span>
+<span class="w">                </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5f</span><span class="p">))</span>
+<span class="w">            </span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// style center menu panel</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">ICmControlModifiers</span><span class="w"> </span><span class="nf">MenuPanel</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// each control has method GetModifiersBuilder() so you can build style and return</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// I will explain this Column method under this code</span>
+<span class="w">            </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span><span class="w"> </span>
+<span class="w">                </span><span class="c1">// this is center panel that will contain 3 buttons so make them center vertically when there will be added</span>
+<span class="w">                </span><span class="p">.</span><span class="n">VerticalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">BorderRadius</span><span class="p">(</span><span class="mi">20</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+<span class="w">                </span><span class="p">.</span><span class="n">Width</span><span class="p">(</span><span class="mi">30</span><span class="p">.</span><span class="n">Percent</span><span class="p">())</span><span class="w"> </span><span class="c1">// set wodth to 30 % of available space</span>
+<span class="w">                </span><span class="p">.</span><span class="n">Height</span><span class="p">(</span><span class="mi">50</span><span class="p">.</span><span class="n">Percent</span><span class="p">())</span><span class="w"> </span><span class="c1">// set height to 50 % of available space</span>
+<span class="w">                </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
+<span class="w">            </span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// style for each of three buttons of our implementation</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">ICmControlModifiers</span><span class="w"> </span><span class="nf">MenuButton</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// each control has method GetModifiersBuilder() so you can build style and return</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// I will explain this Button method under this code</span>
+<span class="w">            </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+<span class="w">                </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                    </span><span class="c1">// set width and height to auto</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">WidthAuto</span><span class="p">()</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">HeightAuto</span><span class="p">()</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">yellow</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">20</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BorderWidth</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">BorderRadius</span><span class="p">(</span><span class="mi">20</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span>
+<span class="w">                    </span><span class="c1">// set margin of 16 pixels around control </span>
+<span class="w">                    </span><span class="p">.</span><span class="n">MarginAll</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">)</span>
+
+<span class="w">                    </span><span class="c1">// this is magic I will allow animation and make animation for 400 ms</span>
+<span class="w">                    </span><span class="c1">// you will ask what animation?. Because below we add scaling and font to bold </span>
+<span class="w">                    </span><span class="c1">// when mouse will hover over this button. So if we add animation then this state will be changed</span>
+<span class="w">                    </span><span class="c1">// over time instead of instant change. It will slowly change state</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">AnimEnable</span><span class="p">()</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
+
+<span class="w">                    </span><span class="c1">// ok now we switch bulder to hover state. Now when we add modifiers we do it for new state </span>
+<span class="w">                    </span><span class="c1">// which is hover state and all modifiers will now be to button when mouse will hover</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">Hover</span><span class="p">)</span>
+<span class="w">                    </span><span class="c1">// scale button when mouse is hovering</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="w"> </span><span class="mf">1.05f</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="mf">1.4f</span><span class="p">)</span>
+<span class="w">                    </span><span class="c1">// set font for text when mouse is hovering</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">TextFontStyle</span><span class="p">(</span><span class="n">CmFontStyle</span><span class="p">.</span><span class="n">bold</span><span class="p">)</span>
+<span class="w">                    </span><span class="c1">// and </span>
+<span class="w">                    </span><span class="p">.</span><span class="n">TextColorRGB</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">red</span><span class="p">)</span>
+
+<span class="w">            </span><span class="p">);</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>What are modifiers?</p>
+<blockquote>
+<p>Under the hood modifiers will replace your styling code that you have to add typically in uss code for UI Toolkit.</p>
+</blockquote>
+<p>styling method <strong>MenuButton</strong> will automatically generate this uss code - but you don't have to know it, but I will show as an example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nc">Method_2</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">235</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mf">1.00</span><span class="p">);</span>
+<span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-width</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-top-left-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-top-right-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-bottom-left-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-bottom-right-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">transition-property</span><span class="p">:</span><span class="w"> </span><span class="kc">all</span><span class="p">;</span>
+<span class="w">    </span><span class="k">transition-duration</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="kt">ms</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">Method_2</span><span class="p">:</span><span class="nd">hover</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">scale</span><span class="p">:</span><span class="w"> </span><span class="mf">1.05</span><span class="w"> </span><span class="mf">1.40</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">-unity-font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">bold</span><span class="p">;</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nb">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>and style will be loaded in the background and assigned to your controls. The full uss code is larger for our theme, but I only showed uss code for our button.</p>
+<p>You can add more themes by implementing our base theme class MyFirstTheme and adding it to the themes in our screen manager.</p>
+<p>Read modifiers section of the documentation to understand it more.</p>
+<p>I could finish now, but I will show one thing. How to handle click event on the buttons and change screen. We have one screen, but if you add more screens, then you can change the screen by just calling a simple method call.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyFirstMainMenuScreen</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">MyFirstTheme</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="p">.....</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindUIEventsOnStart</span><span class="p">(</span><span class="n">CmUIEventsHandler</span><span class="w"> </span><span class="n">eventsHandler</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">eventsHandler</span><span class="p">.</span><span class="n">buttonClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">@base</span><span class="w"> </span><span class="o">=&gt;</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">@base</span><span class="p">.</span><span class="n">GetName</span><span class="p">().</span><span class="n">Equals</span><span class="p">(</span><span class="s">&quot;Start&quot;</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">SetCurrentScreen</span><span class="p">(</span><span class="s">&quot;your screen name&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">@base</span><span class="p">.</span><span class="n">GetName</span><span class="p">().</span><span class="n">Equals</span><span class="p">(</span><span class="s">&quot;Exit&quot;</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">Application</span><span class="p">.</span><span class="n">Quit</span><span class="p">();</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">};</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">.....</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>This is our final screen. Read the documentation then you will know about event handling, modifiers, and other stuff. I will try record video tutorial as soon as posible. </p>
+<p>Go to my discord and ask questions :D</p>
+<p>https://discord.gg/XnjTwJBjqY</p>
+<p><img alt="simple_scene.gif" src="images/how_to_start/simple_scene.gif" /></p>
+<blockquote>
+<p>I will complete the documentation soon. I am trying to add more and more every day.</p>
+</blockquote></section><h1 class='nav-section-title-end'>Ended: Tutorial scenes</h1>
                         <h1 class='nav-section-title' id='section-documentation'>
                             Documentation <a class='headerlink' href='#section-documentation' title='Permanent link'>↵</a>
                         </h1>
