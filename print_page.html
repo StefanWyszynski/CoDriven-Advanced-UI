@@ -2562,20 +2562,26 @@ and events handling of these controls</p></section>
 <!-- TOC -->
 <ul>
 <li><a href="#controls-cmbutton-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
-<li><a href="#controls-cmbutton-introduction">introduction</a></li>
 <li><a href="#controls-cmbutton-cmbutton">CmButton</a></li>
 <li><a href="#controls-cmbutton-style-cmbutton-elements">Style CmButton elements</a></li>
 </ul>
 <!-- TOC -->
 
-<h2 id="controls-cmbutton-introduction">introduction</h2>
-<p>CmControlBase is the base control <a href="#visual_controls">more in the introduction here</a></p>
 <h1 id="controls-cmbutton-cmbutton">CmButton</h1>
 <p>CmButton is a button control. It's based on Button control from UI Toolkit. </p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmButton</span><span class="w"> </span><span class="n">someButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">();</span>
 </code></pre></div>
 <h1 id="controls-cmbutton-style-cmbutton-elements">Style CmButton elements</h1>
 <p>CmButton modifiers contains only one element to style - the "Button"</p>
+<p>CmButton.GetModifiersBuilder() will return CmButtonModifiers.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmButtonModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">Button</span><span class="p">(</span><span class="n">CmModifierText</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>When you open UI Toolkit Debugger then you will see that button is not container and has only one element to style - the button itself, so I have added only one Button modifier which accept CmModifierText to style button text and background because CmModifierText is extensionsion of CmModifierBackground </p>
+<p><img alt="button.png" src="images/controls/button.png" /></p>
+<p>here is example styling</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">OptionButton</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// create button somewhere</span>
@@ -2583,12 +2589,12 @@ and events handling of these controls</p></section>
 <span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
 <span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetEnabled</span><span class="p">(</span><span class="n">enabled</span><span class="p">);</span>
 
-<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">ExampleButton</span><span class="p">);</span>
+<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">);</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="c1">// in your theme</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">ExampleButton</span><span class="p">()</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">()</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
 <span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
@@ -2612,13 +2618,62 @@ and events handling of these controls</p></section>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>to learn about modifiers for all controls <a href="#modifiers">click here</a></p></section><section class="print-page" id="controls-cmimage"><h1 id="controls-cmimage-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
+<p>to learn about modifiers for all controls <a href="#modifiers">click here</a></p>
+<p>// events - under construction</p></section><section class="print-page" id="controls-cmimage"><h1 id="controls-cmimage-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#visual_controls">Go back</a></p>
 <h1 id="controls-cmimage-cmimage">CmImage</h1>
 <p>Under construction</p></section><section class="print-page" id="controls-cmlabel"><h1 id="controls-cmlabel-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#visual_controls">Go back</a></p>
 <h1 id="controls-cmlabel-cmlabel">CmLabel</h1>
-<p>Under construction</p></section><section class="print-page" id="controls-cmprogressbar"><h1 id="controls-cmprogressbar-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#controls-cmlabel-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
+<li><a href="#controls-cmlabel-cmlabel">CmLabel</a></li>
+<li><a href="#controls-cmlabel-cmlabel-1">CmLabel</a></li>
+<li><a href="#controls-cmlabel-style-cmlabel-elements">Style CmLabel elements</a></li>
+</ul>
+<!-- TOC -->
+
+<h1 id="controls-cmlabel-cmlabel_1">CmLabel</h1>
+<p>CmLabel is a button control. It's based on Button control from UI Toolkit.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmLabel</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmLabel</span><span class="p">();</span>
+</code></pre></div>
+<h1 id="controls-cmlabel-style-cmlabel-elements">Style CmLabel elements</h1>
+<p>CmLabel modifiers contains only one element to style - the "Label"</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmLabelModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmLabelModifiers</span><span class="w"> </span><span class="nf">Label</span><span class="p">(</span><span class="n">CmModifierText</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>When you open UI Toolkit Debugger then you will see that label is not container and has only one element to style - the label itself, so I have added only one Label modifier which accept CmModifierText to style label text and background because CmModifierText is extensions of CmModifierBackground</p>
+<p><img alt="label.png" src="images/controls/label.png" /></p>
+<p>here is example styling</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmLabel</span><span class="w"> </span><span class="nf">OptionButton</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// create button somewhere</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmLabel</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">getUIEventsHandler</span><span class="p">());</span>
+<span class="w">        </span><span class="n">label</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="w">        </span><span class="n">label</span><span class="p">.</span><span class="n">SetEnabled</span><span class="p">(</span><span class="n">enabled</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">label</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleLabel</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// in your theme</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ICmControlModifiers</span><span class="w"> </span><span class="nf">StyleLabel</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmLabel</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Label</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">WidthWrapContent</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">HeightWrapContent</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">TextColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>to learn about modifiers for all controls <a href="#modifiers">click here</a></p>
+<p>// events - under construction</p></section><section class="print-page" id="controls-cmprogressbar"><h1 id="controls-cmprogressbar-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#visual_controls">Go back</a></p>
 <h1 id="controls-cmprogressbar-cmprogressbar">CmProgressBar</h1>
 <p>Under construction</p></section><section class="print-page" id="controls-cmradiobutton"><h1 id="controls-cmradiobutton-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
@@ -2630,7 +2685,81 @@ and events handling of these controls</p></section>
 <p>Under construction</p></section><section class="print-page" id="controls-cmtextfield"><h1 id="controls-cmtextfield-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#visual_controls">Go back</a></p>
 <h1 id="controls-cmtextfield-cmtextfield">CmTextField</h1>
-<p>Under construction</p></section><section class="print-page" id="controls-cmtoggle"><h1 id="controls-cmtoggle-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#controls-cmtextfield-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
+<li><a href="#controls-cmtextfield-cmtextfield">CmTextField</a></li>
+<li><a href="#controls-cmtextfield-cmtextfield-1">CmTextField</a></li>
+<li><a href="#controls-cmtextfield-style-cmtextfield-elements">Style CmTextField elements</a></li>
+</ul>
+<!-- TOC -->
+
+<h1 id="controls-cmtextfield-cmtextfield_1">CmTextField</h1>
+<p>CmTextField is an input text control. You can enter text inside it.</p>
+<p>It's extension of TextField control from UI Toolkit.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmTextField</span><span class="w"> </span><span class="n">textField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmTextField</span><span class="p">();</span>
+</code></pre></div>
+<h1 id="controls-cmtextfield-style-cmtextfield-elements">Style CmTextField elements</h1>
+<p>CmTextField modifiers contains a few elements to style. Each element has its own method in modifiers:</p>
+<p>CmTextField.GetModifiersBuilder() will return CmTextFieldModifiers. You will use it to style Background, Label or TextInput of this control</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmTextFieldModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmTextFieldModifiers</span><span class="w"> </span><span class="nf">Background</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmTextFieldModifiers</span><span class="w"> </span><span class="nf">Label</span><span class="p">(</span><span class="n">CmModifierText</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmTextFieldModifiers</span><span class="w"> </span><span class="nf">TextInput</span><span class="p">(</span><span class="n">CmModifierText</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>When you add CmTextField (which is TextField inside) to your scene and open UI Toolkit Debugger then you will see that TextField as</p>
+<p><img alt="textfield.png" src="images/controls/textfield.png" /></p>
+<p>here is example styling</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmTextField</span><span class="w"> </span><span class="nf">InputField</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">inputText</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">textField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmTextField</span><span class="p">(</span><span class="n">GetScreen</span><span class="p">(),</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">GetUIEventsHandler</span><span class="p">());</span>
+<span class="w">        </span><span class="n">textField</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">textField</span><span class="p">.</span><span class="n">SetInputText</span><span class="p">(</span><span class="n">inputText</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">textField</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">InputField</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">textField</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// in your theme</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmTextFieldModifiers</span><span class="w"> </span><span class="nf">InputField</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmTextField</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Label</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">Weight</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">TextAlign</span><span class="p">(</span><span class="n">CmTextAlign</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// input background inactive</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Background</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="n">_animDurSlow</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">WidthAuto</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// input text inactive</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">TextInput</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">Weight</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="n">_animDurSlow</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">TextAlign</span><span class="p">(</span><span class="n">CmTextAlign</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// background focus</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Background</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">Focus</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="n">_animDurSlow</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">CopyFrom</span><span class="p">(</span><span class="n">DefBorderRadiusAndWidth</span><span class="p">())</span>
+<span class="w">                </span><span class="p">.</span><span class="n">BorderColorRGBA</span><span class="p">(</span><span class="n">_inputBorderActiveColor</span><span class="p">)</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>to learn about modifiers for all controls <a href="#modifiers">click here</a></p>
+<p>// events - under construction</p></section><section class="print-page" id="controls-cmtoggle"><h1 id="controls-cmtoggle-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#visual_controls">Go back</a></p>
 <h1 id="controls-cmtoggle-cmtoggle">CmToggle</h1>
 <p>Under construction</p></section><h1 class='nav-section-title-end'>Ended: Single</h1>
@@ -2642,10 +2771,11 @@ and events handling of these controls</p></section>
 <h1 id="controls-cmcolumn-cmcolumn">CmColumn</h1>
 <p>CmColumn a container. It is based on VisualElement. You can add controls to it by using:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmButton</span><span class="w"> </span><span class="n">someButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">();</span>
+
 <span class="w">    </span><span class="n">CmColumn</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">();</span>
 <span class="w">    </span><span class="n">column</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">someButton</span><span class="p">);</span>
 </code></pre></div>
-<p>All controls added to CmColumn will be hold in column way. To change how added controls will be positioned you can use
+<p>All controls added to CmColumn will be displayed in column way. To change how added controls will be positioned you can use
 modifier:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmColumn</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">();</span>
 <span class="w">    </span><span class="n">column</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">ExampleColumn</span><span class="p">);</span>
@@ -2664,37 +2794,55 @@ modifier:</p>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>HorizontalArrangement allow you to set how added controls to this container will be positioned horizontally. Available
+<li>VerticalArrangement allow you to set how added controls to this container will be positioned horizontally. Available
   values: START, CENTER, END, SPACE_BETWEEN, SPACE_AROUND.</li>
-<li>VerticalAlignment allow you to set how added controls to this container will be positioned vetrically. Available
+<li>HorizontalAlignment allow you to set how added controls to this container will be positioned vetrically. Available
   values: START, CENTER, END, STRETCH, TEXT_BASELINE
   STRETCH will stretch control to parent size vertically.</li>
 </ul>
 <h1 id="controls-cmcolumn-style-cmcolumn-elements">Style CmColumn elements</h1>
-<p>CmColumn modifiers contains only one element to style - the "Container"</p>
-<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmColumn</span><span class="w"> </span><span class="nf">createColumn</span><span class="p">()</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">CmColumn</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">();</span>
-<span class="w">            </span><span class="n">column</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">HorizontalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="p">.</span><span class="n">START</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">VerticalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">SPACE_BETWEEN</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">FillMaxWidth</span><span class="p">()</span>
-<span class="w">                </span><span class="p">.</span><span class="n">FillMaxHeight</span><span class="p">()</span>
-<span class="w">            </span><span class="p">);</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">container</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
+<p>CmColumn modifiers contains only one element to style - the "Column"</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmColumnModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmColumnModifiers</span><span class="w"> </span><span class="nf">Column</span><span class="p">(</span><span class="n">CmModifierColumn</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
 </code></pre></div>
-<p>to learn about modifiers for all controls <a href="#modifiers">click here</a></p></section><section class="print-page" id="controls-cmrow"><h1 id="controls-cmrow-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
+<p>When you open UI Toolkit Debugger then you will see that Column is a container - so you will add elements to it.</p>
+<p>the Visual element containing three buttons in below screen is a CmColumn</p>
+<p><img alt="button.png" src="images/controls/button.png" /></p>
+<p>Here is how you can style it</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmColumn</span><span class="w"> </span><span class="nf">createColumn</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">CmColumn</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">();</span>
+<span class="w">        </span><span class="n">column</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleColumn</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">container</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+
+<span class="w">    </span><span class="c1">// in your theme</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmColumnModifiers</span><span class="w"> </span><span class="nf">StyleColumn</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">HorizontalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="p">.</span><span class="n">START</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">VerticalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">SPACE_BETWEEN</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">FillMaxWidth</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">FillMaxHeight</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>to learn about modifiers for all controls <a href="#modifiers">click here</a></p>
+<p>// events - under construction</p></section><section class="print-page" id="controls-cmrow"><h1 id="controls-cmrow-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#visual_controls">Go back</a></p>
 <h1 id="controls-cmrow-cmrow">CmRow</h1>
-<p>CmRow is a container. It is based on VisualElement. You can add controls to it by using:</p>
+<p>CmRow a container. It is based on VisualElement. You can add controls to it by using:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmButton</span><span class="w"> </span><span class="n">someButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">();</span>
 <span class="w">    </span><span class="c1">//</span>
 <span class="w">    </span><span class="n">CmRow</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">();</span>
 <span class="w">    </span><span class="n">row</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">someButton</span><span class="p">);</span>
 </code></pre></div>
-<p>This is similar to CmColumn <a href="#controls-cmcolumn">read here</a></p>
-<p>All controls added to CmRow will be hold in column way. To change how added controls will be positioned you can use
+<p>All controls added to CmRow will be displayed in column way. To change how added controls will be positioned you can use
 modifier:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// create row somewhere</span>
 <span class="w">    </span><span class="n">CmRow</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">();</span>
@@ -2723,7 +2871,16 @@ modifier:</p>
   STRETCH will stretch control to parent size vertically.</li>
 </ul>
 <h1 id="controls-cmrow-style-cmrow-elements">Style CmRow elements</h1>
-<p>CmRow modifiers contains only one element to style - the "Container"</p>
+<p>CmRow modifiers contains only one element to style - the "Row"</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmRowModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmRowModifiers</span><span class="w"> </span><span class="nf">Row</span><span class="p">(</span><span class="n">CmModifierRow</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>When you open UI Toolkit Debugger then you will see that Row is a container - so you will add elements to it.</p>
+<p>the Visual element containing three buttons in below screen is a CmRow</p>
+<p><img alt="button.png" src="images/controls/button.png" /></p>
+<p>Here is how you can style it</p>
 <div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmRow</span><span class="w"> </span><span class="nf">createRow</span><span class="p">()</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="n">CmRow</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">();</span>
@@ -2734,6 +2891,34 @@ modifier:</p>
 
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">container</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
+
+
+<span class="w">    </span><span class="c1">// in your theme</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmRowModifiers</span><span class="w"> </span><span class="nf">StyleColumn</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmRow</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">HorizontalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="p">.</span><span class="n">START</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">VerticalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">SPACE_BETWEEN</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">FillMaxWidth</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">FillMaxHeight</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>to learn about modifiers for all controls <a href="#modifiers">click here</a></p>
+<h1 id="controls-cmrow-cmrow_1">CmRow</h1>
+<p>CmRow is a container. It is based on VisualElement. You can add controls to it by using:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>This control is similar to CmColumn <a href="#controls-cmcolumn">read here</a></p>
+<p>All controls added to CmRow will be hold in row way. To change how added controls will be positioned you can use
+modifier:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h1 id="controls-cmrow-style-cmrow-elements_1">Style CmRow elements</h1>
+<p>CmRow modifiers contains only one element to style - the "Container"</p>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p>to learn about modifiers for all controls <a href="#modifiers">click here</a></p></section><section class="print-page" id="controls-cmdraggablescrollview"><h1 id="controls-cmdraggablescrollview-codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="#visual_controls">Go back</a></p>

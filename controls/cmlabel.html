@@ -218,7 +218,55 @@
                 <h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="../visual_controls.html">Go back</a></p>
 <h1 id="cmlabel">CmLabel</h1>
-<p>Under construction</p>
+<!-- TOC -->
+<ul>
+<li><a href="#codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
+<li><a href="#cmlabel">CmLabel</a></li>
+<li><a href="#cmlabel-1">CmLabel</a></li>
+<li><a href="#style-cmlabel-elements">Style CmLabel elements</a></li>
+</ul>
+<!-- TOC -->
+
+<h1 id="cmlabel_1">CmLabel</h1>
+<p>CmLabel is a button control. It's based on Button control from UI Toolkit.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmLabel</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmLabel</span><span class="p">();</span>
+</code></pre></div>
+<h1 id="style-cmlabel-elements">Style CmLabel elements</h1>
+<p>CmLabel modifiers contains only one element to style - the "Label"</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmLabelModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmLabelModifiers</span><span class="w"> </span><span class="nf">Label</span><span class="p">(</span><span class="n">CmModifierText</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>When you open UI Toolkit Debugger then you will see that label is not container and has only one element to style - the label itself, so I have added only one Label modifier which accept CmModifierText to style label text and background because CmModifierText is extensions of CmModifierBackground</p>
+<p><img alt="label.png" src="../images/controls/label.png" /></p>
+<p>here is example styling</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmLabel</span><span class="w"> </span><span class="nf">OptionButton</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// create button somewhere</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmLabel</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">getUIEventsHandler</span><span class="p">());</span>
+<span class="w">        </span><span class="n">label</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="w">        </span><span class="n">label</span><span class="p">.</span><span class="n">SetEnabled</span><span class="p">(</span><span class="n">enabled</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">label</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleLabel</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// in your theme</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">ICmControlModifiers</span><span class="w"> </span><span class="nf">StyleLabel</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmLabel</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Label</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">WidthWrapContent</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">HeightWrapContent</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">TextColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">TextFontSize</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>to learn about modifiers for all controls <a href="../modifiers.html">click here</a></p>
+<p>// events - under construction</p>
               
             </div>
           </div><footer>

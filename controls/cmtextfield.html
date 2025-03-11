@@ -218,7 +218,81 @@
                 <h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="../visual_controls.html">Go back</a></p>
 <h1 id="cmtextfield">CmTextField</h1>
-<p>Under construction</p>
+<!-- TOC -->
+<ul>
+<li><a href="#codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
+<li><a href="#cmtextfield">CmTextField</a></li>
+<li><a href="#cmtextfield-1">CmTextField</a></li>
+<li><a href="#style-cmtextfield-elements">Style CmTextField elements</a></li>
+</ul>
+<!-- TOC -->
+
+<h1 id="cmtextfield_1">CmTextField</h1>
+<p>CmTextField is an input text control. You can enter text inside it.</p>
+<p>It's extension of TextField control from UI Toolkit.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmTextField</span><span class="w"> </span><span class="n">textField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmTextField</span><span class="p">();</span>
+</code></pre></div>
+<h1 id="style-cmtextfield-elements">Style CmTextField elements</h1>
+<p>CmTextField modifiers contains a few elements to style. Each element has its own method in modifiers:</p>
+<p>CmTextField.GetModifiersBuilder() will return CmTextFieldModifiers. You will use it to style Background, Label or TextInput of this control</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmTextFieldModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmTextFieldModifiers</span><span class="w"> </span><span class="nf">Background</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmTextFieldModifiers</span><span class="w"> </span><span class="nf">Label</span><span class="p">(</span><span class="n">CmModifierText</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmTextFieldModifiers</span><span class="w"> </span><span class="nf">TextInput</span><span class="p">(</span><span class="n">CmModifierText</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>When you add CmTextField (which is TextField inside) to your scene and open UI Toolkit Debugger then you will see that TextField as</p>
+<p><img alt="textfield.png" src="../images/controls/textfield.png" /></p>
+<p>here is example styling</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmTextField</span><span class="w"> </span><span class="nf">InputField</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">inputText</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">textField</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmTextField</span><span class="p">(</span><span class="n">GetScreen</span><span class="p">(),</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">GetUIEventsHandler</span><span class="p">());</span>
+<span class="w">        </span><span class="n">textField</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">textField</span><span class="p">.</span><span class="n">SetInputText</span><span class="p">(</span><span class="n">inputText</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">textField</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">InputField</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">textField</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// in your theme</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmTextFieldModifiers</span><span class="w"> </span><span class="nf">InputField</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmTextField</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Label</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">Weight</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">TextAlign</span><span class="p">(</span><span class="n">CmTextAlign</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// input background inactive</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Background</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="n">_animDurSlow</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">WidthAuto</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// input text inactive</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">TextInput</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">Weight</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="n">_animDurSlow</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">TextAlign</span><span class="p">(</span><span class="n">CmTextAlign</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
+<span class="w">        </span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// background focus</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Background</span><span class="p">(</span>
+<span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">Focus</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="n">_animDurSlow</span><span class="p">)</span>
+<span class="w">                </span><span class="p">.</span><span class="n">CopyFrom</span><span class="p">(</span><span class="n">DefBorderRadiusAndWidth</span><span class="p">())</span>
+<span class="w">                </span><span class="p">.</span><span class="n">BorderColorRGBA</span><span class="p">(</span><span class="n">_inputBorderActiveColor</span><span class="p">)</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>to learn about modifiers for all controls <a href="../modifiers.html">click here</a></p>
+<p>// events - under construction</p>
               
             </div>
           </div><footer>

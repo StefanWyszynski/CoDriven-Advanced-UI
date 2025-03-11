@@ -218,14 +218,13 @@
                 <h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="../visual_controls.html">Go back</a></p>
 <h1 id="cmrow">CmRow</h1>
-<p>CmRow is a container. It is based on VisualElement. You can add controls to it by using:</p>
+<p>CmRow a container. It is based on VisualElement. You can add controls to it by using:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmButton</span><span class="w"> </span><span class="n">someButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">();</span>
 <span class="w">    </span><span class="c1">//</span>
 <span class="w">    </span><span class="n">CmRow</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">();</span>
 <span class="w">    </span><span class="n">row</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">someButton</span><span class="p">);</span>
 </code></pre></div>
-<p>This is similar to CmColumn <a href="cmcolumn.html">read here</a></p>
-<p>All controls added to CmRow will be hold in column way. To change how added controls will be positioned you can use
+<p>All controls added to CmRow will be displayed in column way. To change how added controls will be positioned you can use
 modifier:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// create row somewhere</span>
 <span class="w">    </span><span class="n">CmRow</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">();</span>
@@ -254,7 +253,16 @@ modifier:</p>
   STRETCH will stretch control to parent size vertically.</li>
 </ul>
 <h1 id="style-cmrow-elements">Style CmRow elements</h1>
-<p>CmRow modifiers contains only one element to style - the "Container"</p>
+<p>CmRow modifiers contains only one element to style - the "Row"</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmRowModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmRowModifiers</span><span class="w"> </span><span class="nf">Row</span><span class="p">(</span><span class="n">CmModifierRow</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>When you open UI Toolkit Debugger then you will see that Row is a container - so you will add elements to it.</p>
+<p>the Visual element containing three buttons in below screen is a CmRow</p>
+<p><img alt="button.png" src="../images/controls/button.png" /></p>
+<p>Here is how you can style it</p>
 <div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmRow</span><span class="w"> </span><span class="nf">createRow</span><span class="p">()</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="n">CmRow</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">();</span>
@@ -265,6 +273,34 @@ modifier:</p>
 
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">container</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
+
+
+<span class="w">    </span><span class="c1">// in your theme</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmRowModifiers</span><span class="w"> </span><span class="nf">StyleColumn</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmRow</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">HorizontalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="p">.</span><span class="n">START</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">VerticalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">SPACE_BETWEEN</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">FillMaxWidth</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">FillMaxHeight</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>to learn about modifiers for all controls <a href="../modifiers.html">click here</a></p>
+<h1 id="cmrow_1">CmRow</h1>
+<p>CmRow is a container. It is based on VisualElement. You can add controls to it by using:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<p>This control is similar to CmColumn <a href="cmcolumn.html">read here</a></p>
+<p>All controls added to CmRow will be hold in row way. To change how added controls will be positioned you can use
+modifier:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+<h1 id="style-cmrow-elements_1">Style CmRow elements</h1>
+<p>CmRow modifiers contains only one element to style - the "Container"</p>
+<div class="highlight"><pre><span></span><code>
 </code></pre></div>
 <p>to learn about modifiers for all controls <a href="../modifiers.html">click here</a></p>
               

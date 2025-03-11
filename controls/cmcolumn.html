@@ -220,10 +220,11 @@
 <h1 id="cmcolumn">CmColumn</h1>
 <p>CmColumn a container. It is based on VisualElement. You can add controls to it by using:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmButton</span><span class="w"> </span><span class="n">someButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">();</span>
+
 <span class="w">    </span><span class="n">CmColumn</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">();</span>
 <span class="w">    </span><span class="n">column</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">someButton</span><span class="p">);</span>
 </code></pre></div>
-<p>All controls added to CmColumn will be hold in column way. To change how added controls will be positioned you can use
+<p>All controls added to CmColumn will be displayed in column way. To change how added controls will be positioned you can use
 modifier:</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmColumn</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">();</span>
 <span class="w">    </span><span class="n">column</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">ExampleColumn</span><span class="p">);</span>
@@ -242,27 +243,46 @@ modifier:</p>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li>HorizontalArrangement allow you to set how added controls to this container will be positioned horizontally. Available
+<li>VerticalArrangement allow you to set how added controls to this container will be positioned horizontally. Available
   values: START, CENTER, END, SPACE_BETWEEN, SPACE_AROUND.</li>
-<li>VerticalAlignment allow you to set how added controls to this container will be positioned vetrically. Available
+<li>HorizontalAlignment allow you to set how added controls to this container will be positioned vetrically. Available
   values: START, CENTER, END, STRETCH, TEXT_BASELINE
   STRETCH will stretch control to parent size vertically.</li>
 </ul>
 <h1 id="style-cmcolumn-elements">Style CmColumn elements</h1>
-<p>CmColumn modifiers contains only one element to style - the "Container"</p>
-<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmColumn</span><span class="w"> </span><span class="nf">createColumn</span><span class="p">()</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="n">CmColumn</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">();</span>
-<span class="w">            </span><span class="n">column</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">HorizontalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="p">.</span><span class="n">START</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">VerticalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">SPACE_BETWEEN</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">FillMaxWidth</span><span class="p">()</span>
-<span class="w">                </span><span class="p">.</span><span class="n">FillMaxHeight</span><span class="p">()</span>
-<span class="w">            </span><span class="p">);</span>
-<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">container</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
+<p>CmColumn modifiers contains only one element to style - the "Column"</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmColumnModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmColumnModifiers</span><span class="w"> </span><span class="nf">Column</span><span class="p">(</span><span class="n">CmModifierColumn</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>When you open UI Toolkit Debugger then you will see that Column is a container - so you will add elements to it.</p>
+<p>the Visual element containing three buttons in below screen is a CmColumn</p>
+<p><img alt="button.png" src="../images/controls/button.png" /></p>
+<p>Here is how you can style it</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmColumn</span><span class="w"> </span><span class="nf">createColumn</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">CmColumn</span><span class="w"> </span><span class="n">column</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">();</span>
+<span class="w">        </span><span class="n">column</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleColumn</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">container</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+
+<span class="w">    </span><span class="c1">// in your theme</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmColumnModifiers</span><span class="w"> </span><span class="nf">StyleColumn</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmColumn</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">HorizontalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="p">.</span><span class="n">START</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">VerticalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">SPACE_BETWEEN</span><span class="p">)</span>
+<span class="w">            </span><span class="p">.</span><span class="n">FillMaxWidth</span><span class="p">()</span>
+<span class="w">            </span><span class="p">.</span><span class="n">FillMaxHeight</span><span class="p">()</span>
+<span class="w">        </span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>to learn about modifiers for all controls <a href="../modifiers.html">click here</a></p>
+<p>// events - under construction</p>
               
             </div>
           </div><footer>

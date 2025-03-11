@@ -94,8 +94,6 @@
     <ul class="current">
                 <li class="toctree-l3 current"><a class="reference internal current" href="#">CmButton</a>
     <ul class="current">
-    <li class="toctree-l4"><a class="reference internal" href="#introduction">introduction</a>
-    </li>
     </ul>
                 </li>
                 <li class="toctree-l3"><a class="reference internal" href="cmimage.html">CmImage</a>
@@ -222,20 +220,26 @@
 <!-- TOC -->
 <ul>
 <li><a href="#codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</a></li>
-<li><a href="#introduction">introduction</a></li>
 <li><a href="#cmbutton">CmButton</a></li>
 <li><a href="#style-cmbutton-elements">Style CmButton elements</a></li>
 </ul>
 <!-- TOC -->
 
-<h2 id="introduction">introduction</h2>
-<p>CmControlBase is the base control <a href="../visual_controls.html">more in the introduction here</a></p>
 <h1 id="cmbutton">CmButton</h1>
 <p>CmButton is a button control. It's based on Button control from UI Toolkit. </p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmButton</span><span class="w"> </span><span class="n">someButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">();</span>
 </code></pre></div>
 <h1 id="style-cmbutton-elements">Style CmButton elements</h1>
 <p>CmButton modifiers contains only one element to style - the "Button"</p>
+<p>CmButton.GetModifiersBuilder() will return CmButtonModifiers.</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmButtonModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">Button</span><span class="p">(</span><span class="n">CmModifierText</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>When you open UI Toolkit Debugger then you will see that button is not container and has only one element to style - the button itself, so I have added only one Button modifier which accept CmModifierText to style button text and background because CmModifierText is extensionsion of CmModifierBackground </p>
+<p><img alt="button.png" src="../images/controls/button.png" /></p>
+<p>here is example styling</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmButton</span><span class="w"> </span><span class="nf">OptionButton</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">enabled</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="c1">// create button somewhere</span>
@@ -243,12 +247,12 @@
 <span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetName</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
 <span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetEnabled</span><span class="p">(</span><span class="n">enabled</span><span class="p">);</span>
 
-<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">ExampleButton</span><span class="p">);</span>
+<span class="w">        </span><span class="n">button</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleButton</span><span class="p">);</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="c1">// in your theme</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">ExampleButton</span><span class="p">()</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmButtonModifiers</span><span class="w"> </span><span class="nf">StyleButton</span><span class="p">()</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmButton</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
 <span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
@@ -273,6 +277,7 @@
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>to learn about modifiers for all controls <a href="../modifiers.html">click here</a></p>
+<p>// events - under construction</p>
               
             </div>
           </div><footer>
