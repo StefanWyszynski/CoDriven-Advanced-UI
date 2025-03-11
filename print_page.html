@@ -1793,7 +1793,7 @@ than for text. Because the text has font size/color etc. but the background does
 <h2 id="modifiers-modifiers-builder">Modifiers builder</h2>
 <p>This is why modifier builder - the class that we will be using for building style for specific control is divided into
 groups that inherit from other groups modifiers to build modifiers depend on their type like text, background etc.</p>
-<p>This is how it looks</p>
+<p>This is modifiers hierarchy</p>
 <p><img alt="graphs" src="images/graphs/graph_modifiers_tree.png" /></p>
 <blockquote>
 <p>Note: you shouldn't use classes with the text "<strong>Base</strong>" in their names from the above diagram. Only if you need to create
@@ -1815,7 +1815,7 @@ margin.</p>
 position, size</p>
 </blockquote>
 <ul>
-<li><strong>CmModifierBaseImageAndBackground</strong>  - extension from <code>CmModifierBaseBackground</code>.</li>
+<li><strong>CmModifierBaseImageAndBackground</strong> - extension from <code>CmModifierBaseBackground</code>.</li>
 </ul>
 <blockquote>
 <p>It will allow you to set properties like image, image scale mode, image tint color</p>
@@ -1860,11 +1860,9 @@ but CmRow is a horizontal container. The same rules affect html/css controls.</p
 </blockquote>
 <hr />
 <h1 id="modifiers-how-it-works-all-together-with-controls">How it works all together with controls</h1>
-<p>All controls have a field called <code>Modifiers</code>which is a class that allows you to style elements of these controls like
-background, label, scrollbars, etc.</p>
-<p>Some controls have many elements like CmScrollView. But for example, let's take a look at CmToogle control. This is simple
-toggle button.</p>
-<p><strong>CmToogle</strong> has a <code>Modifiers</code> field that contains methods to style elements of CmToogle control like Background, Label,
+<p>All controls have a method called <code>GetModifiersBuilder()</code> which returns a class that allows you to style elements of these controls like background, label, scrollbars, etc.</p>
+<p>Some controls have many elements like CmScrollView. But for example, let's take a look at <strong>CmToogle</strong> control. This is simple toggle button.</p>
+<p><strong>CmToogle</strong> has a <code>GetModifiersBuilder()</code> method that returns class with methods to style elements of CmToogle control like Background, Label,
 CheckMarkBackground and CheckMark</p>
 <div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmToggleModifiers</span><span class="w"> </span><span class="nf">Background</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
 <span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmToggleModifiers</span><span class="w"> </span><span class="nf">Label</span><span class="p">(</span><span class="n">CmModifierText</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
@@ -1874,7 +1872,7 @@ CheckMarkBackground and CheckMark</p>
 <p>so you can style any element of toggle control by using:</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">cmToggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmToggle</span><span class="p">(..);</span>
 
-<span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">;</span>
+<span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
 
 <span class="w"> </span><span class="c1">// change CheckMarkBackground</span>
 <span class="w"> </span><span class="n">modifiers</span><span class="p">.</span><span class="n">CheckMarkBackground</span><span class="p">(...)</span>
@@ -1885,16 +1883,25 @@ CheckMarkBackground and CheckMark</p>
 <span class="w"> </span><span class="c1">// change Label</span>
 <span class="w"> </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Label</span><span class="p">(...)</span>
 </code></pre></div>
+<p>So let's suppose you want to style CmToggle, you will use CheckMarkBackground() method to style checkmark background:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">    </span><span class="n">modifiers</span><span class="p">.</span><span class="n">CheckMarkBackground</span><span class="p">(</span>
+<span class="w">        </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">.</span><span class="n">OverflowVisible</span><span class="p">()</span>
+<span class="w">    </span><span class="p">)</span>
+</code></pre></div>
+<p>you will use modifiers.CheckMark(...) to style checkmark,</p>
+<p>you will use modifiers.Label(...) to style label</p>
+<p>so different method to style different element of one control.</p>
 <blockquote>
-<p>Note: each method allows you to style other elements and because the label is not background it will use different Modifiers
-builder. <strong>Label</strong> contains text so it uses <strong>CmModifierText</strong>, but the <strong>Background</strong> is just a simple background, so
-text modifiers are useless here so we hide its methods by using a less extended modifier builder like *
-<em>CmModifierBackground</em>*.</p>
+<p>if you will style Label of CmToogle control then you will use CmModifierText that contains additional method for styling text
+but if you style CheckMarkBackground then you will use CmModifierBackground that has methods to style background but doesn't contain methods for styling text
+I could just add one class with all modifiers but you shouldn't see methods for styling text when you style Background of your control</p>
 </blockquote>
 <p>Here is how to style the checkmark element which contains the image and background so it uses <strong>CmModifierImageAndBackground</strong>
 modifier:</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">cmToggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmToggle</span><span class="p">(..);</span>
-<span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">CheckMark</span><span class="p">(</span>
+<span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">().</span><span class="n">CheckMark</span><span class="p">(</span>
 <span class="w">     </span><span class="c1">// create modifier for DEFAULT_STATE but we will add other states using ____NextSelector</span>
 <span class="w">     </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierImageAndBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
 <span class="w">         </span><span class="p">.</span><span class="n">BorderWidth</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -1914,31 +1921,26 @@ modifier:</p>
 <span class="w">         </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">gray</span><span class="p">)</span>
 <span class="w"> </span><span class="p">);</span>
 </code></pre></div>
-<p>This code can have multiple lines because you would want to change many modifiers, but it's simple to understand and
-easier to maintain than the USS code.</p>
-<p>Additionally, you will not have to know the class name for the toggle checkmark to change it and modifiers will
-hide difficult flex uss code behind simple API.</p>
+<p>This code can have multiple lines because you would want to change many modifiers, but it's simple to understand and easier to maintain than the USS code.</p>
+<p>Additionally, you will not have to know the class name for the toggle checkmark to change it and modifiers will hide difficult flex uss code behind simple API.</p>
 <hr />
 <h2 id="modifiers-what-is-usspropertyval">what is UssPropertyVal</h2>
-<p>Many modifiers allow you to set parameters as percents, pixels, or others. These modifiers will accept parameters with
-int type which will be converted to pixels internally in USS.</p>
-<p>There are also overloaded versions of these modifier functions that will accept parameters as <strong>UssPropertyVal</strong>.</p>
-<p><strong>UssPropertyVal</strong> is a special conversion class generated automatically from your int/float/double parameters that will
-be converted to pixels/percents/other.</p>
-<blockquote>
-<p>Important: You won't have to create this class because it will be created automatically when you use the extension
-function on int/float/double values.</p>
-</blockquote>
-<h3 id="modifiers-so-how-to-create-these-values">So, how to create these values?</h3>
-<p>here is an example of that</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">CheckMark</span><span class="p">(</span>
-<span class="w">     </span><span class="c1">// create modifier for DEFAULT_STATE but we will add other state using ____NextSelector</span>
-<span class="w">     </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierImageAndBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
-<span class="w">         </span><span class="p">.</span><span class="n">BorderWidth</span><span class="p">(</span><span class="mi">4</span><span class="p">.</span><span class="n">px</span><span class="p">())</span>
-<span class="w"> </span><span class="p">);</span>
+<p>Many modifiers allow you to set parameters as percents, pixels, or others. If modifiers will accept parameters with int type then it will be usually converted to pixels internally in USS.</p>
+<p>There are also overloaded versions of these modifier that will accept parameters as <strong>UssPropertyVal</strong>.</p>
+<p>For example Width() modifier. You can pass pixels, or percentage etc</p>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="p">.</span><span class="n">Width</span><span class="p">(</span><span class="mi">40</span><span class="p">.</span><span class="n">Px</span><span class="p">())</span><span class="w"> </span><span class="c1">// pixels</span>
 </code></pre></div>
-<p>in this example, BorderWidth accepts <strong>UssPropertyVal</strong> but it was automatically created from int value "4" converted
-by extension function "px()" to <strong>UssPropertyVal</strong> class</p>
+<p>or</p>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="p">.</span><span class="n">Width</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span><span class="w"> </span><span class="c1">// pixels</span>
+</code></pre></div>
+<p>or </p>
+<div class="highlight"><pre><span></span><code><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
+<span class="p">.</span><span class="n">Width</span><span class="p">(</span><span class="mi">10</span><span class="p">.</span><span class="n">Percent</span><span class="p">())</span><span class="w"> </span><span class="c1">// percentage of available area</span>
+</code></pre></div>
+<p>in this example, Width accepts <strong>UssPropertyVal</strong> but it was automatically created from int value "40" converted
+by extension function "Px()" to <strong>UssPropertyVal</strong> class</p>
 <p>you can use extension functions on base types int/float/double in some exceptions:</p>
 <table>
 <thead>
@@ -1950,43 +1952,43 @@ by extension function "px()" to <strong>UssPropertyVal</strong> class</p>
 </thead>
 <tbody>
 <tr>
-<td>.px()</td>
+<td>.Px()</td>
 <td>UssPropertyVal</td>
 <td>pixel values</td>
 </tr>
 <tr>
-<td>.percent()</td>
+<td>.Percent()</td>
 <td>UssPropertyVal</td>
 <td>percentage values</td>
 </tr>
 <tr>
-<td>.em()</td>
+<td>.Em()</td>
 <td>UssPropertyVal</td>
 <td>font em values</td>
 </tr>
 <tr>
-<td>.rem()</td>
+<td>.Rem()</td>
 <td>UssPropertyVal</td>
 <td>font rem values</td>
 </tr>
 <tr>
-<td>.deg()</td>
+<td>.Deg()</td>
 <td>UssPropertyVal</td>
 <td>rotation values</td>
 </tr>
 <tr>
-<td>.rad()</td>
+<td>.Rad()</td>
 <td>UssPropertyVal</td>
 <td>rotation values</td>
 </tr>
 <tr>
-<td>.grad()</td>
+<td>.Grad()</td>
 <td>UssPropertyVal</td>
 <td>rotation values</td>
 </tr>
 </tbody>
 </table>
-<p>Another example. If you want to set font size using "em()"</p>
+<p>Another example. If you want to set font size using "Em()"</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">CheckMark</span><span class="p">(</span>
 <span class="w">     </span><span class="c1">// create modifier for DEFAULT_STATE but we will add other state using ____NextSelector</span>
 <span class="w">     </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierImageAndBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
@@ -1994,18 +1996,18 @@ by extension function "px()" to <strong>UssPropertyVal</strong> class</p>
 <span class="w"> </span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<h2 id="modifiers-custom-modifiers-for-your-own-visual-change-for-control-runtime">Custom modifiers (for your own visual change for control runtime)</h2>
-<p>Suppose that for example, you want to hide a label using USS code for the UI toolkit using your custom modifier.</p>
+<h1 id="modifiers-custom-selectors-for-your-own-visual-change-for-control-runtime">Custom selectors (for your own visual change for control runtime)</h1>
+<p>Suppose that for example, you want to hide a label using USS code for the UI Toolkit using your custom modifier.</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">cmToggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmToggle</span><span class="p">(..);</span>
 
 <span class="w"> </span><span class="c1">//Create a custom selector for the label with the name: &quot;your_custom_selector_name_enter_here&quot;</span>
-<span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">Label</span><span class="p">(</span>
+<span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">().</span><span class="n">Label</span><span class="p">(</span>
 <span class="w">     </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierText</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;your_custom_selector_name_enter_here&quot;</span><span class="p">)</span>
 <span class="w">         </span><span class="p">.</span><span class="n">Hide</span><span class="p">()</span>
 <span class="w"> </span><span class="p">);</span>
 
 <span class="w"> </span><span class="c1">//------------------------ </span>
-<span class="w"> </span><span class="c1">// then runtime</span>
+<span class="w"> </span><span class="c1">// then runtime somewhere in code you can use:</span>
 
 <span class="w"> </span><span class="c1">//Add your selector to hide the label</span>
 <span class="w"> </span><span class="n">cmToggle</span><span class="p">.</span><span class="n">SetCustomSelector</span><span class="p">(</span><span class="s">&quot;your_custom_selector_name_enter_here&quot;</span><span class="p">);</span>
@@ -2013,8 +2015,13 @@ by extension function "px()" to <strong>UssPropertyVal</strong> class</p>
 <span class="w"> </span><span class="c1">// to remove your selector to show the label</span>
 <span class="w"> </span><span class="n">cmToggle</span><span class="p">.</span><span class="n">RemoveCustomSelector</span><span class="p">(</span><span class="s">&quot;your_custom_selector_name_enter_here&quot;</span><span class="p">);</span>
 </code></pre></div>
+<p>This way you can use your own selector. In above example <strong>your_custom_selector_name_enter_here</strong> is name for your selector.</p>
+<p>You will pass name for your custom selector in Modifier constructor as second parameter. Then you can add your selector to your control runtime. Or remove it any time.</p>
+<blockquote>
+<p>For an example you can make your custom selecto with animation that will for example move control to left with animation and make it slowly transparent during animation. Then set this selector when game start for all buttons. Then they will be animated. This is powerfull feature of uss of UI Toolkit that will be build from your selectors. </p>
+</blockquote>
 <hr />
-<h2 id="modifiers-cmselector-controls-visual-state">CmSelector (controls visual state)</h2>
+<h2 id="modifiers-cmselector-controls-visual-state-this-is-built-in-state-for-your-control">CmSelector (controls visual state) - this is built-in state for your control</h2>
 <p>The selector is something like a state of control. Here is the list of states</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">/// &lt;summary&gt;</span>
 <span class="w">    </span><span class="c1">/// Use this to build a selecor for control. For example when you want to change style when the mouse is over a control.</span>
@@ -2054,8 +2061,9 @@ by extension function "px()" to <strong>UssPropertyVal</strong> class</p>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>DEFAULT_STATE is the state when control is visible on the screen and nothing is changed with its state. You will always use this state for styling. Typically you will also style control for HOVER and DISABLED states to change how the control will look while the mouse is hovering over it, or when the control is disabled. Here is an example of how to style these three states:</p>
+<p>See example below how to set how control will look like in default state, or when mouse is hovered, or when disabled</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="kt">var</span><span class="w"> </span><span class="n">cmToggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmToggle</span><span class="p">(..);</span>
-<span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">CheckMark</span><span class="p">(</span>
+<span class="w"> </span><span class="n">cmToogle</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">().</span><span class="n">CheckMark</span><span class="p">(</span>
 <span class="w">     </span><span class="c1">// create modifier for DEFAULT_STATE but we will add other states using ____NextSelector</span>
 <span class="w">     </span><span class="k">new</span><span class="w"> </span><span class="nf">CmModifierImageAndBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
 <span class="w">         </span><span class="p">.</span><span class="n">BorderWidth</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -2071,6 +2079,9 @@ by extension function "px()" to <strong>UssPropertyVal</strong> class</p>
 <span class="w">         </span><span class="p">.</span><span class="n">BackgroundColorRGBA</span><span class="p">(</span><span class="n">Color</span><span class="p">.</span><span class="n">white</span><span class="p">)</span>
 <span class="w"> </span><span class="p">);</span>
 </code></pre></div>
+<blockquote>
+<p>Default state is base state how control will look like by default. When you add hover state and for example you will change control to red when mouse is hovering then control will have the same modifiers as in default state but only red color overriden in hover state </p>
+</blockquote>
 <hr />
 <h1 id="modifiers-simple-list-of-all-modifiers">Simple list of all modifiers</h1>
 <p>Here are all modifiers available in version 1.0.0 of CoDriven Advanced UI.</p>
@@ -2560,7 +2571,7 @@ and events handling of these controls</p></section>
 <h2 id="controls-cmbutton-introduction">introduction</h2>
 <p>CmControlBase is the base control <a href="#visual_controls">more in the introduction here</a></p>
 <h1 id="controls-cmbutton-cmbutton">CmButton</h1>
-<p>CmButton is a button control. Is is based on VisualElement. </p>
+<p>CmButton is a button control. It's based on Button control from UI Toolkit. </p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="n">CmButton</span><span class="w"> </span><span class="n">someButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">();</span>
 </code></pre></div>
 <h1 id="controls-cmbutton-style-cmbutton-elements">Style CmButton elements</h1>
