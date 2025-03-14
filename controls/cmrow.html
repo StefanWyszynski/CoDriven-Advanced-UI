@@ -256,7 +256,7 @@ modifier:</p>
 <p>CmRow modifiers contains only one element to style - the "Row"</p>
 <div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmRowModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmRowModifiers</span><span class="w"> </span><span class="nf">Row</span><span class="p">(</span><span class="n">CmModifierRow</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmRowModifiers</span><span class="w"> </span><span class="nf">Container</span><span class="p">(</span><span class="n">CmModifierRow</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div>
 <p>When you open UI Toolkit Debugger then you will see that Row is a container - so you will add elements to it.</p>
@@ -266,17 +266,14 @@ modifier:</p>
 <div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmRow</span><span class="w"> </span><span class="nf">createRow</span><span class="p">()</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="n">CmRow</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">();</span>
-<span class="w">            </span><span class="n">row</span><span class="p">.</span><span class="n">Modifiers</span><span class="p">.</span><span class="n">Container</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierRow</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">HorizontalArrangement</span><span class="p">(</span><span class="n">CmArrangement</span><span class="p">.</span><span class="n">CENTER</span><span class="p">)</span>
-<span class="w">                </span><span class="p">.</span><span class="n">VerticalAlignment</span><span class="p">(</span><span class="n">CmAlignment</span><span class="p">.</span><span class="n">STRETCH</span><span class="p">)</span>
-<span class="w">            </span><span class="p">);</span>
+<span class="w">            </span><span class="n">row</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleRow</span><span class="p">);</span>
 
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">container</span><span class="p">;</span>
 <span class="w">        </span><span class="p">}</span>
 
 
 <span class="w">    </span><span class="c1">// in your theme</span>
-<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmRowModifiers</span><span class="w"> </span><span class="nf">StyleColumn</span><span class="p">()</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmRowModifiers</span><span class="w"> </span><span class="nf">StyleRow</span><span class="p">()</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmRow</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
 <span class="w">        </span><span class="n">modifiers</span><span class="p">.</span><span class="n">Column</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierColumn</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DEFAULT_STATE</span><span class="p">)</span>

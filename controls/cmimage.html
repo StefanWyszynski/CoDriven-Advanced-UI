@@ -218,7 +218,52 @@
                 <h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="../visual_controls.html">Go back</a></p>
 <h1 id="cmimage">CmImage</h1>
-<p>Under construction</p>
+<h2 id="description">Description</h2>
+<p>CmImage is a control based on Unity UI Toolkit's VisualElement that displays images. It provides flexible image display capabilities with support for different scale modes. CmImage allows you to display images with various scaling and positioning options, making it suitable for UI elements like icons, thumbnails, and decorative elements.</p>
+<h2 id="creating-a-cmimage">Creating a CmImage</h2>
+<p>You can create a CmImage using:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// With screen and events handler parameters</span>
+<span class="n">CmImage</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmImage</span><span class="p">(</span><span class="n">GetScreen</span><span class="p">(),</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">GetUIEventsHandler</span><span class="p">());</span>
+</code></pre></div>
+<h2 id="cmimage-control-built-in-methods">CmImage Control Built-In Methods</h2>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// returns Unity VisualElement that represents the Image</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">VisualElement</span><span class="w"> </span><span class="nf">GetVisualElement</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_image</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<h2 id="scale-modes">Scale Modes</h2>
+<p>CmImage supports various scale modes through the <code>CmImageScaleMode</code> enum:</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">CmImageScaleMode</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">ScaleToFit</span><span class="p">,</span><span class="w">      </span><span class="c1">// Scales image to fit within the container while maintaining aspect ratio</span>
+<span class="w">    </span><span class="n">ScaleAndCrop</span><span class="p">,</span><span class="w">    </span><span class="c1">// Scales image to fill container, cropping if necessary</span>
+<span class="w">    </span><span class="n">Stretch</span><span class="p">,</span><span class="w">         </span><span class="c1">// Stretches the image to fill the container, ignoring aspect ratio</span>
+<span class="w">    </span><span class="n">Original</span><span class="p">,</span><span class="w">        </span><span class="c1">// Displays the image at its original size</span>
+<span class="w">    </span><span class="n">StretchToFill</span><span class="w">    </span><span class="c1">// Similar to Stretch but ensures full coverage</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="style-cmimage-elements">Style CmImage Elements</h2>
+<p>CmImage.GetModifiersBuilder() will return modifiers that you can use to style CmImage.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmImageModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Apply Image and background styling to the image container</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmImageModifiers</span><span class="w"> </span><span class="nf">Image</span><span class="p">(</span><span class="n">CmModifierImageAndBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>So you can style CmImage using the modifiers pattern:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CmImage</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmImage</span><span class="p">();</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmImage</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+
+<span class="c1">// Apply styling</span>
+<span class="n">modifiers</span><span class="p">.</span><span class="n">Image</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierImageAndBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">AnimDuration</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">FillMaxWidth</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">FillMaxHeight</span><span class="p">()</span>
+<span class="w">    </span><span class="p">.</span><span class="n">____NextSelector</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">Hover</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="mf">1.3f</span><span class="p">)</span>
+<span class="p">);</span>
+</code></pre></div>
               
             </div>
           </div><footer>

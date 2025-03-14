@@ -218,7 +218,124 @@
                 <h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="../visual_controls.html">Go back</a></p>
 <h1 id="cmscroller">CmScroller</h1>
-<p>Under construction</p>
+<h2 id="description">Description</h2>
+<p>CmScroller is a scrollable container based on VisualElement from UI Toolkit called Scroller. You can add child controls to it, and it will enable
+vertical or horizontal scrolling, depending on its configuration.</p>
+<h2 id="adding-controls-to-cmscroller">Adding Controls to CmScroller</h2>
+<p>You can add controls to a CmScroller by using:</p>
+<div class="highlight"><pre><span></span><code><span class="n">CmButton</span><span class="w"> </span><span class="n">someButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmButton</span><span class="p">();</span>
+<span class="c1">//</span>
+<span class="n">CmScroller</span><span class="w"> </span><span class="n">scroller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmScroller</span><span class="p">();</span>
+<span class="n">scroller</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">someButton</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="cmscroller-control-built-in-methods">CmScroller control built-in methods</h2>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// set scroll direction Vertical or Horizontal</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetScrollerDirection</span><span class="p">(</span><span class="n">SliderDirection</span><span class="w"> </span><span class="n">direction</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// current scroll value</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">SetScrollerValue</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="k">value</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// set scroll observable, so you can change observable value and it will change scroller value inside</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindScrollerValue</span><span class="p">(</span><span class="n">CmObservableData</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">observableScrollerValue</span><span class="p">)</span>
+
+<span class="w">    </span><span class="c1">// returns unity Visual element which is Scroller</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">VisualElement</span><span class="w"> </span><span class="nf">GetVisualElement</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">_scroller</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<h2 id="style-cmscroller-elements">Style CmScroller Elements</h2>
+<p>CmScroller.GetModifiersBuilder() will return modifiers that you can use to style CmScroller.</p>
+<div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmScrollerModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmMainModifiers</span><span class="w"> </span><span class="n">Main</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmMainModifiers</span><span class="p">(</span><span class="n">_cmModifiersContainer</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmDraggerModifiers</span><span class="w"> </span><span class="n">Dragger</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmDraggerModifiers</span><span class="p">(</span><span class="n">_cmModifiersContainer</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmScrollerButtonsModifiers</span><span class="w"> </span><span class="n">ScrollerButtons</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmScrollerButtonsModifiers</span><span class="p">(</span><span class="n">_cmModifiersContainer</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmTrackerModifiers</span><span class="w"> </span><span class="n">Tracker</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmTrackerModifiers</span><span class="p">(</span><span class="n">_cmModifiersContainer</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">CmLabelModifiers</span><span class="w"> </span><span class="n">Label</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">get</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmLabelModifiers</span><span class="p">(</span><span class="n">_cmModifiersContainer</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmLabelModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmLabelModifiers</span><span class="w"> </span><span class="nf">Control</span><span class="p">(</span><span class="n">CmModifierText</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmMainModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmMainModifiers</span><span class="w"> </span><span class="nf">Background</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmDraggerModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmDraggerModifiers</span><span class="w"> </span><span class="nf">Border</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmDraggerModifiers</span><span class="w"> </span><span class="nf">Background</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmDraggerModifiers</span><span class="w"> </span><span class="nf">DragContainer</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmScrollerButtonsModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmScrollerButtonsModifiers</span><span class="w"> </span><span class="nf">ArrowLow</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmScrollerButtonsModifiers</span><span class="w"> </span><span class="nf">ArrowHigh</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmTrackerModifiers</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ICmControlModifiers</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="n">CmTrackerModifiers</span><span class="w"> </span><span class="nf">Background</span><span class="p">(</span><span class="n">CmModifierBackground</span><span class="w"> </span><span class="n">modifier</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>CmScroller can be styled using above elements so you can style it like here:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Create scroller somewhere</span>
+<span class="n">CmScroller</span><span class="w"> </span><span class="n">scroller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmScroller</span><span class="p">();</span>
+<span class="n">scroller</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">ScrollerStyle</span><span class="p">);</span>
+
+<span class="c1">// In your theme</span>
+<span class="k">public</span><span class="w"> </span><span class="n">ICmControlModifiers</span><span class="w"> </span><span class="nf">ScrollerStyle</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">modifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CmScroller</span><span class="p">.</span><span class="n">GetModifiersBuilder</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">scrollbar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">modifiers</span><span class="p">.</span><span class="n">VerticalScroll</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// style scroller main background</span>
+<span class="w">    </span><span class="n">scrollbar</span><span class="p">.</span><span class="n">Main</span><span class="p">.</span><span class="n">Background</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">OverflowVisible</span><span class="p">()</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// style scroller buttons</span>
+<span class="w">    </span><span class="n">scrollbar</span><span class="p">.</span><span class="n">ScrollerButtons</span><span class="p">.</span><span class="n">ArrowLow</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Hide</span><span class="p">()</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="n">scrollbar</span><span class="p">.</span><span class="n">ScrollerButtons</span><span class="p">.</span><span class="n">ArrowHigh</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">Hide</span><span class="p">()</span>
+<span class="w">    </span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// style scroller tracker </span>
+<span class="w">    </span><span class="n">scrollbar</span><span class="p">.</span><span class="n">Tracker</span><span class="p">.</span><span class="n">Background</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">CmModifierBackground</span><span class="p">(</span><span class="n">CmSelector</span><span class="p">.</span><span class="n">DefaultState</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">BorderWidth</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">BorderRadius</span><span class="p">(</span><span class="n">_scrollBarRadius</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">BorderColorRGBA</span><span class="p">(</span><span class="n">_bgColorTint</span><span class="p">)</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">modifiers</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>To learn about modifiers for all controls, <a href="../modifiers.html">click here</a></p>
               
             </div>
           </div><footer>
