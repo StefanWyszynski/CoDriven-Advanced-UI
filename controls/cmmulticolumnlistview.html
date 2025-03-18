@@ -218,7 +218,123 @@
                 <h1 id="codriven-advanced-ui-documentation">CoDriven Advanced UI documentation</h1>
 <p><a href="../visual_controls.html">Go back</a></p>
 <h1 id="cmmulticolumnlistview">CmMultiColumnListView</h1>
-<p>Under construction</p>
+<p><img alt="multicolumnlistview_example.png" src="../images/controls/multicolumnlistview_example.png" /></p>
+<p>CmMultiColumnListView is a list view that supports multiple columns. It's based on a container control <strong>MultiColumnListView</strong> from UI Toolkit that is customized for advanced UI handling.</p>
+<h1 id="initialize-cmmulticolumnlistview">Initialize CmMultiColumnListView</h1>
+<p>To initialize the list view, you need to define the number of columns, provide data, and set appropriate column headers.</p>
+<p>CmMultiColumnListView contains columns with headers that will be created and filled with your controls and data. </p>
+<p>To create controls and data for you CmMul, you need to create adapter that will hold all items.</p>
+<p>Here is an example how to create CmMultiColumnListView similar to what was used to create built-in translation editor.</p>
+<p>After that I will show you how to create adapter and fill it with data:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmControlBase</span><span class="w"> </span><span class="nf">OnMakeContent</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// create control for current screen with single selection</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmMultiColumnListView</span><span class="p">(</span><span class="n">GetScreen</span><span class="p">(),</span><span class="w"> </span><span class="n">SelectionType</span><span class="p">.</span><span class="n">Single</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">GetUIEventsHandler</span><span class="p">());</span>
+
+<span class="w">        </span><span class="c1">// example adapter will fill all your items for the control</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmTranslationTableAdapter</span><span class="p">(</span><span class="n">GetScreen</span><span class="p">(),</span><span class="w"> </span><span class="n">langData</span><span class="p">,</span><span class="w"> </span><span class="n">_specialAction</span><span class="p">);</span>
+<span class="w">        </span><span class="n">adapter</span><span class="p">.</span><span class="n">SetItemsData</span><span class="p">(</span><span class="n">langData</span><span class="p">.</span><span class="n">translationsRows</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// set adapter</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="n">Items</span><span class="p">(</span><span class="n">adapter</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">list</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>First create adapter for your data. You will have to use CmMultiColumnListAdapter as base class for your adapter</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c1">// ItemData are the data type that will be used to populate single row. Row can contain multiple data</span>
+<span class="w">    </span><span class="c1">// ItemControl is a control that will be used as container for your control in single item for column</span>
+<span class="w">    </span><span class="c1">// HeaderControl is a control that will be used as container for your control in single item for the header of column</span>
+<span class="w">    </span><span class="c1">// theme will be passed the same theme as in your screen </span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">abstract</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmMultiColumnListAdapter</span><span class="o">&lt;</span><span class="n">ItemData</span><span class="p">,</span><span class="w"> </span><span class="n">ItemControl</span><span class="p">,</span><span class="w"> </span><span class="n">HeaderControl</span><span class="p">,</span><span class="w"> </span><span class="n">THEME</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>So let's create example adapter. This adapter was used for translation editor.</p>
+<p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CmTranslationTableAdapter</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">CmMultiColumnListAdapter</span><span class="o">&lt;</span>
+<span class="w">        </span><span class="n">TranslationRow</span><span class="p">,</span><span class="w"> </span><span class="c1">// the data type used for the whole row (multiple columns in a row)</span>
+<span class="w">        </span><span class="n">CmRow</span><span class="p">,</span><span class="w"> </span><span class="c1">// will be used as container for the whole column item</span>
+<span class="w">        </span><span class="n">CmRow</span><span class="p">,</span><span class="w"> </span><span class="c1">// will be used as container for the column header</span>
+<span class="w">        </span><span class="n">CmTranslationEditorTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="c1">// is a theme used for the translation editor in this example</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// the data for all controls</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">TranslationLanguagesData</span><span class="w"> </span><span class="n">_langData</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">ICmTranslateActionData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">_specialAction</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">CmTranslationTableAdapter</span><span class="p">(</span><span class="n">CmScreen</span><span class="o">&lt;</span><span class="n">CmTranslationEditorTheme</span><span class="o">&gt;</span><span class="w"> </span><span class="n">screen</span><span class="p">,</span>
+<span class="w">            </span><span class="n">TranslationLanguagesData</span><span class="w"> </span><span class="n">langData</span><span class="p">,</span><span class="w"> </span><span class="n">Action</span><span class="o">&lt;</span><span class="n">ICmTranslateActionData</span><span class="o">&gt;</span><span class="w"> </span><span class="n">specialAction</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="k">base</span><span class="p">(</span><span class="n">screen</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">_langData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">langData</span><span class="p">;</span>
+<span class="w">            </span><span class="n">_specialAction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">specialAction</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+</code></pre></div>
+this adapter will contain all your columns that will be displayed for single row.</p>
+<p>You will have multiple rows and each row will contain multiple columns. 
+The best example would be highscore table for typical game. Where each row will contain columns like "player name", "player score"
+To create all columns override CreateAllColumns() method of the adapter</p>
+<p><div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Column</span><span class="o">&gt;</span><span class="w"> </span><span class="n">CreateAllColumns</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Column</span><span class="o">&gt;</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Column</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="w">            </span><span class="c1">// add your columns here to columns list</span>
+<span class="w">            </span><span class="c1">// I removed the code because it is to big for example</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">columns</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+</code></pre></div>
+Ok. Now your control will contain columns, buw where is the data?.</p>
+<p>If you remember the data was passed to the adapter when it was created before:</p>
+<p><div class="highlight"><pre><span></span><code><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmControlBase</span><span class="w"> </span><span class="nf">OnMakeContent</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// create control for current screen with single selection</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmMultiColumnListView</span><span class="p">(</span><span class="n">GetScreen</span><span class="p">(),</span><span class="w"> </span><span class="n">SelectionType</span><span class="p">.</span><span class="n">Single</span><span class="p">,</span><span class="w"> </span><span class="n">cmUIEventsHandler</span><span class="p">:</span><span class="w"> </span><span class="n">GetUIEventsHandler</span><span class="p">());</span>
+
+<span class="w">        </span><span class="c1">// example adapter will fill all your items for the control</span>
+<span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmTranslationTableAdapter</span><span class="p">(</span><span class="n">GetScreen</span><span class="p">(),</span><span class="w"> </span><span class="n">langData</span><span class="p">,</span><span class="w"> </span><span class="n">_specialAction</span><span class="p">);</span>
+<span class="w">        </span><span class="n">adapter</span><span class="p">.</span><span class="n">SetItemsData</span><span class="p">(</span><span class="n">langData</span><span class="p">.</span><span class="n">translationsRows</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// set adapter</span>
+<span class="w">        </span><span class="n">list</span><span class="p">.</span><span class="n">Items</span><span class="p">(</span><span class="n">adapter</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">list</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+SetItemsData is where you pass all items for all rows for your control</p>
+<p>adapter.SetItemsData(langData.translationsRows);</p>
+<p>translationsRows contains data for all rows.</p>
+<p>This would contains list of highscore items, where highscore item will contain player name, player score ect.</p>
+<p>Ok now the control will know how many rows will be needed from SetItemsData, and will know how many colums there will be per row because you have overriden CreateAllColumns method of adapter.</p>
+<p>Now it's time to create controls for headers, and bind data to it</p>
+<p>To create headers and bind data to it - we will override methods:</p>
+<div class="highlight"><pre><span></span><code><span class="w">        </span><span class="c1">// create container with controls for your HEADER column here</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmRow</span><span class="w"> </span><span class="nf">CreateHeaderControlAtColumn</span><span class="p">(</span><span class="n">Column</span><span class="w"> </span><span class="n">column</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="p">...</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="c1">// Bind data for your HEADER column container here</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindHeaderControlAtColumn</span><span class="p">(</span><span class="n">Column</span><span class="w"> </span><span class="n">column</span><span class="p">,</span><span class="w"> </span><span class="n">CmRow</span><span class="w"> </span><span class="n">cmControl</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="p">...</span>
+<span class="w">        </span><span class="p">}</span>
+</code></pre></div>
+<p>Ok. Headers will be created and populated with data.</p>
+<p>Now it's time to create and populate data for your columns not headers. In highscore you will create and bind player name column, and score column  </p>
+<p><div class="highlight"><pre><span></span><code><span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="n">CmRow</span><span class="w"> </span><span class="nf">CreateRowControlAtColumn</span><span class="p">(</span><span class="n">Column</span><span class="w"> </span><span class="n">column</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">container</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CmRow</span><span class="p">(</span><span class="n">GetScreen</span><span class="p">());</span>
+<span class="w">            </span><span class="n">container</span><span class="p">.</span><span class="n">SetStyle</span><span class="p">(</span><span class="n">GetTheme</span><span class="p">().</span><span class="n">StyleForMyColumnContainer</span><span class="p">);</span>
+
+<span class="w">            </span><span class="c1">// create container with controls for your column here</span>
+<span class="w">            </span><span class="n">container</span><span class="p">.</span><span class="n">AddContent</span><span class="p">(</span><span class="n">CreateMyRowControlHere</span><span class="p">());</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">container</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">BindRowControlAtColumn</span><span class="p">(</span><span class="n">Column</span><span class="w"> </span><span class="n">column</span><span class="p">,</span><span class="w"> </span><span class="n">CmRow</span><span class="w"> </span><span class="n">cmControl</span><span class="p">,</span><span class="w"> </span><span class="n">TranslationRow</span><span class="w"> </span><span class="n">itemData</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">BindTextInputActions</span><span class="p">(</span><span class="n">column</span><span class="p">,</span><span class="w"> </span><span class="n">cmControl</span><span class="p">,</span><span class="w"> </span><span class="n">itemData</span><span class="p">);</span>
+<span class="w">            </span><span class="n">BindButtonXAction</span><span class="p">(</span><span class="n">column</span><span class="p">,</span><span class="w"> </span><span class="n">cmControl</span><span class="p">,</span><span class="w"> </span><span class="n">itemData</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+</code></pre></div>
+Ok it should work now.</p>
+<p>If you want better example see <strong>CmTranslationTableAdapter</strong> from the engine code. You will understand how it works.</p>
+<h1 id="style-cmmulticolumnlistview">Style CmMultiColumnListView</h1>
+<p>You don't have to style CmMultiColumnListView. You will style controls inside your columns.</p>
+<p>to learn about modifiers for all controls <a href="../modifiers.html">click here</a></p>
               
             </div>
           </div><footer>
